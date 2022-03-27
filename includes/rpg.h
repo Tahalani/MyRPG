@@ -32,20 +32,51 @@ typedef struct event {
     sfEvent event;
 } event_t;
 
+typedef struct element_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f pos;
+    int max_value;
+} element_t;
+
+typedef struct player_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfVector2f scale;
+    sfVector2f position;
+    sfIntRect rect;
+} player_t;
+
 typedef struct game_s {
+    element_t map;
+    player_t player;
     window_t window;
     event_t event;
+    sfClock *clock;
 } game_t;
+
+// PLAYER //
+int move_rect(sfIntRect *rect, int offset, int max_value, int top);
+int position_sprite(sfVector2f *position, int x, int y);
+int run_player(sfSprite *sprite, sfVector2f *position, char check);
+int player_loop(game_t *game);
 
 // WINDOW.C //
 sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
 
 // EVENT.C //
+int analyse_move_player(game_t *game);
 int analyse_events(game_t *game);
 
 // MY_RPG.C //
 int initialize_value(game_t *game);
 int my_rpg(game_t *game);
+
+// PATH_SPRITE.C //
+sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
+int set_path_sprite(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);

@@ -11,16 +11,26 @@ EXTENSION	=		.c
 
 SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					utils/move_rect								\
+					utils/position								\
+					player/loop									\
+					player/position								\
 					window										\
 					display										\
 					event										\
+					path_sprite									\
 					))											\
 
 SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					utils/move_rect								\
+					utils/position								\
+					player/loop									\
+					player/position								\
 					window										\
 					display										\
 					event										\
+					path_sprite									\
 					))											\
 
 OBJ			=		$(SRC:$(EXTENSION)=.o)
