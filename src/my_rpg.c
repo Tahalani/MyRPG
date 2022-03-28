@@ -8,10 +8,28 @@
 #include "my.h"
 #include "rpg.h"
 
+static int before_loop(game_t *game)
+{
+    initialize_value(game);
+    player_before_loop(game);
+    position_sprite(game->map.sprite, &game->map.pos, -1120, -600);
+    return (0);
+}
+
+static int in_loop(game_t *game)
+{
+    analyse_events(game);
+    game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+    player_loop(game);
+    function_to_display(game);
+    return (0);
+}
+
 int initialize_value(game_t *game)
 {
+    game->second_clock = 0.00;
     game->clock = sfClock_create();
-    game->player.rect = (sfIntRect){0, 0, 64, 64};
+    game->player.rect = (sfIntRect){0, 192, 64, 64};
     game->window.width = 1920;
     game->window.height = 1080;
     game->window.window =
@@ -22,11 +40,8 @@ int initialize_value(game_t *game)
 
 int my_rpg(game_t *game)
 {
-    initialize_value(game);
-    while (sfRenderWindow_isOpen(game->window.window)) {
-        analyse_events(game);
-        player_loop(game);
-        function_to_display(game);
-    }
+    before_loop(game);
+    while (sfRenderWindow_isOpen(game->window.window))
+        in_loop(game);
     return (0);
 }

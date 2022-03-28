@@ -11,20 +11,20 @@
 int analyse_move_player(game_t *game)
 {
     if (sfKeyboard_isKeyPressed(sfKeyS)) {
-        move_rect(&game->player.rect, 64, 256, 0);
-        run_player(game->player.sprite, &game->player.position, 's');
+        rect_player(game, 0);
+        run_player(game, 's');
     }
     if (sfKeyboard_isKeyPressed(sfKeyQ)) {
-        move_rect(&game->player.rect, 64, 256, 64);
-        run_player(game->player.sprite, &game->player.position, 'q');
+        rect_player(game, 64);
+        run_player(game, 'q');
     }
     if (sfKeyboard_isKeyPressed(sfKeyD)) {
-        move_rect(&game->player.rect, 64, 256, 128);
-            run_player(game->player.sprite, &game->player.position, 'd');
+        rect_player(game, 128);
+        run_player(game, 'd');
     }
     if (sfKeyboard_isKeyPressed(sfKeyZ)) {
-        move_rect(&game->player.rect, 64, 256, 192);
-        run_player(game->player.sprite, &game->player.position, 'z');
+        rect_player(game, 192);
+        run_player(game, 'z');
     }
     sfSprite_setTextureRect(game->player.sprite, game->player.rect);
     return (0);

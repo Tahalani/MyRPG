@@ -8,25 +8,34 @@
 #include "my.h"
 #include "rpg.h"
 
-int run_player(sfSprite *sprite, sfVector2f *position, char check)
+int run_player(game_t *game, char check)
 {
-    switch (check)
-    {
-    case 's':
-        position->y += 2;
-        break;
-    case 'q':
-        position->x -= 2;
-        break;
-    case 'd':
-        position->x += 2;
-        break;
-    case 'z':
-        position->y -= 2;
-        break;
-    default:
-        break;
+    if (check == 's') {
+        game->player.position.y += 4;
+        game->map.pos.y -= 4;
     }
-    sfSprite_setPosition(sprite, *position);
+    if (check == 'q') {
+        game->player.position.x -= 4;
+        game->map.pos.x += 4;
+    }
+    if (check == 'd') {
+        game->player.position.x += 4;
+        game->map.pos.x -= 4;
+    }
+    if (check == 'z') {
+        game->player.position.y -= 4;
+        game->map.pos.y += 4;
+    }
+    sfSprite_setPosition(game->map.sprite, game->map.pos);
+    sfSprite_setPosition(game->player.sprite, game->player.position);
+    return (0);
+}
+
+int rect_player(game_t *game, int top)
+{
+    game->player.rect.top = top;
+    game->player.rect.left += 64;
+    if (game->player.rect.left == 256)
+        game->player.rect.left = 0;
     return (0);
 }

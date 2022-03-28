@@ -13,6 +13,7 @@ SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					utils/move_rect								\
 					utils/position								\
+					utils/init									\
 					player/loop									\
 					player/position								\
 					window										\
@@ -25,6 +26,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					utils/move_rect								\
 					utils/position								\
+					utils/init									\
 					player/loop									\
 					player/position								\
 					window										\

@@ -55,12 +55,18 @@ typedef struct game_s {
     window_t window;
     event_t event;
     sfClock *clock;
+    float second_clock;
 } game_t;
 
-// PLAYER //
+// UTILS //
+sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
 int move_rect(sfIntRect *rect, int offset, int max_value, int top);
-int position_sprite(sfVector2f *position, int x, int y);
-int run_player(sfSprite *sprite, sfVector2f *position, char check);
+int position_sprite(sfSprite *sprite, sfVector2f *position, int x, int y);
+
+// PLAYER //
+int run_player(game_t *game, char check);
+int rect_player(game_t *game, int top);
+int player_before_loop(game_t *game);
 int player_loop(game_t *game);
 
 // WINDOW.C //
@@ -70,15 +76,14 @@ sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
 int analyse_move_player(game_t *game);
 int analyse_events(game_t *game);
 
-// MY_RPG.C //
-int initialize_value(game_t *game);
-int my_rpg(game_t *game);
-
 // PATH_SPRITE.C //
-sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
 int set_path_sprite(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);
+
+// MY_RPG.C //
+int initialize_value(game_t *game);
+int my_rpg(game_t *game);
 
 #endif/* !PROJET_H_ */
