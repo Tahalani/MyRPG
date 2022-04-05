@@ -64,8 +64,6 @@ all:	$(NAME)
 
 .SILENT:
 
-.PHONY: all re clean fclean units_tests tests_run
-
 $(NAME):	$(OBJ)
 	$(MAKE) -C lib/my
 	$(CC) -o $(NAME) $(OBJ) $(CFLAGS) $(LDFLAGS) $(CFLAGS) -L./lib/my -lmy
@@ -79,7 +77,7 @@ fclean:	clean
 	$(MAKE) -C lib/my fclean
 	$(RM) $(NAME)
 	$(RM) $(NAME_CRI)
-	$(RM) -r unwanted
+	$(RM) -r $(NAME_DIR)
 	$(RM) $(OBJT)
 	$(RM) $(EXT_CRI)
 
@@ -96,3 +94,8 @@ tests_run:		units_tests
 	./$(NAME_CRI)
 	$(MV) *.gcda $(NAME_DIR)
 	gcovr $(NAME_DIR)/
+
+debug: CPPFLAGS += -g3
+debug: re
+
+.PHONY: all re clean fclean units_tests tests_run debug

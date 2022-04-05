@@ -13,7 +13,8 @@ static int before_loop(game_t *game)
 {
     initialize_value(game);
     player_before_loop(&game->player);
-    position_sprite(game->background.sprite, &game->background.pos, -2700, -850);
+    position_sprite
+    (game->background.sprite, &game->background.pos, -2700, -850);
     return (0);
 }
 

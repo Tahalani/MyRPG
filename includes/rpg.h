@@ -21,10 +21,10 @@ int move_rect(sfIntRect *rect, int offset, int max_value, int top);
 int position_sprite(sfSprite *sprite, sfVector2f *position, int x, int y);
 
 // PLAYER //
-int run_player(game_t *game, char check);
 int rect_player(player_t *player, int top);
 int player_before_loop(player_t *player);
 int player_loop(player_t *player);
+void run_player(game_t *game, char check);
 
 // WINDOW.C //
 sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
