@@ -13,7 +13,7 @@ static int before_loop(game_t *game)
 {
     initialize_value(game);
     player_before_loop(&game->player);
-    position_sprite(game->map.sprite, &game->map.pos, -2700, -850);
+    position_sprite(game->background.sprite, &game->background.pos, -2700, -850);
     return (0);
 }
 
@@ -28,6 +28,9 @@ static int in_loop(game_t *game)
 
 int initialize_value(game_t *game)
 {
+    game->map.main_map = map_create(game);
+    game->map.x_player = 14;
+    game->map.y_player = 29;
     game->second_clock = 0.00;
     game->player.second = 0.00;
     game->clock = sfClock_create();

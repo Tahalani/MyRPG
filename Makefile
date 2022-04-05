@@ -20,6 +20,7 @@ SRC			=		src/main.c									\
 					display										\
 					event										\
 					path_sprite									\
+					map											\
 					))											\
 
 SRCT 		=		tests/tests_rpg.c							\
@@ -33,6 +34,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					display										\
 					event										\
 					path_sprite									\
+					map											\
 					))											\
 
 OBJ			=		$(SRC:$(EXTENSION)=.o)

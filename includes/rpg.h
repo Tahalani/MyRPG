@@ -36,6 +36,9 @@ int analyse_events(game_t *game);
 // PATH_SPRITE.C //
 int set_path_sprite(game_t *game);
 
+// MAP.C //
+char **map_create(game_t *game);
+
 // DISPLAY.C //
 int function_to_display(game_t *game);
 

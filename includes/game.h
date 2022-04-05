@@ -18,6 +18,7 @@
     #include <SFML/Window.h>
     #include <SFML/Audio.h>
     #include "player.h"
+    #include "map.h"
 
 typedef struct window_s {
     sfRenderWindow *window;
@@ -39,10 +40,11 @@ typedef struct element_s {
 } element_t;
 
 typedef struct game_s {
-    element_t map;
+    element_t background;
     player_t player;
     window_t window;
     event_t event;
+    map_t map;
     sfClock *clock;
     float second_clock;
 } game_t;

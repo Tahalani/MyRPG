@@ -10,14 +10,15 @@
 
 int run_player(game_t *game, char check)
 {
-    if (check == 's') {
+    if (check == 's' && game->map.main_map[game->map.y_player + 1][game->map.x_player] == '1') {
+        game->map.y_player += 1;
         for (int count = 0; count != 8;) {
             game->player.second =
             sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
             if (game->player.second >= 0.05) {
                 game->player.position.y += 5.5;
-                game->map.pos.y -= 10;
-                sfSprite_setPosition(game->map.sprite, game->map.pos);
+                game->background.pos.y -= 10;
+                sfSprite_setPosition(game->background.sprite, game->background.pos);
                 sfSprite_setPosition(game->player.sprite, game->player.position);
                 function_to_display(game);
                 sfClock_restart(game->player.clock);
@@ -25,14 +26,15 @@ int run_player(game_t *game, char check)
             }
         }
     }
-    if (check == 'q') {
+    if (check == 'q' && game->map.main_map[game->map.y_player][game->map.x_player - 1] == '1') {
+        game->map.x_player -= 1;
         for (int count = 0; count != 8;) {
             game->player.second =
             sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
             if (game->player.second >= 0.05) {
                 game->player.position.x -= 5.5;
-                game->map.pos.x += 10;
-                sfSprite_setPosition(game->map.sprite, game->map.pos);
+                game->background.pos.x += 10;
+                sfSprite_setPosition(game->background.sprite, game->background.pos);
                 sfSprite_setPosition(game->player.sprite, game->player.position);
                 function_to_display(game);
                 sfClock_restart(game->player.clock);
@@ -40,14 +42,15 @@ int run_player(game_t *game, char check)
             }
         }
     }
-    if (check == 'd') {
+    if (check == 'd' && game->map.main_map[game->map.y_player][game->map.x_player + 1] == '1') {
+        game->map.x_player += 1;
         for (int count = 0; count != 8;) {
             game->player.second =
             sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
             if (game->player.second >= 0.05) {
                 game->player.position.x += 5.5;
-                game->map.pos.x -= 10;
-                sfSprite_setPosition(game->map.sprite, game->map.pos);
+                game->background.pos.x -= 10;
+                sfSprite_setPosition(game->background.sprite, game->background.pos);
                 sfSprite_setPosition(game->player.sprite, game->player.position);
                 function_to_display(game);
                 sfClock_restart(game->player.clock);
@@ -55,14 +58,15 @@ int run_player(game_t *game, char check)
             }
         }
     }
-    if (check == 'z') {
+    if (check == 'z' && game->map.main_map[game->map.y_player - 1][game->map.x_player] == '1') {
+        game->map.y_player -= 1;
         for (int count = 0; count != 8;) {
             game->player.second =
             sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
             if (game->player.second >= 0.05) {
                 game->player.position.y -= 5.5;
-                game->map.pos.y += 10;
-                sfSprite_setPosition(game->map.sprite, game->map.pos);
+                game->background.pos.y += 10;
+                sfSprite_setPosition(game->background.sprite, game->background.pos);
                 sfSprite_setPosition(game->player.sprite, game->player.position);
                 function_to_display(game);
                 sfClock_restart(game->player.clock);
@@ -70,7 +74,7 @@ int run_player(game_t *game, char check)
             }
         }
     }
-    sfSprite_setPosition(game->map.sprite, game->map.pos);
+    sfSprite_setPosition(game->background.sprite, game->background.pos);
     sfSprite_setPosition(game->player.sprite, game->player.position);
     return (0);
 }
