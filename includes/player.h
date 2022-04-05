@@ -28,6 +28,7 @@ typedef struct player_s {
     sfVector2f scale;
     sfVector2f position;
     sfIntRect rect;
+    int check_player;
 } player_t;
 
 #endif/* !PLAYER_H_ */
