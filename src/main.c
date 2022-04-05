@@ -13,7 +13,7 @@ int main(int ac, char **av)
     game_t game;
 
     (void)ac;
-    (void)av;
+    game.player.check_player = my_getnbr(av[1]);
     my_rpg(&game);
     return (0);
 }
