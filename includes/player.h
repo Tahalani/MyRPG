@@ -28,6 +28,8 @@ typedef struct player_s {
     sfVector2f scale;
     sfVector2f position;
     sfIntRect rect;
+    sfClock *clock;
+    float second;
     int check_player;
 } player_t;
 
