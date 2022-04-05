@@ -7,6 +7,7 @@
 
 #include "my.h"
 #include "rpg.h"
+#include "game.h"
 
 static int before_loop(game_t *game)
 {
@@ -28,7 +29,9 @@ static int in_loop(game_t *game)
 int initialize_value(game_t *game)
 {
     game->second_clock = 0.00;
+    game->player.second = 0.00;
     game->clock = sfClock_create();
+    game->player.clock = sfClock_create();
     game->player.rect = (sfIntRect){0, 192, 64, 64};
     game->window.width = 1920;
     game->window.height = 1080;

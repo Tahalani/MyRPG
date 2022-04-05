@@ -39,7 +39,7 @@ OBJ			=		$(SRC:$(EXTENSION)=.o)
 
 OBJT		=		$(SRCT:$(EXTENSION)=.o)
 
-CFLAGS		=		-I./includes -Wall -Wextra
+CFLAGS		=		-I./includes -Wall -Wextra -g3
 
 LDFLAGS		=		-l csfml-graphics -l csfml-window	\
 					-l csfml-system -l csfml-audio
