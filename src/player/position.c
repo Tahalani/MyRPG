@@ -11,31 +11,31 @@
 int run_player(game_t *game, char check)
 {
     if (check == 's') {
-        game->player.position.y += 4;
-        game->map.pos.y -= 4;
+        game->player.position.y += 3;
+        game->map.pos.y -= 15;
     }
     if (check == 'q') {
-        game->player.position.x -= 4;
-        game->map.pos.x += 4;
+        game->player.position.x -= 3;
+        game->map.pos.x += 15;
     }
     if (check == 'd') {
-        game->player.position.x += 4;
-        game->map.pos.x -= 4;
+        game->player.position.x += 3;
+        game->map.pos.x -= 15;
     }
     if (check == 'z') {
-        game->player.position.y -= 4;
-        game->map.pos.y += 4;
+        game->player.position.y -= 3;
+        game->map.pos.y += 15;
     }
     sfSprite_setPosition(game->map.sprite, game->map.pos);
     sfSprite_setPosition(game->player.sprite, game->player.position);
     return (0);
 }
 
-int rect_player(game_t *game, int top)
+int rect_player(player_t *player, int top)
 {
-    game->player.rect.top = top;
-    game->player.rect.left += 64;
-    if (game->player.rect.left == 256)
-        game->player.rect.left = 0;
+    player->rect.top = top;
+    player->rect.left += 64;
+    if (player->rect.left == 256)
+        player->rect.left = 0;
     return (0);
 }

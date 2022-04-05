@@ -8,55 +8,12 @@
 #ifndef PROJET_H_
     #define PROJET_H_
 
-    #include <SFML/Graphics/RenderWindow.h>
-    #include <SFML/Graphics/Transform.h>
-    #include <SFML/System/Vector2.h>
-    #include <SFML/Graphics/Types.h>
-    #include <SFML/Graphics/Rect.h>
-    #include <SFML/Window/Mouse.h>
-    #include <SFML/Graphics.h>
-    #include <SFML/Window.h>
-    #include <SFML/Audio.h>
     #include <stdbool.h>
     #include <stdlib.h>
     #include <unistd.h>
     #include <stdio.h>
-
-typedef struct window_s {
-    sfRenderWindow *window;
-    int width;
-    int height;
-} window_t;
-
-typedef struct event {
-    sfEvent event;
-} event_t;
-
-typedef struct element_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f scale;
-    sfVector2f pos;
-    int max_value;
-} element_t;
-
-typedef struct player_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfVector2f scale;
-    sfVector2f position;
-    sfIntRect rect;
-} player_t;
-
-typedef struct game_s {
-    element_t map;
-    player_t player;
-    window_t window;
-    event_t event;
-    sfClock *clock;
-    float second_clock;
-} game_t;
+    #include "player.h"
+    #include "game.h"
 
 // UTILS //
 sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
@@ -65,9 +22,9 @@ int position_sprite(sfSprite *sprite, sfVector2f *position, int x, int y);
 
 // PLAYER //
 int run_player(game_t *game, char check);
-int rect_player(game_t *game, int top);
-int player_before_loop(game_t *game);
-int player_loop(game_t *game);
+int rect_player(player_t *player, int top);
+int player_before_loop(player_t *player);
+int player_loop(player_t *player);
 
 // WINDOW.C //
 sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);

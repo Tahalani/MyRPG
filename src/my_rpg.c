@@ -11,8 +11,8 @@
 static int before_loop(game_t *game)
 {
     initialize_value(game);
-    player_before_loop(game);
-    position_sprite(game->map.sprite, &game->map.pos, -1120, -600);
+    player_before_loop(&game->player);
+    position_sprite(game->map.sprite, &game->map.pos, -2700, -850);
     return (0);
 }
 
@@ -20,7 +20,7 @@ static int in_loop(game_t *game)
 {
     analyse_events(game);
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-    player_loop(game);
+    player_loop(&game->player);
     function_to_display(game);
     return (0);
 }

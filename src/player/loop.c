@@ -8,13 +8,13 @@
 #include "my.h"
 #include "rpg.h"
 
-int player_before_loop(game_t *game)
+int player_before_loop(player_t *player)
 {
-    position_sprite(game->player.sprite, &game->player.position, 900, 626);
+    position_sprite(player->sprite, &player->position, 900, 850);
     return (0);
 }
 
-int player_loop(game_t *game)
+int player_loop(player_t *player)
 {
     return (0);
 }
