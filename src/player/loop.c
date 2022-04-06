@@ -16,5 +16,6 @@ int player_before_loop(player_t *player)
 
 int player_loop(player_t *player)
 {
+    sfSprite_setTextureRect(player->sprite, player->rect);
     return (0);
 }

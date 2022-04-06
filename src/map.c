@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-char **map_create(game_t *game)
+char **map_create(void)
 {
     char *buffer = NULL;
     char **map = NULL;

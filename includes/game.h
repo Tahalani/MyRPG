@@ -47,6 +47,7 @@ typedef struct game_s {
     map_t map;
     sfClock *clock;
     float second_clock;
+    int status;
 } game_t;
 
 #endif/* !GAME_H_ */

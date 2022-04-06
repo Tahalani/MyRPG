@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y)
+sfSprite *init_sprite(char *path, sfTexture *texture, float x, float y)
 {
     sfSprite* sprite;
     sfVector2f scale = {x, y};

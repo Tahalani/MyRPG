@@ -8,21 +8,22 @@
 #include "my.h"
 #include "rpg.h"
 #include "game.h"
+#include "menu.h"
 
 static int before_loop(game_t *game)
 {
     initialize_value(game);
     player_before_loop(&game->player);
     position_sprite
-    (game->background.sprite, &game->background.pos, -2700, -850);
+    (game->background.sprite, &game->background.pos, 0, 0);
     return (0);
 }
 
 static int in_loop(game_t *game)
 {
-    analyse_events(game);
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);
+    analyse_events(game);
     function_to_display(game);
     return (0);
 }
@@ -39,16 +40,21 @@ int initialize_value(game_t *game)
     game->player.rect = (sfIntRect){0, 192, 64, 64};
     game->window.width = 1920;
     game->window.height = 1080;
+    game->status = 1;
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
     set_path_sprite(game);
     return (0);
 }
 
-int my_rpg(game_t *game)
+int my_rpg(game_t *game, menu_t *menu)
 {
     before_loop(game);
-    while (sfRenderWindow_isOpen(game->window.window))
-        in_loop(game);
+    while (sfRenderWindow_isOpen(game->window.window)) {
+        if (game->status == 1)
+            loop_menu(menu, game);
+        if (game->status == 0)
+            in_loop(game);
+    }
     return (0);
 }

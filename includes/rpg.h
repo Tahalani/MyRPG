@@ -14,6 +14,7 @@
     #include <stdio.h>
     #include "player.h"
     #include "game.h"
+    #include "menu.h"
 
 // UTILS //
 sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
@@ -37,13 +38,19 @@ int analyse_events(game_t *game);
 int set_path_sprite(game_t *game);
 
 // MAP.C //
-char **map_create(game_t *game);
+char **map_create();
 
 // DISPLAY.C //
 int function_to_display(game_t *game);
 
 // MY_RPG.C //
 int initialize_value(game_t *game);
-int my_rpg(game_t *game);
+int my_rpg(game_t *game, menu_t *menu);
+
+// MENU.C //
+int analyse_menu(menu_t *menu, game_t *game);
+int loop_menu(menu_t *menu, game_t *game);
+int display_menu(menu_t *menu, game_t *game);
+int start_game(game_t *game);
 
 #endif/* !PROJET_H_ */
