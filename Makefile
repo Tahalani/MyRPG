@@ -21,6 +21,7 @@ SRC			=		src/main.c									\
 					event										\
 					path_sprite									\
 					map											\
+					music										\
 					menu/analyse_menu							\
 					menu/menu_loop								\
 					menu/start_game								\
@@ -39,6 +40,11 @@ SRCT 		=		tests/tests_rpg.c							\
 					event										\
 					path_sprite									\
 					map											\
+					music										\
+					menu/analyse_menu							\
+					menu/menu_loop								\
+					menu/start_game								\
+					menu/display_menu							\
 					))											\
 
 OBJ			=		$(SRC:$(EXTENSION)=.o)
