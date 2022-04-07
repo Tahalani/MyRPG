@@ -14,18 +14,16 @@ int test_plus(game_t *game, int operator, float *player, float *bg)
         game->player.second =
         sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
         if (game->player.second >= 0.05 && operator == 1) {
-            *player += 5.5;
-            *bg -= 10;
+            *player += 14;
             count++;
             sfClock_restart(game->player.clock);
         } else if (game->player.second >= 0.05 && operator == 0) {
-            *player -= 5.5;
-            *bg += 10;
+            *player -= 14;
             count++;
             sfClock_restart(game->player.clock);
         }
-        sfSprite_setPosition
-        (game->background.sprite, game->background.pos);
+        sfView_setCenter(game->map.view, game->player.position);
+        sfRenderWindow_setView (game->window.window, game->map.view);
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
     }
@@ -38,6 +36,7 @@ void run_player(game_t *game, char check)
     game->map.main_map[game->map.y_player + 1][game->map.x_player] == '1') {
         game->map.y_player += 1;
         test_plus(game, 1, &game->player.position.y, &game->background.pos.y);
+
     }
     if (check == 'q' &&
     game->map.main_map[game->map.y_player][game->map.x_player - 1] == '1') {

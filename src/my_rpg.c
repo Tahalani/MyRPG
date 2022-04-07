@@ -23,6 +23,8 @@ static int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);
+    game->map.view = sfView_create();
+    sfView_setSize(game->map.view, game->map.view_size);
     analyse_events(game);
     function_to_display(game);
     return (0);
@@ -38,6 +40,7 @@ int initialize_value(game_t *game)
     game->clock = sfClock_create();
     game->player.clock = sfClock_create();
     game->player.rect = (sfIntRect){0, 192, 64, 64};
+    game->map.view_size = (sfVector2f){1745, 981};
     game->window.width = 1920;
     game->window.height = 1080;
     game->status = 1;

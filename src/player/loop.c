@@ -10,7 +10,7 @@
 
 int player_before_loop(player_t *player)
 {
-    position_sprite(player->sprite, &player->position, 900, 770);
+    position_sprite(player->sprite, &player->position, 2160, 1027);
     return (0);
 }
 
