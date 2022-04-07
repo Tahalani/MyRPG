@@ -18,5 +18,8 @@ int set_path_sprite(game_t *game)
     if (game->player.check_player == 1)
         game->player.sprite =
         init_sprite("ressources/player_2.png", game->player.texture, 2, 2);
+    if (game->player.check_player == 2)
+        game->player.sprite =
+        init_sprite("ressources/player_3.png", game->player.texture, 2, 2);
     return (0);
 }
