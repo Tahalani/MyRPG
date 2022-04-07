@@ -9,6 +9,7 @@
 
 int start_game(game_t *game)
 {
+    music("ressources/music/back_music.ogg" , 1);
     game->background.sprite =
     init_sprite("ressources/map.png", game->background.texture, 2.6, 2.6);
     position_sprite

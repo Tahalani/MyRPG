@@ -43,6 +43,9 @@ char **map_create();
 // DISPLAY.C //
 int function_to_display(game_t *game);
 
+// MUSIC.C //
+sfMusic *music(char *path, int loop);
+
 // MY_RPG.C //
 int initialize_value(game_t *game);
 int my_rpg(game_t *game, menu_t *menu);

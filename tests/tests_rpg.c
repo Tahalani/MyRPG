@@ -37,7 +37,8 @@ Test(move_rect, test_rect_two)
 Test(my_rpg, test_rpg)
 {
     game_t *game = malloc(sizeof(game_t));
+    menu_t *menu = malloc(sizeof(menu_t));
 
     game->window.window = initialize_window(1920, 1080, 32);
-    cr_assert_eq(my_rpg(game), 0);
+    cr_assert_eq(my_rpg(game, menu), 0);
 }
