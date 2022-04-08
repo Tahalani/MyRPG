@@ -26,6 +26,8 @@ static int in_loop(game_t *game)
     game->map.view = sfView_create();
     sfView_setSize(game->map.view, game->map.view_size);
     analyse_events(game);
+    sfView_setCenter(game->map.view, game->player.position);
+    sfRenderWindow_setView (game->window.window, game->map.view);
     function_to_display(game);
     return (0);
 }
