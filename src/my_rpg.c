@@ -45,7 +45,7 @@ int initialize_value(game_t *game, menu_t *menu)
     game->map.view_size = (sfVector2f){1745, 981};
     game->window.width = 1920;
     game->window.height = 1080;
-    game->status = 1;
+    game->status = 2;
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
     set_path_sprite(game);
@@ -59,10 +59,10 @@ int my_rpg(game_t *game, menu_t *menu)
 {
     before_loop(game, menu);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 1)
-            loop_menu(menu, game);
         if (game->status == 0)
             in_loop(game);
+        else if (game->status != 0)
+            loop_menu(menu, game);
     }
     return (0);
 }

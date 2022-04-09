@@ -15,9 +15,11 @@ int set_path_menu(menu_t *menu)
     menu->stop_btn.sprite =
     init_sprite("ressources/menu/stop_btn.png", menu->stop_btn.texture, 1, 1);
     menu->music_btn.sprite =
-    init_sprite("ressources/menu/music_btn.png", menu->music_btn.texture, 1, 1);
+    init_sprite("ressources/menu/music.png", menu->music_btn.texture, 1, 1);
     menu->about_btn.sprite =
-    init_sprite("ressources/menu/about_btn.png", menu->about_btn.texture, 1, 1);
+    init_sprite("ressources/menu/about.png", menu->about_btn.texture, 1, 1);
+    menu->cursor.sprite =
+    init_sprite("ressources/menu/cursor.png", menu->cursor.texture, 1, 1);
     return (0);
 }
 

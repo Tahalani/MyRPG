@@ -37,6 +37,7 @@ typedef struct menu_s {
     btn_t stop_btn;
     btn_t music_btn;
     btn_t about_btn;
+    btn_t cursor;
 } menu_t;
 
 #endif/* !menu_H_ */
