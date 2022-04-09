@@ -10,9 +10,9 @@
 #include "game.h"
 #include "menu.h"
 
-static int before_loop(game_t *game)
+static int before_loop(game_t *game, menu_t *menu)
 {
-    initialize_value(game);
+    initialize_value(game, menu);
     player_before_loop(&game->player);
     position_sprite
     (game->background.sprite, &game->background.pos, 0, 0);
@@ -32,7 +32,7 @@ static int in_loop(game_t *game)
     return (0);
 }
 
-int initialize_value(game_t *game)
+int initialize_value(game_t *game, menu_t *menu)
 {
     game->map.main_map = map_create(game);
     game->map.x_player = 14;
@@ -49,12 +49,15 @@ int initialize_value(game_t *game)
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
     set_path_sprite(game);
+    set_path_menu(menu);
+    init_pos_menu(menu);
+    init_scale_menu(menu);
     return (0);
 }
 
 int my_rpg(game_t *game, menu_t *menu)
 {
-    before_loop(game);
+    before_loop(game, menu);
     while (sfRenderWindow_isOpen(game->window.window)) {
         if (game->status == 1)
             loop_menu(menu, game);

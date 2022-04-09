@@ -12,6 +12,10 @@ int display_menu(menu_t *menu, game_t *game)
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->play_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->stop_btn.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

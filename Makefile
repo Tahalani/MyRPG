@@ -23,7 +23,9 @@ SRC			=		src/main.c									\
 					map											\
 					music										\
 					menu/analyse_menu							\
+					menu/set_pos								\
 					menu/menu_loop								\
+					menu/set_scale								\
 					menu/start_game								\
 					menu/display_menu							\
 					))											\

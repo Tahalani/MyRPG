@@ -47,13 +47,18 @@ int function_to_display(game_t *game);
 sfMusic *music(char *path, int loop);
 
 // MY_RPG.C //
-int initialize_value(game_t *game);
+int initialize_value(game_t *game, menu_t *menu);
 int my_rpg(game_t *game, menu_t *menu);
 
 // MENU.C //
 int analyse_menu(menu_t *menu, game_t *game);
 int loop_menu(menu_t *menu, game_t *game);
 int display_menu(menu_t *menu, game_t *game);
+int set_path_menu(menu_t *menu);
+int set_pos_menu(menu_t *menu);
+int init_pos_menu(menu_t *menu);
+int set_scale_menu(menu_t *menu);
+int init_scale_menu(menu_t *menu);
 int start_game(game_t *game);
 
 #endif/* !PROJET_H_ */

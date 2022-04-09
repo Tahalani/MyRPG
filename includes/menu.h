@@ -24,6 +24,8 @@
     #include "game.h"
 
 typedef struct menu_s {
+    element_t play_btn;
+    element_t stop_btn;
 } menu_t;
 
 #endif/* !menu_H_ */
