@@ -23,9 +23,20 @@
     #include <stdio.h>
     #include "game.h"
 
+typedef struct btn_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f pos;
+    int status;
+} btn_t;
+
 typedef struct menu_s {
-    element_t play_btn;
-    element_t stop_btn;
+    btn_t play_btn;
+    btn_t stop_btn;
+    btn_t music_btn;
+    btn_t about_btn;
 } menu_t;
 
 #endif/* !menu_H_ */

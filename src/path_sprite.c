@@ -14,6 +14,10 @@ int set_path_menu(menu_t *menu)
     init_sprite("ressources/menu/play_btn.png", menu->play_btn.texture, 1, 1);
     menu->stop_btn.sprite =
     init_sprite("ressources/menu/stop_btn.png", menu->stop_btn.texture, 1, 1);
+    menu->music_btn.sprite =
+    init_sprite("ressources/menu/music_btn.png", menu->music_btn.texture, 1, 1);
+    menu->about_btn.sprite =
+    init_sprite("ressources/menu/about_btn.png", menu->about_btn.texture, 1, 1);
     return (0);
 }
 
