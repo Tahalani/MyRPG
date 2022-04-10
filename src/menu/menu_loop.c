@@ -7,12 +7,12 @@
 
 #include "rpg.h"
 
-int loop_menu(menu_t *menu, game_t *game)
+int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
-    analyse_menu(menu, game);
+    analyse_menu(menu, game, btn);
     if (game->status == 2)
-        display_menu(menu, game);
+        display_menu(menu, game, btn);
     if (game->status == 3)
-        display_menu_conf(menu, game);
+        display_menu_conf(menu, game, btn);
     return (0);
 }

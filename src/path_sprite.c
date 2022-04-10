@@ -21,20 +21,20 @@ int set_path_menu_conf(menu_t *menu)
     return (0);
 }
 
-int set_path_menu(menu_t *menu)
+int set_path_menu(menu_t *menu, btn_t *btn)
 {
-    menu->play_btn.sprite =
-    init_sprite("ressources/menu/play_btn.png", menu->play_btn.texture, 1, 1);
-    menu->stop_btn.sprite =
-    init_sprite("ressources/menu/stop_btn.png", menu->stop_btn.texture, 1, 1);
-    menu->music_btn.sprite =
-    init_sprite("ressources/menu/music.png", menu->music_btn.texture, 1, 1);
-    menu->about_btn.sprite =
-    init_sprite("ressources/menu/about.png", menu->about_btn.texture, 1, 1);
-    menu->next_btn.sprite =
-    init_sprite("ressources/menu/about.png", menu->next_btn.texture, 1, 1);
-    menu->prev_btn.sprite =
-    init_sprite("ressources/menu/about.png", menu->prev_btn.texture, 1, 1);
+    btn->play_btn.sprite =
+    init_sprite("ressources/menu/play_btn.png", btn->play_btn.texture, 1, 1);
+    btn->stop_btn.sprite =
+    init_sprite("ressources/menu/stop_btn.png", btn->stop_btn.texture, 1, 1);
+    btn->music_btn.sprite =
+    init_sprite("ressources/menu/music.png", btn->music_btn.texture, 1, 1);
+    btn->about_btn.sprite =
+    init_sprite("ressources/menu/about.png", btn->about_btn.texture, 1, 1);
+    btn->next_btn.sprite =
+    init_sprite("ressources/menu/about.png", btn->next_btn.texture, 1, 1);
+    btn->prev_btn.sprite =
+    init_sprite("ressources/menu/about.png", btn->prev_btn.texture, 1, 1);
     set_path_menu_conf(menu);
     return (0);
 }

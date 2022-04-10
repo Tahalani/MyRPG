@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-int analyse_menu(menu_t *menu, game_t *game)
+int analyse_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     while (sfRenderWindow_pollEvent(game->window.window, &game->event.event)) {
         if (game->event.event.type == sfEvtClosed

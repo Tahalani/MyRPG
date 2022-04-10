@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-int display_menu_conf(menu_t *menu, game_t *game)
+int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
@@ -24,23 +24,23 @@ int display_menu_conf(menu_t *menu, game_t *game)
     return (0);
 }
 
-int display_menu(menu_t *menu, game_t *game)
+int display_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->play_btn.sprite, NULL);
+    (game->window.window, btn->play_btn.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->stop_btn.sprite, NULL);
+    (game->window.window, btn->stop_btn.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->music_btn.sprite, NULL);
+    (game->window.window, btn->music_btn.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->about_btn.sprite, NULL);
+    (game->window.window, btn->about_btn.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->next_btn.sprite, NULL);
+    (game->window.window, btn->next_btn.sprite, NULL);
     sfRenderWindow_drawSprite
-    (game->window.window, menu->prev_btn.sprite, NULL);
+    (game->window.window, btn->prev_btn.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
