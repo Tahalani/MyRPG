@@ -10,11 +10,9 @@
 int loop_menu(menu_t *menu, game_t *game)
 {
     analyse_menu(menu, game);
-    printf("%d\n", game->status);
     if (game->status == 2)
         display_menu(menu, game);
-    if (game->status == 3) {
+    if (game->status == 3)
         display_menu_conf(menu, game);
-    }
     return (0);
 }
