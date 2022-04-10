@@ -49,6 +49,8 @@ int initialize_value(game_t *game, menu_t *menu)
     game->status = 2;
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
+    pnj_create(game);
+    set_position_pnj(game);
     set_path_sprite(game);
     return (0);
 }

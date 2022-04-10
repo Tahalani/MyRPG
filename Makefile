@@ -22,6 +22,10 @@ SRC			=		src/main.c									\
 					path_sprite									\
 					map											\
 					music										\
+					pnj/position_pnj							\
+					pnj/init_pnj								\
+					pnj/rect_pnj								\
+					pnj/display_pnj								\
 					menu/analyse_menu							\
 					menu/set_pos								\
 					menu/menu_loop								\
@@ -44,6 +48,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					path_sprite									\
 					map											\
 					music										\
+					pnj											\
 					menu/analyse_menu							\
 					menu/set_pos								\
 					menu/menu_loop								\
