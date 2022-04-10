@@ -18,6 +18,9 @@ static int set_path_menu_conf(menu_t *menu)
     init_sprite("ressources/player.png", menu->brown_skin.texture, 1, 1);
     menu->blue_skin.sprite =
     init_sprite("ressources/player_3.png", menu->blue_skin.texture, 1, 1);
+    menu->sign_skin.sprite =
+    init_sprite("ressources/menu/sign_skin.png",
+    menu->blue_skin.texture, 1, 1);
     return (0);
 }
 
@@ -27,6 +30,9 @@ static int set_path_menu_settings(menu_t *menu, btn_t *btn)
     init_sprite("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
     btn->up_btn.sprite =
     init_sprite("ressources/menu/up_btn.png", btn->stop_btn.texture, 1, 1);
+    menu->sign_settings.sprite =
+    init_sprite("ressources/menu/sign_settings.png",
+    menu->blue_skin.texture, 1, 1);
     return (0);
 }
 

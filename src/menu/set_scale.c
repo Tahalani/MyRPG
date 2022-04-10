@@ -19,6 +19,8 @@ int set_scale_menu(menu_t *menu, btn_t *btn)
     sfSprite_setScale(menu->red_skin.sprite, menu->red_skin.scale);
     sfSprite_setScale(menu->brown_skin.sprite, menu->brown_skin.scale);
     sfSprite_setScale(menu->blue_skin.sprite, menu->blue_skin.scale);
+    sfSprite_setScale(menu->sign_settings.sprite, menu->sign_settings.scale);
+    sfSprite_setScale(menu->sign_skin.sprite, menu->sign_skin.scale);
     return (0);
 }
 
@@ -34,6 +36,8 @@ int init_scale_menu(menu_t *menu, btn_t *btn)
     menu->red_skin.scale = (sfVector2f){3, 3};
     menu->brown_skin.scale = (sfVector2f){3, 3};
     menu->blue_skin.scale = (sfVector2f){3, 3};
+    menu->sign_settings.scale = (sfVector2f){1.2, 1.2};
+    menu->sign_skin.scale = (sfVector2f){1.2, 1.2};
     set_scale_menu(menu, btn);
     return (0);
 }

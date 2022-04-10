@@ -18,6 +18,8 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     (game->window.window, btn->up_btn.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->next_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->sign_settings.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
@@ -37,6 +39,8 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     (game->window.window, menu->blue_skin.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->prev_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->sign_skin.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
