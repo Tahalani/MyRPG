@@ -13,6 +13,7 @@
 static int before_loop(game_t *game, menu_t *menu)
 {
     initialize_value(game, menu);
+    initialize_menu(menu);
     player_before_loop(&game->player);
     position_sprite
     (game->background.sprite, &game->background.pos, 0, 0);
@@ -49,9 +50,15 @@ int initialize_value(game_t *game, menu_t *menu)
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
     set_path_sprite(game);
+    return (0);
+}
+
+int initialize_menu(menu_t *menu)
+{
     set_path_menu(menu);
     init_pos_menu(menu);
     init_scale_menu(menu);
+    init_rect_menu(menu);
     return (0);
 }
 

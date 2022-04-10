@@ -38,6 +38,9 @@ typedef struct menu_s {
     btn_t music_btn;
     btn_t about_btn;
     btn_t cursor;
+    btn_t red_skin;
+    btn_t brown_skin;
+    btn_t blue_skin;
 } menu_t;
 
 #endif/* !menu_H_ */

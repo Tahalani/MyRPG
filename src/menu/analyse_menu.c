@@ -15,6 +15,10 @@ int analyse_menu(menu_t *menu, game_t *game)
             sfRenderWindow_close(game->window.window);
         if (sfKeyboard_isKeyPressed(sfKeyEnter))
             start_game(game);
+        if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight))
+            game->status++;
+        if (game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft))
+            game->status--;
     }
     return (0);
 }

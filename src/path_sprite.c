@@ -8,6 +8,19 @@
 #include "my.h"
 #include "rpg.h"
 
+int set_path_menu_conf(menu_t *menu)
+{
+    menu->cursor.sprite =
+    init_sprite("ressources/menu/cursor.png", menu->cursor.texture, 1, 1);
+    menu->red_skin.sprite =
+    init_sprite("ressources/player_2.png", menu->red_skin.texture, 1, 1);
+    menu->brown_skin.sprite =
+    init_sprite("ressources/player.png", menu->brown_skin.texture, 1, 1);
+    menu->blue_skin.sprite =
+    init_sprite("ressources/player_3.png", menu->blue_skin.texture, 1, 1);
+    return (0);
+}
+
 int set_path_menu(menu_t *menu)
 {
     menu->play_btn.sprite =
@@ -18,8 +31,7 @@ int set_path_menu(menu_t *menu)
     init_sprite("ressources/menu/music.png", menu->music_btn.texture, 1, 1);
     menu->about_btn.sprite =
     init_sprite("ressources/menu/about.png", menu->about_btn.texture, 1, 1);
-    menu->cursor.sprite =
-    init_sprite("ressources/menu/cursor.png", menu->cursor.texture, 1, 1);
+    set_path_menu_conf(menu);
     return (0);
 }
 

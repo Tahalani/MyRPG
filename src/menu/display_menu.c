@@ -14,6 +14,12 @@ int display_menu_conf(menu_t *menu, game_t *game)
     (game->window.window, game->background.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, menu->cursor.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->red_skin.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->brown_skin.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->blue_skin.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
