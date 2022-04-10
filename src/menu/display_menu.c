@@ -16,7 +16,6 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);

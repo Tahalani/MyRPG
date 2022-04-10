@@ -19,7 +19,7 @@ int init_rect_menu(menu_t *menu)
 {
     menu->red_skin.rect = (sfIntRect){0, 0, 50, 75};
     menu->brown_skin.rect = (sfIntRect){0, 0, 50, 73};
-    menu->blue_skin.rect= (sfIntRect){0, 0, 50, 75};
+    menu->blue_skin.rect = (sfIntRect){0, 0, 50, 75};
     set_rect_menu(menu);
     return (0);
 }
