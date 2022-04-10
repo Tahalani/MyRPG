@@ -59,12 +59,15 @@ int set_pos_menu(menu_t *menu, btn_t *btn);
 int init_pos_menu(menu_t *menu, btn_t *btn);
 int set_scale_menu(menu_t *menu, btn_t *btn);
 int init_scale_menu(menu_t *menu, btn_t *btn);
-int start_game(game_t *game);
+int start_game(game_t *game, menu_t *menu);
 int init_rect_menu(menu_t *menu);
 int set_rect_menu(menu_t *menu);
 int initialize_menu(menu_t *menu, btn_t *btn);
 
 // MENU_CONF.C //
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
+
+// MENU_SETTINGS.C //
+int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 
 #endif/* !PROJET_H_ */

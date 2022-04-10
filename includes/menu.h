@@ -46,6 +46,7 @@ typedef struct menu_s {
     param_t red_skin;
     param_t brown_skin;
     param_t blue_skin;
+    music_t sound;
 } menu_t;
 
 #endif/* !menu_H_ */

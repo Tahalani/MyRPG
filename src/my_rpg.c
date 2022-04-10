@@ -55,6 +55,7 @@ int initialize_value(game_t *game, menu_t *menu)
 
 int initialize_menu(menu_t *menu, btn_t *btn)
 {
+    menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
     set_path_menu(menu, btn);
     init_pos_menu(menu, btn);
     init_scale_menu(menu, btn);

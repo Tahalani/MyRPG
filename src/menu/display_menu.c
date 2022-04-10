@@ -7,6 +7,16 @@
 
 #include "rpg.h"
 
+int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
+{
+    sfRenderWindow_clear(game->window.window, sfBlack);
+    sfRenderWindow_drawSprite
+    (game->window.window, game->background.sprite, NULL);
+    sfRenderWindow_display(game->window.window);
+    return (0);
+}
+
+
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);

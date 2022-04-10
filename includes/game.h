@@ -39,6 +39,11 @@ typedef struct element_s {
     int max_value;
 } element_t;
 
+typedef struct music_s {
+    sfMusic *game;
+    sfMusic *menu;
+} music_t;
+
 typedef struct game_s {
     element_t background;
     player_t player;
@@ -46,6 +51,7 @@ typedef struct game_s {
     event_t event;
     map_t map;
     sfClock *clock;
+    music_t sound;
     float second_clock;
     int status;
 } game_t;

@@ -7,9 +7,10 @@
 
 #include "rpg.h"
 
-int start_game(game_t *game)
+int start_game(game_t *game, menu_t *menu)
 {
-    music("ressources/music/back_music.ogg" , 1);
+    sfMusic_stop(menu->sound.menu);
+    game->sound.game = music("ressources/music/back_music.ogg", 1);
     game->background.sprite =
     init_sprite("ressources/map.png", game->background.texture, 2.3, 2.3);
     position_sprite
