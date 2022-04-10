@@ -44,6 +44,14 @@ typedef struct music_s {
     sfMusic *menu;
 } music_t;
 
+typedef struct pnj_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f position;
+} pnj_t;
+
 typedef struct game_s {
     element_t background;
     player_t player;
@@ -52,6 +60,7 @@ typedef struct game_s {
     map_t map;
     sfClock *clock;
     music_t sound;
+    pnj_t pnj[3];
     float second_clock;
     int status;
 } game_t;

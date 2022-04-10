@@ -64,6 +64,12 @@ int init_rect_menu(menu_t *menu);
 int set_rect_menu(menu_t *menu);
 int initialize_menu(menu_t *menu, btn_t *btn);
 
+// PNJ.C //
+int display_pnj(game_t *game);
+int pnj_create(game_t *game);
+int set_position_pnj(game_t *game);
+int set_rect_pnj(game_t *game);
+
 // MENU_CONF.C //
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
 
