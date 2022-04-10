@@ -37,6 +37,10 @@ int display_menu(menu_t *menu, game_t *game)
     (game->window.window, menu->music_btn.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, menu->about_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->next_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->prev_btn.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

@@ -41,6 +41,8 @@ typedef struct menu_s {
     btn_t red_skin;
     btn_t brown_skin;
     btn_t blue_skin;
+    btn_t next_btn;
+    btn_t prev_btn;
 } menu_t;
 
 #endif/* !menu_H_ */

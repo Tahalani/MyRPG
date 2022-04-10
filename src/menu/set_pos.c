@@ -17,6 +17,8 @@ int set_pos_menu(menu_t *menu)
     sfSprite_setPosition(menu->red_skin.sprite, menu->red_skin.pos);
     sfSprite_setPosition(menu->brown_skin.sprite, menu->brown_skin.pos);
     sfSprite_setPosition(menu->blue_skin.sprite, menu->blue_skin.pos);
+    sfSprite_setPosition(menu->next_btn.sprite, menu->next_btn.pos);
+    sfSprite_setPosition(menu->prev_btn.sprite, menu->prev_btn.pos);
     return (0);
 }
 
@@ -30,6 +32,8 @@ int init_pos_menu(menu_t *menu)
     menu->red_skin.pos = (sfVector2f){100, 400};
     menu->brown_skin.pos = (sfVector2f){300, 400};
     menu->blue_skin.pos = (sfVector2f){500, 400};
+    menu->next_btn.pos = (sfVector2f){-550, -50};
+    menu->prev_btn.pos = (sfVector2f){1220, -50};
     set_pos_menu(menu);
     return (0);
 }
