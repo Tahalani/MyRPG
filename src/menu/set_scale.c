@@ -11,6 +11,8 @@ int set_scale_menu(menu_t *menu, btn_t *btn)
 {
     sfSprite_setScale(btn->play_btn.sprite, btn->play_btn.scale);
     sfSprite_setScale(btn->stop_btn.sprite, btn->stop_btn.scale);
+    sfSprite_setScale(btn->down_btn.sprite, btn->down_btn.scale);
+    sfSprite_setScale(btn->up_btn.sprite, btn->up_btn.scale);
     sfSprite_setScale(btn->music_btn.sprite, btn->music_btn.scale);
     sfSprite_setScale(btn->about_btn.sprite, btn->about_btn.scale);
     sfSprite_setScale(menu->cursor.sprite, menu->cursor.scale);
@@ -26,6 +28,8 @@ int init_scale_menu(menu_t *menu, btn_t *btn)
     btn->stop_btn.scale = (sfVector2f){0.95, 0.95};
     btn->music_btn.scale = (sfVector2f){0.8, 0.8};
     btn->about_btn.scale = (sfVector2f){0.8, 0.8};
+    btn->down_btn.scale = (sfVector2f){0.4, 0.4};
+    btn->up_btn.scale = (sfVector2f){0.4, 0.4};
     menu->cursor.scale = (sfVector2f){0.15, 0.15};
     menu->red_skin.scale = (sfVector2f){3, 3};
     menu->brown_skin.scale = (sfVector2f){3, 3};

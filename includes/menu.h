@@ -39,6 +39,8 @@ typedef struct btn_s {
     param_t about_btn;
     param_t next_btn;
     param_t prev_btn;
+    param_t down_btn;
+    param_t up_btn;
 } btn_t;
 
 typedef struct menu_s {

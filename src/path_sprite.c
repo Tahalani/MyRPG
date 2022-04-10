@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-int set_path_menu_conf(menu_t *menu)
+static int set_path_menu_conf(menu_t *menu)
 {
     menu->cursor.sprite =
     init_sprite("ressources/menu/cursor.png", menu->cursor.texture, 1, 1);
@@ -18,6 +18,15 @@ int set_path_menu_conf(menu_t *menu)
     init_sprite("ressources/player.png", menu->brown_skin.texture, 1, 1);
     menu->blue_skin.sprite =
     init_sprite("ressources/player_3.png", menu->blue_skin.texture, 1, 1);
+    return (0);
+}
+
+static int set_path_menu_settings(menu_t *menu, btn_t *btn)
+{
+    btn->down_btn.sprite =
+    init_sprite("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
+    btn->up_btn.sprite =
+    init_sprite("ressources/menu/up_btn.png", btn->stop_btn.texture, 1, 1);
     return (0);
 }
 
@@ -32,10 +41,11 @@ int set_path_menu(menu_t *menu, btn_t *btn)
     btn->about_btn.sprite =
     init_sprite("ressources/menu/about.png", btn->about_btn.texture, 1, 1);
     btn->next_btn.sprite =
-    init_sprite("ressources/menu/about.png", btn->next_btn.texture, 1, 1);
+    init_sprite("ressources/menu/next_btn.png", btn->next_btn.texture, 1, 1);
     btn->prev_btn.sprite =
-    init_sprite("ressources/menu/about.png", btn->prev_btn.texture, 1, 1);
+    init_sprite("ressources/menu/prev_btn.png", btn->prev_btn.texture, 1, 1);
     set_path_menu_conf(menu);
+    set_path_menu_settings(menu, btn);
     return (0);
 }
 
