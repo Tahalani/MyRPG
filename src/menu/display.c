@@ -24,14 +24,14 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
+static int display_conf_skin(menu_t *menu, game_t *game)
 {
-    sfRenderWindow_clear(game->window.window, sfBlack);
-    sfRenderWindow_drawSprite
-    (game->window.window, game->background.sprite, NULL);
-    for (int i = 0; i != 5; ++i)
+    for (int i = 0; i != 3; ++i)
         sfRenderWindow_drawSprite
         (game->window.window, menu->bg_skin[i].sprite, NULL);
+    for (int i = 0; i != 2; ++i)
+        sfRenderWindow_drawSprite
+        (game->window.window, menu->bg_square[i].sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, menu->red_skin.sprite, NULL);
     sfRenderWindow_drawSprite
@@ -39,9 +39,22 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     sfRenderWindow_drawSprite
     (game->window.window, menu->blue_skin.sprite, NULL);
     sfRenderWindow_drawSprite
+    (game->window.window, menu->map1.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, menu->map2.sprite, NULL);
+    return (0);
+}
+
+int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
+{
+    sfRenderWindow_clear(game->window.window, sfBlack);
+    sfRenderWindow_drawSprite
+    (game->window.window, game->background.sprite, NULL);
+    sfRenderWindow_drawSprite
     (game->window.window, btn->prev_btn.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, menu->sign_skin.sprite, NULL);
+    display_conf_skin(menu, game);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

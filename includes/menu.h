@@ -50,7 +50,10 @@ typedef struct menu_s {
     param_t blue_skin;
     param_t sign_settings;
     param_t sign_skin;
-    param_t bg_skin[5];
+    param_t map1;
+    param_t map2;
+    param_t bg_skin[4];
+    param_t bg_square[3];
     music_t sound;
 } menu_t;
 
