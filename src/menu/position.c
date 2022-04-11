@@ -40,8 +40,8 @@ int init_pos_menu(menu_t *menu, btn_t *btn)
     menu->red_skin.pos = (sfVector2f){100, 400};
     menu->brown_skin.pos = (sfVector2f){300, 400};
     menu->blue_skin.pos = (sfVector2f){500, 400};
-    menu->sign_settings.pos = (sfVector2f){-400, 525};
-    menu->sign_skin.pos = (sfVector2f){1250, 525};
+    menu->sign_settings.pos = (sfVector2f){615, 0};
+    menu->sign_skin.pos = (sfVector2f){615, 0};
     set_pos_menu(menu, btn);
     return (0);
 }

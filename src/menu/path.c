@@ -20,6 +20,9 @@ static int set_path_menu_conf(menu_t *menu)
     menu->sign_skin.sprite =
     init_sprite("ressources/menu/sign_skin.png",
     menu->blue_skin.texture, 1, 1);
+    for (int i = 0; i != 4; ++i)
+        menu->bg_skin[i].sprite = init_sprite("ressources/menu/bg_skin.png",
+        menu->blue_skin.texture, 1, 1);
     return (0);
 }
 
