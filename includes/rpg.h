@@ -17,60 +17,60 @@
     #include "menu.h"
 
 // UTILS //
-sfSprite *init_sprite(char *path, sfTexture* texture, float x, float y);
-int move_rect(sfIntRect *rect, int offset, int max_value, int top);
-int position_sprite(sfSprite *sprite, sfVector2f *position, int x, int y);
+sfSprite *init_sprite(char *, sfTexture*, float, float);
+int move_rect(sfIntRect *, int, int, int);
+int position_sprite(sfSprite *, sfVector2f *, int, int);
 
 // MAP //
-char **map_create(char *path);
-int initialize_map(game_t *game);
-int map_loop(game_t *game);
+char **map_create(char *);
+int initialize_map(game_t *);
+int map_loop(game_t *);
 
 // MENU //
-int analyse_menu(menu_t *menu, game_t *game, btn_t *btn);
-int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
-int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
-int display_menu(menu_t *menu, game_t *game, btn_t *btn);
-int loop_menu(menu_t *menu, game_t *game, btn_t *btn);
-int initialize_menu(menu_t *menu, btn_t *btn);
-int set_path_menu(menu_t *menu, btn_t *btn);
-int set_pos_menu(menu_t *menu, btn_t *btn);
-int init_pos_menu(menu_t *menu, btn_t *btn);
-int set_rect_menu(menu_t *menu);
-int init_rect_menu(menu_t *menu);
-int set_scale_menu(menu_t *menu, btn_t *btn);
-int init_scale_menu(menu_t *menu, btn_t *btn);
-int start_game(game_t *game, menu_t *menu);
+int analyse_menu(menu_t *, game_t *, btn_t *);
+int display_menu_settings(menu_t *, game_t *, btn_t *);
+int display_menu_conf(menu_t *, game_t *, btn_t *);
+int display_menu(menu_t *, game_t *, btn_t *);
+int loop_menu(menu_t *, game_t *, btn_t *);
+int initialize_menu(menu_t *, btn_t *);
+int set_path_menu(menu_t *, btn_t *);
+int set_pos_menu(menu_t *, btn_t *);
+int init_pos_menu(menu_t *, btn_t *);
+int set_rect_menu(menu_t *);
+int init_rect_menu(menu_t *);
+int set_scale_menu(menu_t *, btn_t *);
+int init_scale_menu(menu_t *, btn_t *);
+int start_game(game_t *, menu_t *);
 
 // PLAYER //
-int initialize_player(player_t *player);
-int player_loop(player_t *player);
-int test_plus(game_t *game, int operator, float *player);
-void run_player(game_t *game, char check);
-int rect_player(player_t *player, int top);
-int analyse_move_player(game_t *game);
+int initialize_player(player_t *);
+int player_loop(player_t *);
+int test_plus(game_t *, int, float *);
+void run_player(game_t *, char);
+int rect_player(player_t *, int);
+int analyse_move_player(game_t *);
 
 // PNJ //
-int display_pnj(game_t *game);
-int pnj_create(game_t *game);
-int initialize_pnj(game_t *game);
-int set_position_pnj(game_t *game);
-int set_rect_pnj(game_t *game);
+int display_pnj(game_t *);
+int pnj_create(game_t *);
+int initialize_pnj(game_t *);
+int set_position_pnj(game_t *);
+int set_rect_pnj(game_t *);
 
 // DISPLAY.C //
-int function_to_display(game_t *game);
+int function_to_display(game_t *);
 
 // EVENT.C //
-int analyse_events(game_t *game);
+int analyse_events(game_t *);
 
 // MUSIC.C //
-sfMusic *music(char *path, int loop);
+sfMusic *music(char *, int);
 
 // WINDOW.C //
-sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
+sfRenderWindow *initialize_window(int, int, int);
 
 // MY_RPG //
-int initialize_value(game_t *game);
-int my_rpg(game_t *game, menu_t *menu, btn_t *btn);
+int initialize_value(game_t *);
+int my_rpg(game_t *, menu_t *, btn_t *);
 
 #endif/* !PROJET_H_ */
