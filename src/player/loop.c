@@ -12,13 +12,13 @@ int initialize_player(player_t *player)
 {
     if (player->check_player == 0)
         player->sprite =
-        init_sprite("ressources/player.png", player->texture, 2, 2);
+        init_sprite("ressources/player/player.png", player->texture, 2, 2);
     if (player->check_player == 1)
         player->sprite =
-        init_sprite("ressources/player_2.png", player->texture, 2, 2);
+        init_sprite("ressources/player/player_2.png", player->texture, 2, 2);
     if (player->check_player == 2)
         player->sprite =
-        init_sprite("ressources/player_3.png", player->texture, 2, 2);
+        init_sprite("ressources/player/player_3.png", player->texture, 2, 2);
     position_sprite(player->sprite, &player->position, 2160, 1027);
     player->second = 0.00;
     player->clock = sfClock_create();
