@@ -18,5 +18,3 @@ int set_position_pnj(game_t *game)
     set_rect_pnj(game);
     return (0);
 }
-
-

@@ -15,4 +15,5 @@ int set_rect_pnj(game_t *game)
     game->pnj[2].rect = (sfIntRect){48.3333333, 0, 48, 48};
     for (int i = 0; i != 3; i++)
         sfSprite_setTextureRect(game->pnj[i].sprite, game->pnj[i].rect);
+    return (0);
 }

@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-int test_plus(game_t *game, int operator, float *player, float *bg)
+int test_plus(game_t *game, int operator, float *player)
 {
     for (int count = 0; count != 8;) {
         game->player.second =
@@ -23,7 +23,7 @@ int test_plus(game_t *game, int operator, float *player, float *bg)
             sfClock_restart(game->player.clock);
         }
         sfView_setCenter(game->map.view, game->player.position);
-        sfRenderWindow_setView (game->window.window, game->map.view);
+        sfRenderWindow_setView(game->window.window, game->map.view);
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
     }
@@ -35,23 +35,23 @@ void run_player(game_t *game, char check)
     if (check == 's' &&
     game->map.main_map[game->map.y_player + 1][game->map.x_player] == '1') {
         game->map.y_player += 1;
-        test_plus(game, 1, &game->player.position.y, &game->background.pos.y);
+        test_plus(game, 1, &game->player.position.y);
 
     }
     if (check == 'q' &&
     game->map.main_map[game->map.y_player][game->map.x_player - 1] == '1') {
         game->map.x_player -= 1;
-        test_plus(game, 0, &game->player.position.x, &game->background.pos.x);
+        test_plus(game, 0, &game->player.position.x);
     }
     if (check == 'd' &&
     game->map.main_map[game->map.y_player][game->map.x_player + 1] == '1') {
         game->map.x_player += 1;
-        test_plus(game, 1, &game->player.position.x, &game->background.pos.x);
+        test_plus(game, 1, &game->player.position.x);
     }
     if (check == 'z' &&
     game->map.main_map[game->map.y_player - 1][game->map.x_player] == '1') {
         game->map.y_player -= 1;
-        test_plus(game, 0, &game->player.position.y, &game->background.pos.y);
+        test_plus(game, 0, &game->player.position.y);
     }
 }
 

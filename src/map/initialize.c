@@ -1,19 +1,19 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** my_rpg
 ** File description:
-** map
+** initialize
 */
 
 #include "my.h"
 #include "rpg.h"
 
-char **map_create(void)
+char **map_create(char *path)
 {
     char *buffer = NULL;
     char **map = NULL;
 
-    buffer = my_file_in_str("ressources/map/main_map.txt");
+    buffer = my_file_in_str(path);
     map = my_str_to_word_array(buffer, '\n');
     return (map);
 }

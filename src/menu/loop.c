@@ -18,3 +18,13 @@ int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
         display_menu_conf(menu, game, btn);
     return (0);
 }
+
+int initialize_menu(menu_t *menu, btn_t *btn)
+{
+    menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
+    set_path_menu(menu, btn);
+    init_pos_menu(menu, btn);
+    init_scale_menu(menu, btn);
+    init_rect_menu(menu);
+    return (0);
+}

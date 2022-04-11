@@ -11,51 +11,60 @@ EXTENSION	=		.c
 
 SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					map/initialize								\
+					map/loop									\
+					menu/analyse_menu							\
+					menu/display								\
+					menu/loop									\
+					menu/path									\
+					menu/position								\
+					menu/rect									\
+					menu/scale									\
+					menu/start_game								\
+					player/loop									\
+					player/position								\
+					player/rect									\
+					pnj/display									\
+					pnj/initialize								\
+					pnj/loop									\
+					pnj/position								\
+					pnj/rect									\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
-					player/loop									\
-					player/position								\
-					window										\
 					display										\
 					event										\
-					path_sprite									\
-					map											\
 					music										\
-					pnj/position_pnj							\
-					pnj/init_pnj								\
-					pnj/rect_pnj								\
-					pnj/display_pnj								\
-					menu/analyse_menu							\
-					menu/set_pos								\
-					menu/menu_loop								\
-					menu/set_scale								\
-					menu/set_rect								\
-					menu/start_game								\
-					menu/display_menu							\
+					window										\
 					))											\
 
 SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					map/initialize								\
+					map/loop									\
+					menu/analyse_menu							\
+					menu/display								\
+					menu/loop									\
+					menu/path									\
+					menu/position								\
+					menu/rect									\
+					menu/scale									\
+					menu/start_game								\
+					player/loop									\
+					player/position								\
+					player/rect									\
+					pnj/display									\
+					pnj/initialize								\
+					pnj/loop									\
+					pnj/position								\
+					pnj/rect									\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
-					player/loop									\
-					player/position								\
-					window										\
 					display										\
 					event										\
-					path_sprite									\
-					map											\
 					music										\
-					pnj											\
-					menu/analyse_menu							\
-					menu/set_pos								\
-					menu/menu_loop								\
-					menu/set_scale								\
-					menu/set_rect								\
-					menu/start_game								\
-					menu/display_menu							\
+					window										\
 					))											\
 
 OBJ			=		$(SRC:$(EXTENSION)=.o)
