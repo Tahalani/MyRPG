@@ -22,7 +22,7 @@ int set_pos_menu(menu_t *menu, btn_t *btn)
     sfSprite_setPosition(menu->blue_skin.sprite, menu->blue_skin.pos);
     sfSprite_setPosition(menu->sign_settings.sprite, menu->sign_settings.pos);
     sfSprite_setPosition(menu->sign_skin.sprite, menu->sign_skin.pos);
-    for (int i = 0; i != 5; ++i)
+    for (int i = 0; i != 5; i++)
         sfSprite_setPosition(menu->bg_skin[i].sprite, menu->bg_skin[i].pos);
     return (0);
 }
@@ -36,7 +36,7 @@ static int init_pos_conf(menu_t *menu)
     menu->bg_skin[0].pos = (sfVector2f){495, -100};
     menu->bg_skin[3].pos = (sfVector2f){642, 150};
     menu->bg_skin[4].pos = (sfVector2f){952, 150};
-    for (int i = 1; i != 3; ++i)
+    for (int i = 1; i != 3; i++)
         menu->bg_skin[i].pos = (sfVector2f)
         {menu->bg_skin[i - 1].pos.x + 300, -100};
     return (0);
