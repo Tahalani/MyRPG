@@ -9,18 +9,19 @@
 
 static int set_path_menu_conf(menu_t *menu)
 {
-    menu->cursor.sprite =
-    init_sprite("ressources/menu/cursor.png", menu->cursor.texture, 1, 1);
     menu->red_skin.sprite =
-    init_sprite("ressources/player/player_2.png", menu->red_skin.texture, 1, 1);
+    init_sprite("ressources/player/player_2.png",
+    menu->red_skin.texture, 1, 1);
     menu->brown_skin.sprite =
-    init_sprite("ressources/player/player.png", menu->brown_skin.texture, 1, 1);
+    init_sprite("ressources/player/player.png",
+    menu->brown_skin.texture, 1, 1);
     menu->blue_skin.sprite =
-    init_sprite("ressources/player/player_3.png", menu->blue_skin.texture, 1, 1);
+    init_sprite("ressources/player/player_3.png",
+    menu->blue_skin.texture, 1, 1);
     menu->sign_skin.sprite =
     init_sprite("ressources/menu/sign_skin.png",
     menu->blue_skin.texture, 1, 1);
-    for (int i = 0; i != 4; ++i)
+    for (int i = 0; i != 5; ++i)
         menu->bg_skin[i].sprite = init_sprite("ressources/menu/bg_skin.png",
         menu->blue_skin.texture, 1, 1);
     return (0);
