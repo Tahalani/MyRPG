@@ -56,6 +56,8 @@ int pnj_create(game_t *);
 int initialize_pnj(game_t *);
 int set_position_pnj(game_t *);
 int set_rect_pnj(game_t *);
+int rect_pnj(sfVector2f *, game_t *, sfSprite *, char *);
+int pnj_loop(game_t *);
 
 // DISPLAY.C //
 int function_to_display(game_t *);

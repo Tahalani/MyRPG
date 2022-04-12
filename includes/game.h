@@ -50,6 +50,9 @@ typedef struct pnj_s {
     sfIntRect rect;
     sfVector2f scale;
     sfVector2f position;
+    sfClock *clock;
+    float seconds;
+    char **script;
 } pnj_t;
 
 typedef struct game_s {
@@ -60,7 +63,7 @@ typedef struct game_s {
     map_t map;
     sfClock *clock;
     music_t sound;
-    pnj_t pnj[3];
+    pnj_t pnj[4];
     float second_clock;
     int status;
 } game_t;
