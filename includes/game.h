@@ -60,7 +60,7 @@ typedef struct game_s {
     player_t player;
     window_t window;
     event_t event;
-    map_t map;
+    map_t map[2];
     sfClock *clock;
     music_t sound;
     pnj_t pnj[4];

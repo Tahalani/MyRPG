@@ -22,8 +22,8 @@ int test_plus(game_t *game, int operator, float *player)
             count++;
             sfClock_restart(game->player.clock);
         }
-        sfView_setCenter(game->map.view, game->player.position);
-        sfRenderWindow_setView(game->window.window, game->map.view);
+        sfView_setCenter(game->map[0].view, game->player.position);
+        sfRenderWindow_setView(game->window.window, game->map[0].view);
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
     }
@@ -33,23 +33,23 @@ int test_plus(game_t *game, int operator, float *player)
 void run_player(game_t *game, char check)
 {
     if (check == 's' &&
-    game->map.main_map[game->map.y_player + 1][game->map.x_player] == '1') {
-        game->map.y_player += 1;
+    game->map[0].main_map[game->map[0].y_player + 1][game->map[0].x_player] == '1') {
+        game->map[0].y_player += 1;
         test_plus(game, 1, &game->player.position.y);
     }
     if (check == 'q' &&
-    game->map.main_map[game->map.y_player][game->map.x_player - 1] == '1') {
-        game->map.x_player -= 1;
+    game->map[0].main_map[game->map[0].y_player][game->map[0].x_player - 1] == '1') {
+        game->map[0].x_player -= 1;
         test_plus(game, 0, &game->player.position.x);
     }
     if (check == 'd' &&
-    game->map.main_map[game->map.y_player][game->map.x_player + 1] == '1') {
-        game->map.x_player += 1;
+    game->map[0].main_map[game->map[0].y_player][game->map[0].x_player + 1] == '1') {
+        game->map[0].x_player += 1;
         test_plus(game, 1, &game->player.position.x);
     }
     if (check == 'z' &&
-    game->map.main_map[game->map.y_player - 1][game->map.x_player] == '1') {
-        game->map.y_player -= 1;
+    game->map[0].main_map[game->map[0].y_player - 1][game->map[0].x_player] == '1') {
+        game->map[0].y_player -= 1;
         test_plus(game, 0, &game->player.position.y);
     }
 }
