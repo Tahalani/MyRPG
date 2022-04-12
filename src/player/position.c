@@ -36,7 +36,6 @@ void run_player(game_t *game, char check)
     game->map.main_map[game->map.y_player + 1][game->map.x_player] == '1') {
         game->map.y_player += 1;
         test_plus(game, 1, &game->player.position.y);
-
     }
     if (check == 'q' &&
     game->map.main_map[game->map.y_player][game->map.x_player - 1] == '1') {

@@ -24,6 +24,7 @@ static int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);
+    pnj_loop(game);
     analyse_events(game);
     map_loop(game);
     function_to_display(game);
