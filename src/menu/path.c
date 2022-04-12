@@ -39,6 +39,9 @@ static int set_path_menu_settings(menu_t *menu, btn_t *btn)
     menu->sign_settings.sprite =
     init_sprite("ressources/menu/sign_settings.png",
     menu->blue_skin.texture, 1, 1);
+    for (int i = 0; i != 3; ++i)
+        btn->fps_btn[i].sprite = init_sprite
+        ("ressources/menu/fps_btn.png", btn->fps_btn[i].texture, 1, 1);
     return (0);
 }
 
