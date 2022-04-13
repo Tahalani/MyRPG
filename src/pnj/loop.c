@@ -21,5 +21,9 @@ int pnj_loop(game_t *game)
 {
     game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
     rect_pnj(&game->pnj[3].position, game, game->pnj[3].sprite, "ressources/pnj/path_pnj_four.txt");
+    game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
+    rect_pnj(&game->pnj[4].position, game, game->pnj[4].sprite, "ressources/pnj/path_pnj_five.txt");
+    game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
+    rect_pnj(&game->pnj[5].position, game, game->pnj[5].sprite, "ressources/pnj/path_pnj_six.txt");
     return (0);
 }

@@ -64,7 +64,7 @@ typedef struct game_s {
     map_t map[2];
     sfClock *clock;
     music_t sound;
-    pnj_t pnj[4];
+    pnj_t pnj[6];
     float second_clock;
     int status;
 } game_t;
