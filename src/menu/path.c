@@ -32,16 +32,23 @@ static int set_path_menu_conf(menu_t *menu)
 
 static int set_path_menu_settings(menu_t *menu, btn_t *btn)
 {
-    btn->down_btn.sprite =
-    init_sprite("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
-    btn->up_btn.sprite =
-    init_sprite("ressources/menu/up_btn.png", btn->stop_btn.texture, 1, 1);
-    menu->sign_settings.sprite =
-    init_sprite("ressources/menu/sign_settings.png",
+    btn->down_btn.sprite = init_sprite
+    ("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
+    btn->up_btn.sprite = init_sprite
+    ("ressources/menu/up_btn.png", btn->stop_btn.texture, 1, 1);
+    menu->sign_settings.sprite = init_sprite
+    ("ressources/menu/sign_settings.png",
     menu->blue_skin.texture, 1, 1);
-    for (int i = 0; i != 3; ++i)
-        btn->fps_btn[i].sprite = init_sprite
-        ("ressources/menu/fps_btn.png", btn->fps_btn[i].texture, 1, 1);
+    btn->wood_btn[0].sprite = init_sprite
+    ("ressources/menu/fps30_btn.png", btn->wood_btn[0].texture, 1, 1);
+    btn->wood_btn[1].sprite = init_sprite
+    ("ressources/menu/fps45_btn.png", btn->wood_btn[1].texture, 1, 1);
+    btn->wood_btn[2].sprite = init_sprite
+    ("ressources/menu/fps60_btn.png", btn->wood_btn[2].texture, 1, 1);
+    btn->wood_btn[3].sprite = init_sprite
+    ("ressources/menu/zqsd_btn.png", btn->wood_btn[3].texture, 1, 1);
+    btn->wood_btn[4].sprite = init_sprite
+    ("ressources/menu/key_btn.png", btn->wood_btn[4].texture, 1, 1);
     return (0);
 }
 

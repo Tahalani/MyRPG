@@ -20,9 +20,9 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     (game->window.window, btn->next_btn.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, menu->sign_settings.sprite, NULL);
-    for (int i = 0; i != 3; ++i)
+    for (int i = 0; i != 5; ++i)
         sfRenderWindow_drawSprite
-        (game->window.window, btn->fps_btn[i].sprite, NULL);
+        (game->window.window, btn->wood_btn[i].sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

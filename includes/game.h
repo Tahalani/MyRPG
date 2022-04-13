@@ -42,6 +42,7 @@ typedef struct element_s {
 typedef struct music_s {
     sfMusic *game;
     sfMusic *menu;
+    sfMusic *page_menu;
 } music_t;
 
 typedef struct pnj_s {
