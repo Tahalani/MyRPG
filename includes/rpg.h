@@ -22,7 +22,9 @@ int move_rect(sfIntRect *, int, int, int);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
 
 // MAP //
+int acces_to_church_map(game_t *game);
 char **map_create(char *);
+int initialize_map_church(game_t *game);
 int initialize_map(game_t *);
 int map_loop(game_t *);
 

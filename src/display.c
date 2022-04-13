@@ -11,9 +11,15 @@
 int function_to_display(game_t *game)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
-    sfRenderWindow_drawSprite
-    (game->window.window, game->background.sprite, NULL);
-    display_pnj(game);
+    if (game->map[0].check == 1) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->background[0].sprite, NULL);
+        display_pnj(game);
+    }
+    if (game->map[1].check == 1) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->background[1].sprite, NULL);
+    }
     sfRenderWindow_drawSprite(game->window.window, game->player.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
