@@ -26,18 +26,19 @@ int rect_pnj(sfVector2f *position, game_t *game, sfSprite *sprite, char *path)
     static int i = 0;
 
     if (game->pnj->seconds >= 0.1) {
-        if (position->y != atof(script[i + 1]) || position->x != atof(script[i])) {
-            if (position->x < atof(script[i])) {
+        if (position->y != my_getnbr(script[i + 1]) || position->x !=
+        my_getnbr(script[i])) {
+            if (position->x < my_getnbr(script[i])) {
                 move_rect(&game->pnj[3].rect, 34, 136, 108);
                 position->x += 7;
-            } else if (position->x != atof(script[i])) {
+            } else if (position->x != my_getnbr(script[i])) {
                 move_rect(&game->pnj[3].rect, 34, 136, 54);
                 position->x -= 7;
             }
-            if (position->y > atof(script[i + 1])) {
+            if (position->y > my_getnbr(script[i + 1])) {
                 move_rect(&game->pnj[3].rect, 34, 136, 162);
                 position->y -= 7;
-            } else if (position->y != atof(script[i + 1])) {
+            } else if (position->y != my_getnbr(script[i + 1])) {
                 move_rect(&game->pnj[3].rect, 34, 136, 0);
                 position->y += 7;
             }
