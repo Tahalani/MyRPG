@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-int test_plus(game_t *game, int operator, float *player)
+int test_plus(game_t *game, int operator, float *player, int i)
 {
     for (int count = 0; count != 8;) {
         game->player.second =
@@ -22,36 +22,37 @@ int test_plus(game_t *game, int operator, float *player)
             count++;
             sfClock_restart(game->player.clock);
         }
-        sfView_setCenter(game->map[0].view, game->player.position);
-        sfRenderWindow_setView(game->window.window, game->map[0].view);
+        sfView_setCenter(game->map[i].view, game->player.position);
+        sfRenderWindow_setView(game->window.window, game->map[i].view);
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
     }
     return (0);
 }
 
-void run_player(game_t *game, char check)
+int run_player(game_t *game, char check, int i)
 {
     if (check == 's' &&
-    game->map[0].main_map[game->map[0].y_player + 1][game->map[0].x_player] == '1') {
-        game->map[0].y_player += 1;
-        test_plus(game, 1, &game->player.position.y);
+    game->map[i].main_map[game->map[i].y_player + 1][game->map[i].x_player] == '1') {
+        game->map[i].y_player += 1;
+        test_plus(game, 1, &game->player.position.y, i);
     }
     if (check == 'q' &&
-    game->map[0].main_map[game->map[0].y_player][game->map[0].x_player - 1] == '1') {
-        game->map[0].x_player -= 1;
-        test_plus(game, 0, &game->player.position.x);
+    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player - 1] == '1') {
+        game->map[i].x_player -= 1;
+        test_plus(game, 0, &game->player.position.x, i);
     }
     if (check == 'd' &&
-    game->map[0].main_map[game->map[0].y_player][game->map[0].x_player + 1] == '1') {
-        game->map[0].x_player += 1;
-        test_plus(game, 1, &game->player.position.x);
+    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player + 1] == '1') {
+        game->map[i].x_player += 1;
+        test_plus(game, 1, &game->player.position.x, i);
     }
     if (check == 'z' &&
-    game->map[0].main_map[game->map[0].y_player - 1][game->map[0].x_player] == '1') {
-        game->map[0].y_player -= 1;
-        test_plus(game, 0, &game->player.position.y);
+    game->map[i].main_map[game->map[i].y_player - 1][game->map[i].x_player] == '1') {
+        game->map[i].y_player -= 1;
+        test_plus(game, 0, &game->player.position.y, i);
     }
+    return (i);
 }
 
 int rect_player(player_t *player, int top)

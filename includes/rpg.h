@@ -45,8 +45,8 @@ int start_game(game_t *, menu_t *);
 // PLAYER //
 int initialize_player(player_t *);
 int player_loop(player_t *);
-int test_plus(game_t *, int, float *);
-void run_player(game_t *, char);
+int test_plus(game_t *, int, float *, int);
+int run_player(game_t *, char, int);
 int rect_player(player_t *, int);
 int analyse_move_player(game_t *);
 
