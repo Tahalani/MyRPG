@@ -31,8 +31,8 @@ int initialize_pnj(game_t *game)
     init_script(game, 3, 136);
     init_pnj(game, 4, "ressources/pnj/path_pnj_five.txt", 31);
     init_script(game, 4, 93);
-    init_pnj(game, 5, "ressources/pnj/path_pnj_six.txt", 30);
-    init_script(game, 5, 91);
+    init_pnj(game, 5, "ressources/pnj/path_pnj_six.txt", 31);
+    init_script(game, 5, 93);
     game->pnj->seconds = 0;
     game->pnj->clock = sfClock_create();
     return (0);
