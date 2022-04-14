@@ -10,7 +10,7 @@
 
 static int check_map(game_t *game)
 {
-    if (game->map[0].check == 0 &&game->map[1].check == 1)
+    if (game->map[0].check == 0 && game->map[1].check == 1)
         return 1;
     return 0;
 }

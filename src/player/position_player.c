@@ -10,7 +10,7 @@
 
 int test_plus(game_t *game, int operator, float *player, int i)
 {
-    for (int count = 0; count != 8;) {
+    for (int count = 0; count != 4;) {
         game->player.second =
         sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock));
         if (game->player.second >= 0.05 && operator == 1) {
@@ -31,28 +31,38 @@ int test_plus(game_t *game, int operator, float *player, int i)
     return (0);
 }
 
-int run_player(game_t *game, char check, int i)
+static int run_player_two(game_t *game, char check, int i)
 {
-    if (check == 's' &&
-    game->map[i].main_map[game->map[i].y_player + 1][game->map[i].x_player] == '1') {
-        game->map[i].y_player += 1;
-        test_plus(game, 1, &game->player.position.y, i);
-    }
-    if (check == 'q' &&
-    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player - 1] == '1') {
-        game->map[i].x_player -= 1;
-        test_plus(game, 0, &game->player.position.x, i);
-    }
     if (check == 'd' &&
-    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player + 1] == '1') {
+    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player + 1]
+    == '1') {
         game->map[i].x_player += 1;
         test_plus(game, 1, &game->player.position.x, i);
     }
     if (check == 'z' &&
-    game->map[i].main_map[game->map[i].y_player - 1][game->map[i].x_player] == '1') {
+    game->map[i].main_map[game->map[i].y_player - 1][game->map[i].x_player]
+    == '1') {
         game->map[i].y_player -= 1;
         test_plus(game, 0, &game->player.position.y, i);
     }
+    return (i);
+}
+
+int run_player(game_t *game, char check, int i)
+{
+    if (check == 's' &&
+    game->map[i].main_map[game->map[i].y_player + 1][game->map[i].x_player]
+    == '1') {
+        game->map[i].y_player += 1;
+        test_plus(game, 1, &game->player.position.y, i);
+    }
+    if (check == 'q' &&
+    game->map[i].main_map[game->map[i].y_player][game->map[i].x_player - 1]
+    == '1') {
+        game->map[i].x_player -= 1;
+        test_plus(game, 0, &game->player.position.x, i);
+    }
+    i = run_player_two(game, check, i);
     return (i);
 }
 
