@@ -59,6 +59,13 @@ typedef struct pnj_s {
     int count;
 } pnj_t;
 
+typedef struct shape_s {
+    sfRectangleShape *shape;
+    sfTexture *texture;
+    sfVector2f size;
+    sfVector2f pos;
+} shape_t;
+
 typedef struct game_s {
     element_t background[2];
     player_t player;

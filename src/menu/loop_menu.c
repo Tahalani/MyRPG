@@ -23,6 +23,7 @@ int initialize_menu(menu_t *menu, btn_t *btn)
 {
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
     sfMusic_setVolume(menu->sound.menu, 75.0);
+    init_shape_menu(menu);
     set_path_menu(menu, btn);
     init_pos_menu(menu, btn);
     init_scale_menu(menu, btn);

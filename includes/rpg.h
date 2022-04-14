@@ -43,6 +43,7 @@ int init_rect_menu(menu_t *);
 int set_scale_menu(menu_t *, btn_t *);
 int init_scale_menu(menu_t *, btn_t *);
 int start_game(game_t *, menu_t *);
+int init_shape_menu(menu_t *menu);
 
 // PLAYER //
 int initialize_player(player_t *);
@@ -63,6 +64,10 @@ int pnj_loop(game_t *);
 
 // DISPLAY.C //
 int function_to_display(game_t *);
+
+// SHAPE.C //
+sfRectangleShape *make_shape(sfTexture *texture,
+sfVector2f size, sfVector2f pos);
 
 // EVENT.C //
 int analyse_events(game_t *);
