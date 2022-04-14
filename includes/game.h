@@ -53,7 +53,10 @@ typedef struct pnj_s {
     sfVector2f position;
     sfClock *clock;
     float seconds;
-    char **script;
+    int offset;
+    int max_value;
+    char *path;
+    int count;
 } pnj_t;
 
 typedef struct game_s {

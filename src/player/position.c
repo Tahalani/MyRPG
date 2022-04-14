@@ -26,6 +26,7 @@ int test_plus(game_t *game, int operator, float *player, int i)
         sfRenderWindow_setView(game->window.window, game->map[i].view);
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
+        pnj_loop(game);
     }
     return (0);
 }

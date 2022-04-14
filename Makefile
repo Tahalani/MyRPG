@@ -28,6 +28,7 @@ SRC			=		src/main.c									\
 					pnj/initialize								\
 					pnj/loop									\
 					pnj/position								\
+					pnj/script_pnj								\
 					pnj/rect									\
 					utils/move_rect								\
 					utils/position								\

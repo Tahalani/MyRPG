@@ -8,22 +8,12 @@
 #include "my.h"
 #include "rpg.h"
 
-int initialize_pnj(game_t *game)
-{
-    pnj_create(game);
-    set_position_pnj(game);
-    game->pnj->seconds = 0;
-    game->pnj->clock = sfClock_create();
-    return (0);
-}
-
 int pnj_loop(game_t *game)
 {
-    game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
-    rect_pnj(&game->pnj[3].position, game, game->pnj[3].sprite, "ressources/pnj/path_pnj_four.txt");
-    game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
-    rect_pnj(&game->pnj[4].position, game, game->pnj[4].sprite, "ressources/pnj/path_pnj_five.txt");
-    game->pnj->seconds = sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
-    rect_pnj(&game->pnj[5].position, game, game->pnj[5].sprite, "ressources/pnj/path_pnj_six.txt");
+    game->pnj->seconds =
+    sfTime_asSeconds(sfClock_getElapsedTime(game->pnj->clock));
+    scipt_pnj(game, 3);
+    scipt_pnj(game, 4);
+    scipt_pnj(game, 5);
     return (0);
 }
