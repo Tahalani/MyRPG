@@ -19,7 +19,7 @@ int initialize_player(player_t *player)
     if (player->check_player == 2)
         player->sprite =
         init_sprite("ressources/player/player_3.png", player->texture, 2, 2);
-    position_sprite(player->sprite, &player->position, 2160, 1027);
+    position_sprite(player->sprite, &player->position, 1936, 1027);
     player->second = 0.00;
     player->clock = sfClock_create();
     player->rect = (sfIntRect){0, 192, 64, 64};

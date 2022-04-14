@@ -42,6 +42,7 @@ typedef struct element_s {
 typedef struct music_s {
     sfMusic *game;
     sfMusic *menu;
+    sfMusic *page_menu;
 } music_t;
 
 typedef struct pnj_s {
@@ -52,7 +53,10 @@ typedef struct pnj_s {
     sfVector2f position;
     sfClock *clock;
     float seconds;
-    char **script;
+    int offset;
+    int max_value;
+    char *path;
+    int count;
 } pnj_t;
 
 typedef struct game_s {
@@ -63,7 +67,7 @@ typedef struct game_s {
     map_t map[2];
     sfClock *clock;
     music_t sound;
-    pnj_t pnj[4];
+    pnj_t pnj[6];
     float second_clock;
     int status;
 } game_t;

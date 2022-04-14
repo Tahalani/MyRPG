@@ -22,6 +22,7 @@ int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
 int initialize_menu(menu_t *menu, btn_t *btn)
 {
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
+    sfMusic_setVolume(menu->sound.menu, 75.0);
     set_path_menu(menu, btn);
     init_pos_menu(menu, btn);
     init_scale_menu(menu, btn);

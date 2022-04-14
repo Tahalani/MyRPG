@@ -12,24 +12,25 @@ EXTENSION	=		.c
 SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					map/church_map								\
-					map/initialize								\
-					map/loop									\
+					map/initialize_map							\
+					map/loop_map								\
 					menu/analyse_menu							\
-					menu/display								\
-					menu/loop									\
-					menu/path									\
-					menu/position								\
-					menu/rect									\
-					menu/scale									\
+					menu/display_menu							\
+					menu/loop_menu								\
+					menu/path_menu								\
+					menu/position_menu							\
+					menu/rect_menu								\
+					menu/scale_menu								\
 					menu/start_game								\
-					player/loop									\
-					player/position								\
-					player/rect									\
-					pnj/display									\
-					pnj/initialize								\
-					pnj/loop									\
-					pnj/position								\
-					pnj/rect									\
+					player/loop_player							\
+					player/position_player						\
+					player/rect_player							\
+					pnj/display_pnj								\
+					pnj/initialize_pnj							\
+					pnj/loop_pnj								\
+					pnj/position_pnj							\
+					pnj/script_pnj								\
+					pnj/rect_pnj								\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
@@ -41,24 +42,26 @@ SRC			=		src/main.c									\
 
 SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
-					map/initialize								\
-					map/loop									\
+					map/church_map								\
+					map/initialize_map							\
+					map/loop_map								\
 					menu/analyse_menu							\
-					menu/display								\
-					menu/loop									\
-					menu/path									\
-					menu/position								\
-					menu/rect									\
-					menu/scale									\
+					menu/display_menu							\
+					menu/loop_menu								\
+					menu/path_menu								\
+					menu/position_menu							\
+					menu/rect_menu								\
+					menu/scale_menu								\
 					menu/start_game								\
-					player/loop									\
-					player/position								\
-					player/rect									\
-					pnj/display									\
-					pnj/initialize								\
-					pnj/loop									\
-					pnj/position								\
-					pnj/rect									\
+					player/loop_player							\
+					player/position_player						\
+					player/rect_player							\
+					pnj/display_pnj								\
+					pnj/initialize_pnj							\
+					pnj/loop_pnj								\
+					pnj/position_pnj							\
+					pnj/script_pnj								\
+					pnj/rect_pnj								\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
@@ -72,7 +75,7 @@ OBJ			=		$(SRC:$(EXTENSION)=.o)
 
 OBJT		=		$(SRCT:$(EXTENSION)=.o)
 
-CFLAGS		=		-I./includes -Wall -Wextra -g3
+CFLAGS		=		-I./includes -Wall -Wextra
 
 LDFLAGS		=		-l csfml-graphics -l csfml-window	\
 					-l csfml-system -l csfml-audio

@@ -14,7 +14,6 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
-    initialize_map_church(game);
     initialize_menu(menu, btn);
     initialize_player(&game->player);
     initialize_pnj(game);

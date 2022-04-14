@@ -15,10 +15,13 @@ int analyse_menu(menu_t *menu, game_t *game, btn_t *btn)
             sfRenderWindow_close(game->window.window);
         if (sfKeyboard_isKeyPressed(sfKeyEnter))
             start_game(game, menu);
-        if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight))
+        if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight)) {
             game->status++;
-        if (game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft))
+            menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+        } else if (game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft)) {
             game->status--;
+            menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+        }
     }
     return (0);
 }
