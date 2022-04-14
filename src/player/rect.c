@@ -10,9 +10,13 @@
 
 static int check_map(game_t *game)
 {
-    if (game->map[0].check == 0 &&game->map[1].check == 1)
-        return 1;
-    return 0;
+    int i = 0;
+
+    if (game->map[0].check == 0)
+        i = 1;
+    if (game->map[0].check == 1)
+        i = 0;
+    return i;
 }
 
 int analyse_move_player(game_t *game)

@@ -38,6 +38,8 @@ static int check_for_the_good_view(game_t *game)
 
     if (game->map[1].check == 1)
         i = 1;
+    if (game->map[0].check == 1)
+        i = 0;
     return i;
 }
 
