@@ -28,6 +28,7 @@ typedef struct map_s {
     int y_player;
     sfView *view;
     sfVector2f view_size;
+    int check;
 } map_t;
 
 #endif/* !MAP_H_ */

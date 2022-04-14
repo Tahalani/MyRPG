@@ -60,7 +60,7 @@ typedef struct pnj_s {
 } pnj_t;
 
 typedef struct game_s {
-    element_t background;
+    element_t background[2];
     player_t player;
     window_t window;
     event_t event;

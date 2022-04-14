@@ -14,6 +14,7 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
+    initialize_map_church(game);
     initialize_menu(menu, btn);
     initialize_player(&game->player);
     initialize_pnj(game);
@@ -23,6 +24,7 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 static int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+    acces_to_church_map(game);
     player_loop(&game->player);
     pnj_loop(game);
     analyse_events(game);
@@ -40,6 +42,9 @@ int initialize_value(game_t *game)
     game->window.height = 1080;
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
+    for (int i = 0; i <= 1; i++)
+        game->map[i].check = 0;
+    game->map[0].check = 1;
     return (0);
 }
 
