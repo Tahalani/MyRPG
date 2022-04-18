@@ -20,6 +20,7 @@
 sfSprite *init_sprite(char *, sfTexture*, float, float);
 int move_rect(sfIntRect *, int, int, int);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
+int rect_skin(param_t *player, int top);
 
 // MAP //
 int acces_to_church_map(game_t *game);

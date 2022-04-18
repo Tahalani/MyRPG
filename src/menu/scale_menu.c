@@ -7,8 +7,26 @@
 
 #include "rpg.h"
 
+int set_scale_config(menu_t *menu, btn_t *btn)
+{
+    sfSprite_setScale(menu->blue_skin.sprite, menu->blue_skin.scale);
+    sfSprite_setScale(menu->sign_settings.sprite, menu->sign_settings.scale);
+    sfSprite_setScale(menu->sign_skin.sprite, menu->sign_skin.scale);
+    sfSprite_setScale(menu->map1.sprite, menu->map1.scale);
+    sfSprite_setScale(menu->map2.sprite, menu->map2.scale);
+    sfSprite_setScale(menu->red_skin.sprite, menu->red_skin.scale);
+    sfSprite_setScale(menu->brown_skin.sprite, menu->brown_skin.scale);
+    for (int i = 0; i != 3; ++i)
+        sfSprite_setScale(menu->bg_skin[i].sprite, menu->bg_skin[i].scale);
+    for (int i = 0; i != 2; ++i)
+        sfSprite_setScale(menu->bg_square[i].sprite, menu->bg_square[i].scale);
+    return (0);
+}
+
 int set_scale_menu(menu_t *menu, btn_t *btn)
 {
+    for (int i = 0; i != 5; ++i)
+        sfSprite_setScale(btn->wood_btn[i].sprite, btn->wood_btn[i].scale);
     sfSprite_setScale(btn->play_btn.sprite, btn->play_btn.scale);
     sfSprite_setScale(btn->stop_btn.sprite, btn->stop_btn.scale);
     sfSprite_setScale(btn->down_btn.sprite, btn->down_btn.scale);
@@ -17,17 +35,7 @@ int set_scale_menu(menu_t *menu, btn_t *btn)
     sfSprite_setScale(btn->next_btn.sprite, btn->next_btn.scale);
     sfSprite_setScale(btn->music_btn.sprite, btn->music_btn.scale);
     sfSprite_setScale(btn->about_btn.sprite, btn->about_btn.scale);
-    sfSprite_setScale(menu->red_skin.sprite, menu->red_skin.scale);
-    sfSprite_setScale(menu->brown_skin.sprite, menu->brown_skin.scale);
-    sfSprite_setScale(menu->blue_skin.sprite, menu->blue_skin.scale);
-    sfSprite_setScale(menu->sign_settings.sprite, menu->sign_settings.scale);
-    sfSprite_setScale(menu->sign_skin.sprite, menu->sign_skin.scale);
-    sfSprite_setScale(menu->map1.sprite, menu->map1.scale);
-    sfSprite_setScale(menu->map2.sprite, menu->map2.scale);
-    for (int i = 0; i != 3; ++i)
-        sfSprite_setScale(menu->bg_skin[i].sprite, menu->bg_skin[i].scale);
-    for (int i = 0; i != 2; ++i)
-        sfSprite_setScale(menu->bg_square[i].sprite, menu->bg_square[i].scale);
+    set_scale_config(menu, btn);
     return (0);
 }
 
@@ -48,6 +56,8 @@ static int init_scale_conf(menu_t *menu)
 
 int init_scale_menu(menu_t *menu, btn_t *btn)
 {
+    for (int i = 0; i != 5; ++i)
+        btn->wood_btn[i].scale = (sfVector2f){1, 1};
     btn->play_btn.scale = (sfVector2f){1.01, 1.01};
     btn->stop_btn.scale = (sfVector2f){0.95, 0.95};
     btn->music_btn.scale = (sfVector2f){0.8, 0.8};
