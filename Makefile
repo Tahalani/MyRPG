@@ -21,6 +21,9 @@ SRC			=		src/main.c									\
 					menu/position_menu							\
 					menu/rect_menu								\
 					menu/scale_menu								\
+					menu/manage_click							\
+					menu/manage_click_settings					\
+					menu/animation_btn_menu						\
 					menu/shape_menu								\
 					menu/start_game								\
 					player/loop_player							\

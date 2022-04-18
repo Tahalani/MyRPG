@@ -29,7 +29,7 @@ int initialize_map(game_t *);
 int map_loop(game_t *);
 
 // MENU //
-int analyse_menu(menu_t *, game_t *, btn_t *);
+int analyse_menu(menu_t *, game_t *);
 int display_menu_settings(menu_t *, game_t *, btn_t *);
 int display_menu_conf(menu_t *, game_t *, btn_t *);
 int display_menu(menu_t *, game_t *, btn_t *);
@@ -44,6 +44,9 @@ int set_scale_menu(menu_t *, btn_t *);
 int init_scale_menu(menu_t *, btn_t *);
 int start_game(game_t *, menu_t *);
 int init_shape_menu(menu_t *menu);
+int manage_click_menu_conf(menu_t *menu, game_t *game);
+int manage_click_menu(menu_t *menu, game_t *game);
+int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
 
 // PLAYER //
 int initialize_player(player_t *);
