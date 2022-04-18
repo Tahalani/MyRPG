@@ -12,6 +12,9 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[0].sprite, NULL);
+    for (int i = 11; i != 18; ++i)
+        sfRenderWindow_drawRectangleShape(game->window.window,
+        menu->shape_btn[i].shape, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->down_btn.sprite, NULL);
     sfRenderWindow_drawSprite
@@ -29,6 +32,9 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
 
 static int display_conf_skin(menu_t *menu, game_t *game)
 {
+    for (int i = 6; i != 11; ++i)
+        sfRenderWindow_drawRectangleShape(game->window.window,
+        menu->shape_btn[i].shape, NULL);
     for (int i = 0; i != 3; ++i)
         sfRenderWindow_drawSprite
         (game->window.window, menu->bg_skin[i].sprite, NULL);
@@ -67,8 +73,9 @@ int display_menu(menu_t *menu, game_t *game, btn_t *btn)
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[0].sprite, NULL);
-    sfRenderWindow_drawRectangleShape(game->window.window,
-    menu->shape_btn->shape, NULL);
+    for (int i = 0; i != 6; ++i)
+        sfRenderWindow_drawRectangleShape(game->window.window,
+        menu->shape_btn[i].shape, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->play_btn.sprite, NULL);
     sfRenderWindow_drawSprite
