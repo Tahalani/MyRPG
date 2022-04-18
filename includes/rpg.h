@@ -45,8 +45,8 @@ int set_scale_menu(menu_t *, btn_t *);
 int init_scale_menu(menu_t *, btn_t *);
 int start_game(game_t *, menu_t *);
 int init_shape_menu(menu_t *menu);
-int manage_click_menu_conf(menu_t *menu, game_t *game);
-int manage_click_menu(menu_t *menu, game_t *game);
+int manage_click_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
+int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 

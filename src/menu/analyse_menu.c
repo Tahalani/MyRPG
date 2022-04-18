@@ -11,13 +11,13 @@ static int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
 {
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 2)
-        manage_click_menu(menu, game);
+        manage_click_menu(menu, game, btn);
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 1)
         manage_click_menu_settings(menu, game, btn);
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 3)
-        manage_click_menu_conf(menu, game);
+        manage_click_menu_conf(menu, game, btn);
     return (0);
 }
 

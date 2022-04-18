@@ -46,7 +46,7 @@ static int manage_conf_skin(menu_t *menu, sfVector2i mouse, sfFloatRect shape)
     return (0);
 }
 
-int manage_click_menu_conf(menu_t *menu, game_t *game)
+int manage_click_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);
     sfFloatRect shape;
@@ -56,6 +56,7 @@ int manage_click_menu_conf(menu_t *menu, game_t *game)
     shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[2].shape);
     if (sfFloatRect_contains(&shape, mouse.x, mouse.y)) {
         music("ressources/music/menu_page.ogg", 0);
+        btn->prev_btn.scale = (sfVector2f) {0.9, 0.9};
         game->status--;
     }
     return (0);

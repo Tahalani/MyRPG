@@ -19,12 +19,12 @@ btn_t *btn)
         && vol >= 20) {
             vol -= 20;
             sfMusic_setVolume(game->sound.game, vol);
-            btn->down_btn.scale = (sfVector2f) {0.37, 0.37};
+            btn->down_btn.scale = (sfVector2f) {0.35, 0.35};
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 14 &&
         vol <= 80) {
             vol += 20;
-            btn->up_btn.scale = (sfVector2f) {0.37, 0.37};
+            btn->up_btn.scale = (sfVector2f) {0.35, 0.35};
             sfMusic_setVolume(game->sound.game, vol);
         }
     }
@@ -39,9 +39,9 @@ static int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
     for (int i = 11; i != 13; ++i) {
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 11)
-            btn->wood_btn[4].scale = (sfVector2f){0.96, 0.96};
+            btn->wood_btn[4].scale = (sfVector2f){0.94, 0.94};
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 12)
-            btn->wood_btn[3].scale = (sfVector2f){0.96, 0.96};
+            btn->wood_btn[3].scale = (sfVector2f){0.94, 0.94};
     }
     return (0);
 }
@@ -56,15 +56,15 @@ btn_t *btn)
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 15) {
             sfRenderWindow_setFramerateLimit(game->window.window, 30);
-            btn->wood_btn[0].scale = (sfVector2f){0.96, 0.96};
+            btn->wood_btn[0].scale = (sfVector2f){0.94, 0.94};
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 16) {
             sfRenderWindow_setFramerateLimit(game->window.window, 45);
-            btn->wood_btn[1].scale = (sfVector2f){0.96, 0.96};
+            btn->wood_btn[1].scale = (sfVector2f){0.94, 0.94};
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 17) {
             sfRenderWindow_setFramerateLimit(game->window.window, 60);
-            btn->wood_btn[2].scale = (sfVector2f){0.96, 0.96};
+            btn->wood_btn[2].scale = (sfVector2f){0.94, 0.94};
         }
     }
     return (0);
@@ -79,6 +79,7 @@ int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     manage_settings_wood(menu, game, mouse, btn);
     manage_settings_volume(menu, game, mouse, btn);
     if (sfFloatRect_contains(&shape, mouse.x, mouse.y)) {
+        btn->next_btn.scale = (sfVector2f) {0.92, 0.92};
         music("ressources/music/menu_page.ogg", 0);
         game->status++;
     }
