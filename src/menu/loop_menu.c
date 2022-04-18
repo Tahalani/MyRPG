@@ -9,13 +9,13 @@
 
 int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
-    analyse_menu(menu, game);
     animation_menu(menu, game, btn);
+    analyse_menu(menu, game, btn);
     set_scale_menu(menu, btn);
     if (game->status == 1)
         display_menu_settings(menu, game, btn);
     if (game->status == 2)
-        display_menu(menu, game, btn);
+        display_menu(game, btn);
     if (game->status == 3)
         display_menu_conf(menu, game, btn);
     return (0);

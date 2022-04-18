@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-int set_scale_config(menu_t *menu, btn_t *btn)
+int set_scale_config(menu_t *menu)
 {
     sfSprite_setScale(menu->blue_skin.sprite, menu->blue_skin.scale);
     sfSprite_setScale(menu->sign_settings.sprite, menu->sign_settings.scale);
@@ -35,7 +35,7 @@ int set_scale_menu(menu_t *menu, btn_t *btn)
     sfSprite_setScale(btn->next_btn.sprite, btn->next_btn.scale);
     sfSprite_setScale(btn->music_btn.sprite, btn->music_btn.scale);
     sfSprite_setScale(btn->about_btn.sprite, btn->about_btn.scale);
-    set_scale_config(menu, btn);
+    set_scale_config(menu);
     return (0);
 }
 

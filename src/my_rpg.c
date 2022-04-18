@@ -39,6 +39,8 @@ int initialize_value(game_t *game)
     game->status = 2;
     game->window.width = 1920;
     game->window.height = 1080;
+    game->sound.game = music("ressources/music/back_music.ogg", 1);
+    sfMusic_pause(game->sound.game);
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
     for (int i = 0; i <= 1; i++)

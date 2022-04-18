@@ -10,7 +10,8 @@
 int start_game(game_t *game, menu_t *menu)
 {
     sfMusic_stop(menu->sound.menu);
-    game->sound.game = music("ressources/music/back_music.ogg", 1);
+    sfMusic_play(game->sound.game);
+    //game->sound.game = music("ressources/music/back_music.ogg", 1);
     game->background[0].sprite =
     init_sprite
     ("ressources/map/map.png", game->background[0].texture, 2.3, 2.3);

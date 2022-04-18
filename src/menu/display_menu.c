@@ -62,7 +62,7 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int display_menu(menu_t *menu, game_t *game, btn_t *btn)
+int display_menu(game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
