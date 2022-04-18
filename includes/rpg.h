@@ -15,6 +15,7 @@
     #include "player.h"
     #include "game.h"
     #include "menu.h"
+    #include "inventory.h"
 
 // UTILS //
 sfSprite *init_sprite(char *, sfTexture*, float, float);
@@ -66,6 +67,15 @@ int set_position_pnj(game_t *);
 int set_rect_pnj(game_t *);
 int scipt_pnj(game_t *, int);
 int pnj_loop(game_t *);
+int speech_create(game_t *game);
+int condition_display_speech(game_t *game);
+
+// INVENTORY //
+int initialize_story_object(game_t *game);
+int set_position_object(game_t *game);
+int display_natural_object(game_t *game);
+int inventory_loop(game_t *game);
+int set_rect_inv(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *);

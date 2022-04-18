@@ -17,6 +17,7 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     initialize_menu(menu, btn);
     initialize_player(&game->player);
     initialize_pnj(game);
+    initialize_story_object(game);
     return (0);
 }
 
@@ -28,6 +29,7 @@ static int in_loop(game_t *game)
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
+    inventory_loop(game);
     function_to_display(game);
     return (0);
 }
@@ -37,6 +39,7 @@ int initialize_value(game_t *game)
     game->second_clock = 0.00;
     game->clock = sfClock_create();
     game->status = 2;
+    game->story_steps = 0;
     game->window.width = 1920;
     game->window.height = 1080;
     game->sound.game = music("ressources/music/back_music.ogg", 1);
