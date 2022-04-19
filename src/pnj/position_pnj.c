@@ -30,7 +30,8 @@ int set_position_pnj(game_t *game)
     game->pnj[5].position = (sfVector2f){1784, 2065};
     game->pnj[6].position = (sfVector2f){1603, 301};
     game->pnj[7].position = (sfVector2f){150, 1617};
-    for (int i = 0; i != 8; i++)
+    game->pnj[8].position = (sfVector2f){791, -161};
+    for (int i = 0; i != 9; i++)
         sfSprite_setPosition(game->pnj[i].sprite, game->pnj[i].position);
     set_rect_pnj(game);
     return (0);

@@ -17,5 +17,6 @@ int pnj_loop(game_t *game)
     scipt_pnj(game, 5);
     scipt_pnj(game, 6);
     scipt_pnj(game, 7);
+    scipt_pnj(game, 8);
     return (0);
 }
