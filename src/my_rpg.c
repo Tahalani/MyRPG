@@ -23,8 +23,8 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 static int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-    acces_to_church_map(game);
     player_loop(&game->player);
+    acces_to_church_map(game);
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
