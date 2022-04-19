@@ -44,6 +44,7 @@ typedef struct music_s {
     sfMusic *game;
     sfMusic *menu;
     sfMusic *page_menu;
+    sfMusic *dialogue;
     int status;
 } music_t;
 
