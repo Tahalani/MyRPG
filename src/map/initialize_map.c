@@ -32,6 +32,20 @@ int initialize_map_church(game_t *game)
     return (0);
 }
 
+int initialize_map_top(game_t *game)
+{
+    game->background[2].sprite =
+    init_sprite("ressources/map/top_map.png",
+    game->background[2].texture, 1.3, 1.3);
+    game->map[2].main_map = map_create("ressources/map/top_map.txt");
+    game->map[2].x_player = 10;
+    game->map[2].y_player = 18;
+    game->map[2].view_size = (sfVector2f){1820, 1080};
+    position_sprite
+    (game->background[2].sprite, &game->background[2].pos, -2300, -100);
+    return (0);
+}
+
 int initialize_map(game_t *game)
 {
     game->background[0].sprite =
@@ -43,5 +57,6 @@ int initialize_map(game_t *game)
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, 0, 0);
     initialize_map_church(game);
+    initialize_map_top(game);
     return (0);
 }
