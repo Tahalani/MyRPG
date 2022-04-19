@@ -87,7 +87,7 @@ typedef struct game_s {
     sfClock *clock;
     music_t sound;
     pnj_t pnj[6];
-    speech_t speech[3];
+    speech_t speech[4];
     float second_clock;
     int status;
     int story_steps;
