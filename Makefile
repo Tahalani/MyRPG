@@ -64,6 +64,11 @@ SRCT 		=		tests/tests_rpg.c							\
 					menu/position_menu							\
 					menu/rect_menu								\
 					menu/scale_menu								\
+					menu/manage_click							\
+					menu/manage_click_settings					\
+					menu/manage_click_conf						\
+					menu/animation_btn_menu						\
+					menu/shape_menu								\
 					menu/start_game								\
 					player/loop_player							\
 					player/position_player						\
@@ -83,6 +88,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
+					utils/make_shape							\
 					display										\
 					event										\
 					music										\

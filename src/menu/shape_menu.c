@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int init_pos_shape(menu_t *menu)
+int init_pos_shape(menu_t *menu)
 {
     menu->shape_btn[0].pos = (sfVector2f) {765, 260};
     menu->shape_btn[1].pos = (sfVector2f) {765, 440};
@@ -30,7 +30,7 @@ static int init_pos_shape(menu_t *menu)
     return (0);
 }
 
-static int init_shape_menu_settings(menu_t *menu)
+int init_shape_menu_settings(menu_t *menu)
 {
     for (int i = 11; i != 13; ++i) {
         menu->shape_btn[i].size.y = 130;
@@ -53,7 +53,7 @@ static int init_shape_menu_settings(menu_t *menu)
     return (0);
 }
 
-static int init_shape_menu_conf(menu_t *menu)
+int init_shape_menu_conf(menu_t *menu)
 {
     init_shape_menu_settings(menu);
     for (int i = 6; i != 9; ++i) {
