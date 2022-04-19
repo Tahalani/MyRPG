@@ -39,7 +39,7 @@ int set_scale_menu(menu_t *menu, btn_t *btn)
     return (0);
 }
 
-static int init_scale_conf(menu_t *menu)
+int init_scale_conf(menu_t *menu)
 {
     menu->red_skin.scale = (sfVector2f){2.7, 2.7};
     menu->brown_skin.scale = (sfVector2f){2.7, 2.7};

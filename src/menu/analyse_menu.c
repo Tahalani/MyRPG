@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
+int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
 {
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 2)
@@ -21,7 +21,7 @@ static int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-static int analyse_key(menu_t *menu, game_t *game)
+int analyse_key(menu_t *menu, game_t *game)
 {
     if (game->event.event.type == sfEvtClosed
     || sfKeyboard_isKeyPressed(sfKeyEscape))

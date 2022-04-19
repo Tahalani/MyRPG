@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int set_pos_menu_conf(menu_t *menu)
+int set_pos_menu_conf(menu_t *menu)
 {
     sfSprite_setPosition(menu->sign_skin.sprite, menu->sign_skin.pos);
     sfSprite_setPosition(menu->map1.sprite, menu->map1.pos);
@@ -42,7 +42,7 @@ int set_pos_menu(menu_t *menu, btn_t *btn)
     return (0);
 }
 
-static int init_pos_conf(menu_t *menu)
+int init_pos_conf(menu_t *menu)
 {
     menu->sign_skin.pos = (sfVector2f){615, 0};
     menu->red_skin.pos = (sfVector2f){572, 350};
