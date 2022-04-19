@@ -27,7 +27,7 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-static int display_conf_skin(menu_t *menu, game_t *game)
+int display_conf_skin(menu_t *menu, game_t *game)
 {
     for (int i = 0; i != 3; ++i)
         sfRenderWindow_drawSprite
