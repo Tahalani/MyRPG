@@ -17,10 +17,8 @@ sfVector2f size, sfVector2f pos)
 
     sfRectangleShape_setSize(shape, size);
     sfRectangleShape_setPosition(shape, pos);
-    //sfRectangleShape_setOrigin(shape, (sfVector2f){.x = 100, .y = 100});
-    // texture = NULL;
+    texture = NULL;
     sfRectangleShape_setFillColor(shape, sfRed);
-    texture = sfTexture_createFromFile("ressources/menu/about.png", NULL);
     sfRectangleShape_setTexture(shape, texture, true);
     return (shape);
 }

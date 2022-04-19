@@ -15,11 +15,13 @@
     #include "player.h"
     #include "game.h"
     #include "menu.h"
+    #include "inventory.h"
 
 // UTILS //
 sfSprite *init_sprite(char *, sfTexture*, float, float);
 int move_rect(sfIntRect *, int, int, int);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
+int rect_skin(param_t *player, int top);
 
 // MAP //
 int acces_to_church_map(game_t *game);
@@ -32,7 +34,7 @@ int map_loop(game_t *);
 int analyse_menu(menu_t *, game_t *, btn_t *);
 int display_menu_settings(menu_t *, game_t *, btn_t *);
 int display_menu_conf(menu_t *, game_t *, btn_t *);
-int display_menu(menu_t *, game_t *, btn_t *);
+int display_menu(game_t *, btn_t *);
 int loop_menu(menu_t *, game_t *, btn_t *);
 int initialize_menu(menu_t *, btn_t *);
 int set_path_menu(menu_t *, btn_t *);
@@ -44,6 +46,10 @@ int set_scale_menu(menu_t *, btn_t *);
 int init_scale_menu(menu_t *, btn_t *);
 int start_game(game_t *, menu_t *);
 int init_shape_menu(menu_t *menu);
+int manage_click_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
+int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
+int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
+int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 
 // PLAYER //
 int initialize_player(player_t *);
@@ -61,6 +67,15 @@ int set_position_pnj(game_t *);
 int set_rect_pnj(game_t *);
 int scipt_pnj(game_t *, int);
 int pnj_loop(game_t *);
+int speech_create(game_t *game);
+int condition_display_speech(game_t *game);
+
+// INVENTORY //
+int initialize_story_object(game_t *game);
+int set_position_object(game_t *game);
+int display_natural_object(game_t *game);
+int inventory_loop(game_t *game);
+int set_rect_inv(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *);

@@ -25,6 +25,7 @@ int init_script(game_t *game, int i, int max_value)
 
 int initialize_pnj(game_t *game)
 {
+    speech_create(game);
     pnj_create(game);
     set_position_pnj(game);
     init_pnj(game, 3, "ressources/pnj/path_pnj_four.txt", 34);
@@ -53,4 +54,15 @@ int pnj_create(game_t *game)
     game->pnj[5].sprite = init_sprite
     ("ressources/pnj/pnj_six.png", game->pnj[5].texture, 2.2, 2.2);
     return 0;
+}
+
+int speech_create(game_t *game)
+{
+    game->speech[0].sprite = init_sprite
+    ("ressources/speech/Flora_speech_one.png", game->speech[0].texture, 1, 1);
+    game->speech[1].sprite = init_sprite
+    ("ressources/speech/bilal_speech.png", game->speech[1].texture, 1, 1);
+    game->speech[2].sprite = init_sprite
+    ("ressources/speech/emeric_speech.png", game->speech[2].texture, 1, 1);
+    return (0);
 }

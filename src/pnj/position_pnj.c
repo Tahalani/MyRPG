@@ -8,8 +8,20 @@
 #include "my.h"
 #include "rpg.h"
 
+int set_position_speech(game_t *game)
+{
+    game->speech[0].pos = (sfVector2f){-200, 100};
+    game->speech[1].pos = (sfVector2f){250, 700};
+    game->speech[2].pos = (sfVector2f){1600, 1550};
+    for (int i = 0; i != 3; i++) {
+        sfSprite_setPosition(game->speech[i].sprite, game->speech[i].pos);
+    }
+    return (0);
+}
+
 int set_position_pnj(game_t *game)
 {
+    set_position_speech(game);
     game->pnj[0].position = (sfVector2f){2500, 1300};
     game->pnj[1].position = (sfVector2f){1280, 520};
     game->pnj[2].position = (sfVector2f){700, -170};

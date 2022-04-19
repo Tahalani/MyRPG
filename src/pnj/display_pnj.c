@@ -14,5 +14,6 @@ int display_pnj(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->pnj[i].sprite, NULL);
     }
+    condition_display_speech(game);
     return (0);
 }

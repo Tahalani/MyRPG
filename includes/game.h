@@ -19,6 +19,7 @@
     #include <SFML/Audio.h>
     #include "player.h"
     #include "map.h"
+    #include "inventory.h"
 
 typedef struct window_s {
     sfRenderWindow *window;
@@ -43,7 +44,17 @@ typedef struct music_s {
     sfMusic *game;
     sfMusic *menu;
     sfMusic *page_menu;
+    sfMusic *dialogue;
+    int status;
 } music_t;
+
+typedef struct speech_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f pos;
+} speech_t;
 
 typedef struct pnj_s {
     sfTexture *texture;
@@ -72,11 +83,14 @@ typedef struct game_s {
     window_t window;
     event_t event;
     map_t map[2];
+    inventory_t inventory;
     sfClock *clock;
     music_t sound;
     pnj_t pnj[6];
+    speech_t speech[3];
     float second_clock;
     int status;
+    int story_steps;
 } game_t;
 
 #endif/* !GAME_H_ */

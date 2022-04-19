@@ -21,6 +21,10 @@ SRC			=		src/main.c									\
 					menu/position_menu							\
 					menu/rect_menu								\
 					menu/scale_menu								\
+					menu/manage_click							\
+					menu/manage_click_settings					\
+					menu/manage_click_conf						\
+					menu/animation_btn_menu						\
 					menu/shape_menu								\
 					menu/start_game								\
 					player/loop_player							\
@@ -32,6 +36,12 @@ SRC			=		src/main.c									\
 					pnj/position_pnj							\
 					pnj/script_pnj								\
 					pnj/rect_pnj								\
+					pnj/speech_pnj								\
+					inventory/initialize_inv					\
+					inventory/loop_inventory					\
+					inventory/position_inv						\
+					inventory/display_inv						\
+					inventory/rect_inv							\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
@@ -64,6 +74,12 @@ SRCT 		=		tests/tests_rpg.c							\
 					pnj/position_pnj							\
 					pnj/script_pnj								\
 					pnj/rect_pnj								\
+					pnj/speech_pnj								\
+					inventory/initialize_inv					\
+					inventory/loop_inventory					\
+					inventory/position_inv						\
+					inventory/display_inv						\
+					inventory/rect_inv							\
 					utils/move_rect								\
 					utils/position								\
 					utils/init									\
