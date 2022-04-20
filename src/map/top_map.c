@@ -10,8 +10,7 @@
 
 int acces_to_top_map(game_t *game)
 {
-    if (game->map[0].x_player == 29 &&
-    game->map[0].y_player == 1) {
+    if (game->map[0].x_player == 29 && game->map[0].y_player == 1) {
         game->map[0].check = 0;
         game->map[2].check = 1;
         game->map[0].y_player = 3;

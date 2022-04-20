@@ -56,7 +56,16 @@ int initialize_map(game_t *game)
     game->map[0].view_size = (sfVector2f){1745, 981};
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, 0, 0);
+    create_side_map(game);
     initialize_map_church(game);
     initialize_map_top(game);
     return (0);
+}
+
+int create_side_map(game_t *game)
+{
+    game->side_map[0].sprite =
+    init_sprite("ressources/map/left_main_map.png", game->side_map[1].texture, 3, 3);
+    position_sprite(game->side_map[0].sprite, &game->side_map[0].pos, -928, -3490);
+    return 0;
 }

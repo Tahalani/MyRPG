@@ -11,7 +11,7 @@
 
 int main(int ac, char **av)
 {
-    game_t game;
+    game_t *game = malloc(sizeof(game_t));
     menu_t *menu = malloc(sizeof(menu_t));
     btn_t btn;
 
@@ -19,7 +19,7 @@ int main(int ac, char **av)
         my_putstr("Invalid Argument l'hmar\n");
         return (84);
     }
-    game.player.check_player = my_getnbr(av[1]);
-    my_rpg(&game, menu, &btn);
+    game->player.check_player = my_getnbr(av[1]);
+    my_rpg(game, menu, &btn);
     return (0);
 }
