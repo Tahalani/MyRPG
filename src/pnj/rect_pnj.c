@@ -13,7 +13,8 @@ int set_rect_speech(game_t *game)
     game->speech[0].rect = (sfIntRect){0, 0, 1450, 349};
     game->speech[1].rect = (sfIntRect){0, 0, 1450, 349};
     game->speech[2].rect = (sfIntRect){0, 0, 1450, 349};
-    for (int i = 0; i < 3; i++) {
+    game->speech[3].rect = (sfIntRect){0, 0, 1450, 349};
+    for (int i = 0; i < 4; i++) {
         sfSprite_setTextureRect(game->speech[i].sprite, game->speech[i].rect);
     }
     return (0);
