@@ -45,7 +45,7 @@ int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
 int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int display_conf_skin(menu_t *menu, game_t *game);
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
-int display_menu(game_t *game, btn_t *btn);
+int display_menu(menu_t *menu, game_t *game, btn_t *btn);
 int loop_menu(menu_t *menu, game_t *game, btn_t *btn);
 int initialize_menu(menu_t *menu, btn_t *btn);
 int manage_conf_map(menu_t *menu, sfVector2i mouse, sfFloatRect shape);

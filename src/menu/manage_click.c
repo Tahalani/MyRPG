@@ -40,8 +40,16 @@ int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn)
             btn->music_btn.scale = (sfVector2f) {0.78, 0.78};
             menu->sound.status = 0;
         }
-        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 5) {
+        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 5 &&
+            menu->rules.status == 0) {
+            sfSprite_setColor(btn->about_btn.sprite, menu->opacity[1]);
             btn->about_btn.scale = (sfVector2f) {0.78, 0.78};
+            menu->rules.status = 1;
+        } else if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 5 &&
+            menu->rules.status == 1) {
+            sfSprite_setColor(btn->about_btn.sprite, menu->opacity[0]);
+            btn->about_btn.scale = (sfVector2f) {0.78, 0.78};
+            menu->rules.status = 0;
         }
     }
     return (0);

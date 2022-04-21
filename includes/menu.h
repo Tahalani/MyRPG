@@ -53,6 +53,7 @@ typedef struct menu_s {
     param_t sign_skin;
     param_t map1;
     param_t map2;
+    param_t rules;
     param_t bg_skin[4];
     param_t bg_square[3];
     music_t sound;

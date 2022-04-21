@@ -66,6 +66,8 @@ int set_path_menu(menu_t *menu, btn_t *btn)
     init_sprite("ressources/menu/next_btn.png", btn->next_btn.texture, 1, 1);
     btn->prev_btn.sprite =
     init_sprite("ressources/menu/prev_btn.png", btn->prev_btn.texture, 1, 1);
+    menu->rules.sprite =
+    init_sprite("ressources/menu/play_btn.png", menu->rules.texture, 1, 1);
     set_path_menu_conf(menu);
     set_path_menu_settings(menu, btn);
     return (0);
