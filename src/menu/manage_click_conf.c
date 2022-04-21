@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int manage_conf_map(menu_t *menu, sfVector2i mouse, sfFloatRect shape)
+int manage_conf_map(menu_t *menu, sfVector2i mouse, sfFloatRect shape)
 {
     for (int i = 9; i != 11; ++i) {
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
@@ -39,7 +39,7 @@ static int check_click_skin(menu_t *menu, sfSprite *skin)
     return (0);
 }
 
-static int manage_conf_skin(menu_t *menu, sfVector2i mouse, sfFloatRect shape)
+int manage_conf_skin(menu_t *menu, sfVector2i mouse, sfFloatRect shape)
 {
     for (int i = 6; i != 9; ++i) {
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);

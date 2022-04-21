@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int set_path_menu_conf(menu_t *menu)
+int set_path_menu_conf(menu_t *menu)
 {
     menu->map1.sprite = init_sprite
     ("ressources/map/map.png", menu->map1.texture, 1, 1);
@@ -30,7 +30,7 @@ static int set_path_menu_conf(menu_t *menu)
     return (0);
 }
 
-static int set_path_menu_settings(menu_t *menu, btn_t *btn)
+int set_path_menu_settings(menu_t *menu, btn_t *btn)
 {
     btn->down_btn.sprite = init_sprite
     ("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);

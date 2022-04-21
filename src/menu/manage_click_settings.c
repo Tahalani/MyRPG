@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int manage_settings_volume(menu_t *menu, game_t *game, sfVector2i mouse,
+int manage_settings_volume(menu_t *menu, game_t *game, sfVector2i mouse,
 btn_t *btn)
 {
     sfFloatRect shape;
@@ -31,8 +31,7 @@ btn_t *btn)
     return (0);
 }
 
-
-static int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
+int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
 {
     sfFloatRect shape;
 
@@ -52,7 +51,7 @@ static int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
     return (0);
 }
 
-static int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse,
+int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse,
 btn_t *btn)
 {
     sfFloatRect shape;

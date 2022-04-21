@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-static int check_for_the_good_view(game_t *game)
+int check_for_the_good_view(game_t *game)
 {
     int i = 0;
 

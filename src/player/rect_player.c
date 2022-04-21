@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-static int check_map(game_t *game)
+int check_map(game_t *game)
 {
     int i = 0;
 
