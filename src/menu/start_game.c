@@ -9,6 +9,7 @@
 
 int start_game(game_t *game, menu_t *menu)
 {
+    initialize_player(menu, &game->player);
     sfMusic_stop(menu->sound.menu);
     sfMusic_play(game->sound.game);
     game->background[0].sprite =

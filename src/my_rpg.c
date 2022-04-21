@@ -15,7 +15,6 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     initialize_value(game);
     initialize_map(game);
     initialize_menu(menu, btn);
-    initialize_player(&game->player);
     initialize_pnj(game);
     initialize_story_object(game);
     return (0);
@@ -43,6 +42,8 @@ int initialize_value(game_t *game)
     game->story_steps = 0;
     game->window.width = 1920;
     game->window.height = 1080;
+    game->player.sprite =
+    init_sprite("ressources/player/player.png", game->player.texture, 2, 2);
     game->sound.game = music("ressources/music/back_music.ogg", 1);
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);

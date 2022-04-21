@@ -76,7 +76,7 @@ int init_shape_menu(menu_t *menu);
 int start_game(game_t *game, menu_t *menu);
 
 // PLAYER //
-int initialize_player(player_t *player);
+int initialize_player(menu_t *menu, player_t *player);
 int player_loop(player_t *player);
 int test_plus(game_t *game, int operator, float *player, int i);
 int run_player_two(game_t *game, char check, int i);
