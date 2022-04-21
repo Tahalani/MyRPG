@@ -31,10 +31,12 @@ int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn)
             && menu->sound.status == 0) {
             sfMusic_pause(menu->sound.menu);
             btn->music_btn.scale = (sfVector2f) {0.78, 0.78};
+            sfSprite_setColor(btn->music_btn.sprite, menu->opacity[1]);
             menu->sound.status = 1;
         } else if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 4
             && menu->sound.status == 1) {
             sfMusic_play(menu->sound.menu);
+            sfSprite_setColor(btn->music_btn.sprite, menu->opacity[0]);
             btn->music_btn.scale = (sfVector2f) {0.78, 0.78};
             menu->sound.status = 0;
         }

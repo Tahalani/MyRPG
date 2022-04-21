@@ -23,6 +23,8 @@ int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
 
 int initialize_menu(menu_t *menu, btn_t *btn)
 {
+    menu->opacity[0] = sfColor_fromRGB(255, 255, 255);
+    menu->opacity[1] = sfColor_fromRGB(150, 150, 150);
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
     sfMusic_setVolume(menu->sound.menu, 75.0);
     init_shape_menu(menu);
