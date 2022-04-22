@@ -56,6 +56,12 @@ typedef struct speech_s {
     sfVector2f pos;
 } speech_t;
 
+typedef struct text_s {
+    sfText *text;
+    int count;
+    char *str;
+} text_t;
+
 typedef struct pnj_s {
     sfTexture *texture;
     sfSprite *sprite;

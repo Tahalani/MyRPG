@@ -24,6 +24,7 @@ int position_sprite(sfSprite *, sfVector2f *, int, int);
 int rect_skin(param_t *player, int top);
 int move_rect(sfIntRect *rect, int offset, int max_value, int top);
 sfText *make_test(char *path, int pos_x, int pos_y, int size);
+char *int_to_char(int nb);
 
 // MAP //
 int create_side_map(game_t *game);

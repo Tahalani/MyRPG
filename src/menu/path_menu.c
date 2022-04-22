@@ -32,9 +32,9 @@ int set_path_menu_conf(menu_t *menu)
 
 int set_path_menu_settings(menu_t *menu, btn_t *btn)
 {
-    menu->volum = make_test("ressources/menu/font.ttf", 890, 490, 150);
-    sfText_setColor(menu->volum , sfColor_fromRGB(205,133,63));
-    sfText_setString(menu->volum , "100");
+    menu->volum.text = make_test("ressources/menu/font.ttf", 890, 485, 150);
+    sfText_setColor(menu->volum.text, sfColor_fromRGB(205,133,63));
+    sfText_setString(menu->volum.text, menu->volum.str);
     btn->down_btn.sprite = init_sprite
     ("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
     btn->up_btn.sprite = init_sprite
