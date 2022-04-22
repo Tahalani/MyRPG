@@ -44,6 +44,7 @@ SRC			=		src/main.c									\
 					inventory/display_inv						\
 					inventory/rect_inv							\
 					utils/move_rect								\
+					utils/make_text								\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\

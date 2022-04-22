@@ -12,6 +12,7 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[0].sprite, NULL);
+    sfRenderWindow_drawText(game->window.window, menu->volum, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->down_btn.sprite, NULL);
     sfRenderWindow_drawSprite
