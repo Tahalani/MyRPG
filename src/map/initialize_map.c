@@ -46,6 +46,20 @@ int initialize_map_top(game_t *game)
     return (0);
 }
 
+int initialize_castle_map(game_t *game)
+{
+    game->background[3].sprite =
+    init_sprite("ressources/map/castle_map.png",
+    game->background[3].texture, 1.3, 1.3);
+    game->map[3].main_map = map_create("ressources/map/castle_map.txt");
+    game->map[3].x_player = 15;
+    game->map[3].y_player = 16;
+    game->map[3].view_size = (sfVector2f){1920, 1080};
+    position_sprite
+    (game->background[3].sprite, &game->background[3].pos, -3300, -100);
+    return (0);
+}
+
 int initialize_map(game_t *game)
 {
     game->background[0].sprite =
@@ -59,6 +73,7 @@ int initialize_map(game_t *game)
     create_side_map(game);
     initialize_map_church(game);
     initialize_map_top(game);
+    initialize_castle_map(game);
     return (0);
 }
 

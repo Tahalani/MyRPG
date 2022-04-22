@@ -84,12 +84,12 @@ typedef struct shape_s {
 } shape_t;
 
 typedef struct game_s {
-    element_t background[3];
+    element_t background[4];
     element_t side_map[2];
     player_t player;
     window_t window;
     event_t event;
-    map_t map[3];
+    map_t map[4];
     inventory_t inventory;
     sfClock *clock;
     music_t sound;

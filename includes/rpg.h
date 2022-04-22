@@ -31,9 +31,11 @@ int create_side_map(game_t *game);
 char **map_create(char *path);
 int acces_to_top_map(game_t *game);
 int acces_to_church_map(game_t *game);
+int acces_to_castle_map(game_t *game);
 int initialize_map_top(game_t *game);
 int initialize_map_church(game_t *game);
 int initialize_map(game_t *game);
+int initialize_castle_map(game_t *game);
 int check_for_the_good_view(game_t *game);
 int map_loop(game_t *game);
 
