@@ -10,9 +10,10 @@
 
 int display_natural_object(game_t *game)
 {
-    if (game->map[1].check == 1) {
+    if (game->map[1].check == 1 && (game->story_steps == 1 || game->story_steps == 2)) {
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory.object[0].sprite, NULL);
+        game->story_steps = 2;
     }
     return (0);
 }
