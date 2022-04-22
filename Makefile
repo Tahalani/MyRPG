@@ -12,7 +12,8 @@ EXTENSION	=		.c
 SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					map/church_map								\
-					map/top_map								\
+					map/top_map									\
+					map/castle_map									\
 					map/initialize_map							\
 					map/loop_map								\
 					menu/analyse_menu							\

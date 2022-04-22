@@ -27,6 +27,7 @@ static int in_loop(game_t *game)
     player_loop(&game->player);
     acces_to_church_map(game);
     acces_to_top_map(game);
+    acces_to_castle_map(game);
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
@@ -49,7 +50,7 @@ int initialize_value(game_t *game)
     sfMusic_pause(game->sound.game);
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
-    for (int i = 0; i <= 2; i++)
+    for (int i = 0; i <= 3; i++)
         game->map[i].check = 0;
     game->map[0].check = 1;
     return (0);

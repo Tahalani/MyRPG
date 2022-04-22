@@ -57,6 +57,7 @@ typedef struct menu_s {
     param_t bg_square[3];
     music_t sound;
     shape_t shape_btn[19];
+    sfColor opacity[2];
 } menu_t;
 
 #endif/* !menu_H_ */
