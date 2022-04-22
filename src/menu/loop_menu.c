@@ -26,6 +26,9 @@ int initialize_menu(menu_t *menu, btn_t *btn)
     menu->opacity[0] = sfColor_fromRGB(255, 255, 255);
     menu->opacity[1] = sfColor_fromRGB(150, 150, 150);
     menu->rules.status = 0;
+    menu->red_skin.status = 0;
+    menu->brown_skin.status = 0;
+    menu->blue_skin.status = 0;
     menu->volum.str = malloc(sizeof(char) * (3 + 1));
     menu->volum.str = "100";
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
