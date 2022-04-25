@@ -29,6 +29,7 @@ int initialize_menu(menu_t *menu, btn_t *btn)
     menu->red_skin.status = 0;
     menu->brown_skin.status = 0;
     menu->blue_skin.status = 0;
+    menu->sound.status = 0;
     menu->volum.str = malloc(sizeof(char) * (3 + 1));
     menu->volum.str = "100";
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);

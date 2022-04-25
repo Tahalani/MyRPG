@@ -10,7 +10,7 @@
 #include "game.h"
 #include "menu.h"
 
-static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
+int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
@@ -20,7 +20,7 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     return (0);
 }
 
-static int in_loop(game_t *game)
+int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);

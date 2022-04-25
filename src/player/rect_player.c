@@ -27,19 +27,19 @@ int analyse_move_player(game_t *game)
 {
     int i = check_map(game);
 
-    if (sfKeyboard_isKeyPressed(sfKeyS)) {
+    if (sfKeyboard_isKeyPressed(game->key.down)) {
         rect_player(&game->player, 0);
         run_player(game, 's', i);
     }
-    if (sfKeyboard_isKeyPressed(sfKeyQ)) {
+    if (sfKeyboard_isKeyPressed(game->key.left)) {
         rect_player(&game->player, 64);
         run_player(game, 'q', i);
     }
-    if (sfKeyboard_isKeyPressed(sfKeyD)) {
+    if (sfKeyboard_isKeyPressed(game->key.right)) {
         rect_player(&game->player, 128);
         run_player(game, 'd', i);
     }
-    if (sfKeyboard_isKeyPressed(sfKeyZ)) {
+    if (sfKeyboard_isKeyPressed(game->key.up)) {
         rect_player(&game->player, 192);
         run_player(game, 'z', i);
     }

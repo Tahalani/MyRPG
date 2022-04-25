@@ -21,13 +21,13 @@ int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int analyse_key(menu_t *menu, game_t *game)
+int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
 {
     if (game->event.event.type == sfEvtClosed
     || sfKeyboard_isKeyPressed(sfKeyEscape))
         sfRenderWindow_close(game->window.window);
     if (sfKeyboard_isKeyPressed(sfKeyEnter))
-        start_game(game, menu);
+        start_game(game, menu, btn);
     if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight)) {
         game->status++;
         menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
@@ -42,7 +42,7 @@ int analyse_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     while (sfRenderWindow_pollEvent(game->window.window, &game->event.event)) {
         analyse_click(menu, game, btn);
-        analyse_key(menu, game);
+        analyse_key(menu, game, btn);
     }
     return (0);
 }
