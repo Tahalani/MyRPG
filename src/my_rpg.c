@@ -23,7 +23,7 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 int in_loop(game_t *game)
 {
     if (game->status == 5) {
-        analyse_events(game);
+        analyse_events_pause(game);
         inventory_loop(game);
         return (0);
     }

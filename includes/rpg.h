@@ -62,6 +62,9 @@ int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
 
+// PAUSE //
+int analyse_events_pause(game_t *game);
+
 // SET_MENU //
 int set_path_menu_settings(menu_t *menu, btn_t *btn);
 int set_path_menu(menu_t *menu, btn_t *btn);
