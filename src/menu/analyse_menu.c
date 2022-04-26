@@ -26,14 +26,22 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
     if (game->event.event.type == sfEvtClosed
     || sfKeyboard_isKeyPressed(sfKeyEscape))
         sfRenderWindow_close(game->window.window);
-    if (sfKeyboard_isKeyPressed(sfKeyEnter))
+    if (sfKeyboard_isKeyPressed(sfKeyEnter) && game->status != 4)
         start_game(game, menu, btn);
     if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight)) {
         game->status++;
         menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
-    } else if (game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft)) {
+    } else if (game->status != 4 &&
+        game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft)) {
         game->status--;
         menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+    }
+    if (sfKeyboard_isKeyPressed(sfKeyP) && game->status == 4) {
+        game->status = 0;
+        game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+        position_sprite
+        (game->background[4].sprite, &game->background[4].pos,
+        game->player.position.x, game->player.position.y);
     }
     return (0);
 }

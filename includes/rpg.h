@@ -61,6 +61,8 @@ int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse, btn_t *bt
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
+
+// SET_MENU //
 int set_path_menu_settings(menu_t *menu, btn_t *btn);
 int set_path_menu(menu_t *menu, btn_t *btn);
 int set_pos_menu_conf(menu_t *menu);
@@ -78,6 +80,7 @@ int init_shape_menu_settings(menu_t *menu);
 int init_shape_menu_conf(menu_t *menu);
 int init_shape_menu(menu_t *menu);
 int start_game(game_t *game, menu_t *menu, btn_t *btn);
+int display_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
 
 // PLAYER //
 int initialize_player(menu_t *menu, player_t *player);

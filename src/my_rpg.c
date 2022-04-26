@@ -54,6 +54,10 @@ int initialize_value(game_t *game)
     for (int i = 0; i <= 3; i++)
         game->map[i].check = 0;
     game->map[0].check = 1;
+    game->background[4].sprite =
+    init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
+    position_sprite
+    (game->background[4].sprite, &game->background[4].pos, 0, 0);
     return (0);
 }
 

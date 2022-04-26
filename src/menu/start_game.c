@@ -22,8 +22,6 @@ int put_key(game_t *game, btn_t *btn)
         game->key.right = sfKeyRight;
         return (0);
     }
-    btn->wood_btn[3].status = 1;
-    put_key(game, btn);
     return (0);
 }
 
@@ -33,11 +31,6 @@ int start_game(game_t *game, menu_t *menu, btn_t *btn)
     initialize_player(menu, &game->player);
     sfMusic_stop(menu->sound.menu);
     sfMusic_play(game->sound.game);
-    game->background[0].sprite =
-    init_sprite
-    ("ressources/map/map.png", game->background[0].texture, 2.3, 2.3);
-    position_sprite
-    (game->background[0].sprite, &game->background[0].pos, -1000, -400);
     game->status = 0;
     return (0);
 }

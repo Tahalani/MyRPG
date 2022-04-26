@@ -91,7 +91,7 @@ typedef struct move_s {
 } move_t;
 
 typedef struct game_s {
-    element_t background[4];
+    element_t background[5];
     element_t side_map[2];
     player_t player;
     window_t window;
