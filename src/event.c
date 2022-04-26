@@ -15,8 +15,10 @@ int analyse_events(game_t *game)
         || sfKeyboard_isKeyPressed(sfKeyEscape))
             sfRenderWindow_close(game->window.window);
         analyse_move_player(game);
-        if (sfKeyboard_isKeyPressed(sfKeyP))
+        if (sfKeyboard_isKeyPressed(sfKeyI))
             game->status = 5;
+        else if (game->status == 5 && sfKeyboard_isKeyPressed(sfKeyI))
+            game->status = 0;
     }
     return (0);
 }
