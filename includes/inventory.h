@@ -22,16 +22,12 @@
     #include <unistd.h>
     #include <stdio.h>
 
-typedef struct story_object_s {
+typedef struct inventory_s {
     sfTexture *texture;
     sfSprite *sprite;
     sfIntRect rect;
     sfVector2f scale;
     sfVector2f pos;
-} story_object_t;
-
-typedef struct inventory_s {
-    story_object_t object[5];
 } inventory_t;
 
 #endif/* !INVENTORY_H_ */

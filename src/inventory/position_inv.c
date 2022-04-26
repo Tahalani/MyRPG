@@ -10,11 +10,10 @@
 
 int set_position_object(game_t *game)
 {
-    game->inventory.object[0].pos = (sfVector2f){700, 900};
-    game->inventory.object[1].pos = (sfVector2f){1000, 1500};
-    for (int i = 0; i != 2; i++) {
+    game->inventory[0].pos = (sfVector2f){700, 900};
+    game->inventory[1].pos = (sfVector2f){100, 100};
+    for (int i = 0; i != 2; i++)
         sfSprite_setPosition
-        (game->inventory.object[i].sprite, game->inventory.object[i].pos);
-    }
+        (game->inventory[1].sprite, game->inventory[1].pos);
     return (0);
 }

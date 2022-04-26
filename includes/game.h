@@ -90,7 +90,7 @@ typedef struct game_s {
     window_t window;
     event_t event;
     map_t map[4];
-    inventory_t inventory;
+    inventory_t inventory[3];
     sfClock *clock;
     music_t sound;
     pnj_t pnj[11];
