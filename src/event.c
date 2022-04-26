@@ -19,6 +19,10 @@ int analyse_events(game_t *game)
             game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         }
         analyse_move_player(game);
+        if (sfKeyboard_isKeyPressed(sfKeyI))
+            game->status = 5;
+        else if (game->status == 5 && sfKeyboard_isKeyPressed(sfKeyI))
+            game->status = 0;
     }
     return (0);
 }

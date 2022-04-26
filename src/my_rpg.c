@@ -22,6 +22,11 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 
 int in_loop(game_t *game)
 {
+    if (game->status == 5) {
+        analyse_events(game);
+        inventory_loop(game);
+        return (0);
+    }
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);
     acces_to_church_map(game);
@@ -30,7 +35,6 @@ int in_loop(game_t *game)
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
-    inventory_loop(game);
     function_to_display(game);
     return (0);
 }
@@ -65,7 +69,7 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
 {
     before_loop(game, menu, btn);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 0)
+        if (game->status == 0 || game->status == 5)
             in_loop(game);
         else if (game->status != 0)
             loop_menu(menu, game, btn);
