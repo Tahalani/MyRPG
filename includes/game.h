@@ -85,7 +85,7 @@ typedef struct shape_s {
 
 typedef struct game_s {
     element_t background[4];
-    element_t side_map[2];
+    element_t side_map[3];
     player_t player;
     window_t window;
     event_t event;
