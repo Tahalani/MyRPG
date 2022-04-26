@@ -16,5 +16,7 @@ int inventory_loop(game_t *game)
     move_rect(&game->inventory.object[0].rect, 480, 3840, 0);
     sfSprite_setTextureRect(game->inventory.object[0].sprite,
     game->inventory.object[0].rect);
+    sfSprite_setTextureRect(game->inventory.object[1].sprite,
+    game->inventory.object[1].rect);
     return (0);
 }

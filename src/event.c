@@ -15,6 +15,7 @@ int analyse_events(game_t *game)
         || sfKeyboard_isKeyPressed(sfKeyEscape))
             sfRenderWindow_close(game->window.window);
         analyse_move_player(game);
+        display_inventory(game);
     }
     return (0);
 }

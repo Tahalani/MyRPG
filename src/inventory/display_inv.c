@@ -17,3 +17,10 @@ int display_natural_object(game_t *game)
     }
     return (0);
 }
+
+int display_inventory(game_t *game)
+{
+    sfRenderWindow_drawSprite
+    (game->window.window, game->inventory.object[1].sprite, NULL);
+    return (0);
+}

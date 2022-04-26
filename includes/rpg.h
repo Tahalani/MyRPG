@@ -107,6 +107,7 @@ int display_natural_object(game_t *game);
 int inventory_loop(game_t *game);
 int set_scale_inv(game_t *game);
 int set_rect_inv(game_t *game);
+int display_inventory(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);
