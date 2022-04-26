@@ -15,7 +15,7 @@ int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn)
     for (int i = 0; i != 6; ++i) {
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 0)
-            start_game(game, menu);
+            start_game(game, menu, btn);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 1)
             sfRenderWindow_close(game->window.window);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 2) {

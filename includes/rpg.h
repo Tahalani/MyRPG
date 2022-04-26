@@ -41,7 +41,7 @@ int map_loop(game_t *game);
 
 // MENU //
 int analyse_click(menu_t *menu, game_t *game, btn_t *btn);
-int analyse_key(menu_t *menu, game_t *game);
+int analyse_key(menu_t *menu, game_t *game, btn_t *btn);
 int analyse_menu(menu_t *menu, game_t *game, btn_t *btn);
 int animation_menu_settings(menu_t *menu, game_t *game, btn_t *btn, sfFloatRect shape);
 int animation_menu_config(menu_t *menu, game_t *game, btn_t *btn, sfFloatRect shape);
@@ -61,6 +61,8 @@ int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse, btn_t *bt
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
+
+// SET_MENU //
 int set_path_menu_settings(menu_t *menu, btn_t *btn);
 int set_path_menu(menu_t *menu, btn_t *btn);
 int set_pos_menu_conf(menu_t *menu);
@@ -77,7 +79,8 @@ int init_pos_shape(menu_t *menu);
 int init_shape_menu_settings(menu_t *menu);
 int init_shape_menu_conf(menu_t *menu);
 int init_shape_menu(menu_t *menu);
-int start_game(game_t *game, menu_t *menu);
+int start_game(game_t *game, menu_t *menu, btn_t *btn);
+int display_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
 
 // PLAYER //
 int initialize_player(menu_t *menu, player_t *player);
@@ -99,6 +102,7 @@ int scipt_pnj(game_t *game, int i);
 int pnj_loop(game_t *game);
 int speech_create(game_t *game);
 int condition_display_speech(game_t *game);
+int put_key(game_t *game, btn_t *btn);
 
 // INVENTORY //
 int initialize_story_object(game_t *game);
@@ -121,7 +125,7 @@ sfMusic *music(char *, int);
 sfRenderWindow *initialize_window(int, int, int);
 
 // MY_RPG //
-int initialize_value(game_t *);
+int initialize_value(game_t *game);
 int my_rpg(game_t *, menu_t *, btn_t *);
 
 #endif/* !PROJET_H_ */

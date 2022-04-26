@@ -18,17 +18,22 @@ int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
         display_menu(menu, game, btn);
     if (game->status == 3)
         display_menu_conf(menu, game, btn);
+    if (game->status == 4)
+        display_menu_pause(menu, game, btn);
     return (0);
 }
 
 int initialize_menu(menu_t *menu, btn_t *btn)
 {
+    btn->wood_btn[3].status = 1;
+    btn->wood_btn[4].status = 0;
     menu->opacity[0] = sfColor_fromRGB(255, 255, 255);
     menu->opacity[1] = sfColor_fromRGB(150, 150, 150);
     menu->rules.status = 0;
     menu->red_skin.status = 0;
     menu->brown_skin.status = 0;
     menu->blue_skin.status = 0;
+    menu->sound.status = 0;
     menu->volum.str = malloc(sizeof(char) * (3 + 1));
     menu->volum.str = "100";
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
