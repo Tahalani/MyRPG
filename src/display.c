@@ -17,8 +17,10 @@ int function_to_display(game_t *game)
         inventory_loop(game);
     }
     if (game->map[0].check == 1) {
-        sfRenderWindow_drawSprite
-        (game->window.window, game->side_map[0].sprite, NULL);
+        for (int i = 0; i <= 1; i++) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->side_map[i].sprite, NULL);
+        }
         sfRenderWindow_drawSprite
         (game->window.window, game->background[0].sprite, NULL);
         display_pnj(game);
