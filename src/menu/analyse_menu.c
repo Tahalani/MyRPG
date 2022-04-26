@@ -40,8 +40,7 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
         game->status = 0;
         game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         position_sprite
-        (game->background[4].sprite, &game->background[4].pos,
-        game->player.position.x, game->player.position.y);
+        (game->background[4].sprite, &game->background[4].pos, 0, 0);
     }
     return (0);
 }
