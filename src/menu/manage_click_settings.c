@@ -43,11 +43,15 @@ int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
             sfSprite_setColor(btn->wood_btn[4].sprite, menu->opacity[0]);
             sfSprite_setColor(btn->wood_btn[3].sprite, menu->opacity[1]);
             btn->wood_btn[4].scale = (sfVector2f){0.94, 0.94};
+            btn->wood_btn[4].status = 1;
+            btn->wood_btn[3].status = 0;
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 12) {
             sfSprite_setColor(btn->wood_btn[3].sprite, menu->opacity[0]);
             sfSprite_setColor(btn->wood_btn[4].sprite, menu->opacity[1]);
             btn->wood_btn[3].scale = (sfVector2f){0.94, 0.94};
+            btn->wood_btn[3].status = 1;
+            btn->wood_btn[4].status = 0;
         }
     }
     return (0);

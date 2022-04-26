@@ -83,15 +83,23 @@ typedef struct shape_s {
     sfVector2f pos;
 } shape_t;
 
+typedef struct move_s {
+    sfKeyCode up;
+    sfKeyCode down;
+    sfKeyCode left;
+    sfKeyCode right;
+} move_t;
+
 typedef struct game_s {
-    element_t background[4];
     element_t side_map[3];
+    element_t background[5];
     player_t player;
     window_t window;
     event_t event;
     map_t map[4];
-    inventory_t inventory;
+    inventory_t inventory[3];
     sfClock *clock;
+    move_t key;
     music_t sound;
     pnj_t pnj[11];
     speech_t speech[4];
