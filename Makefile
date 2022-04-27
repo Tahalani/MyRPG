@@ -50,6 +50,7 @@ SRC			=		src/main.c									\
 					utils/init									\
 					utils/make_shape							\
 					destroy                                     \
+					loop_destroy_all							\
 					display										\
 					event										\
 					music										\

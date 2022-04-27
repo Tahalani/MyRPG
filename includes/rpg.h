@@ -125,6 +125,7 @@ int initialize_value(game_t *);
 int my_rpg(game_t *, menu_t *, btn_t *);
 
 // DESTROY //
-void destroy_all(menu_t *menu, btn_t *btn, game_t *game, player_t *player);
+void destroy_all(menu_t *menu, btn_t *btn, game_t *game);
+void loop_for_destroy(game_t *game, menu_t *menu);
 
 #endif/* !PROJET_H_ */
