@@ -15,7 +15,6 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     initialize_value(game);
     initialize_map(game);
     initialize_menu(menu, btn);
-    initialize_player(&game->player);
     initialize_pnj(game);
     initialize_story_object(game);
     return (0);
@@ -24,8 +23,10 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 static int in_loop(game_t *game)
 {
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-    acces_to_church_map(game);
     player_loop(&game->player);
+    acces_to_church_map(game);
+    acces_to_top_map(game);
+    acces_to_castle_map(game);
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
@@ -42,13 +43,15 @@ int initialize_value(game_t *game)
     game->story_steps = 0;
     game->window.width = 1920;
     game->window.height = 1080;
+    game->player.sprite =
+    init_sprite("ressources/player/player.png", game->player.texture, 2, 2);
     game->sound.game = music("ressources/music/back_music.ogg", 1);
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);
     sfMusic_pause(game->sound.game);
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
-    for (int i = 0; i <= 1; i++)
+    for (int i = 0; i <= 3; i++)
         game->map[i].check = 0;
     game->map[0].check = 1;
     return (0);

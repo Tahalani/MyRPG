@@ -47,7 +47,6 @@ int scipt_pnj(game_t *game, int i)
     char *buffer = my_file_in_str(game->pnj[i].path);
     char **script = my_str_to_word_array(buffer, ' ');
 
-    printf("%f\n", game->pnj[i].position.x);
     if (game->pnj->seconds >= 0.1) {
         if (game->pnj[i].position.y !=
         my_getnbr(script[game->pnj[i].count + 1]) ||

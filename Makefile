@@ -12,6 +12,53 @@ EXTENSION	=		.c
 SRC			=		src/main.c									\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					map/church_map								\
+					map/top_map									\
+					map/castle_map									\
+					map/initialize_map							\
+					map/loop_map								\
+					menu/analyse_menu							\
+					menu/display_menu							\
+					menu/loop_menu								\
+					menu/path_menu								\
+					menu/position_menu							\
+					menu/rect_menu								\
+					menu/scale_menu								\
+					menu/manage_click							\
+					menu/manage_click_settings					\
+					menu/manage_click_conf						\
+					menu/animation_btn_menu						\
+					menu/shape_menu								\
+					menu/start_game								\
+					player/loop_player							\
+					player/position_player						\
+					player/rect_player							\
+					pnj/display_pnj								\
+					pnj/initialize_pnj							\
+					pnj/loop_pnj								\
+					pnj/position_pnj							\
+					pnj/script_pnj								\
+					pnj/rect_pnj								\
+					pnj/speech_pnj								\
+					inventory/initialize_inv					\
+					inventory/loop_inventory					\
+					inventory/position_inv						\
+					inventory/display_inv						\
+					inventory/rect_inv							\
+					utils/move_rect								\
+					utils/make_text								\
+					utils/position								\
+					utils/init									\
+					utils/make_shape							\
+					destroy                                     \
+					display										\
+					event										\
+					music										\
+					window										\
+					))											\
+
+SRCT 		=		tests/tests_rpg.c							\
+					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					map/church_map								\
 					map/initialize_map							\
 					map/loop_map								\
 					menu/analyse_menu							\
@@ -46,43 +93,6 @@ SRC			=		src/main.c									\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\
-					display										\
-					event										\
-					music										\
-					window										\
-					))											\
-
-SRCT 		=		tests/tests_rpg.c							\
-					$(addsuffix .c, $(addprefix src/, my_rpg	\
-					map/church_map								\
-					map/initialize_map							\
-					map/loop_map								\
-					menu/analyse_menu							\
-					menu/display_menu							\
-					menu/loop_menu								\
-					menu/path_menu								\
-					menu/position_menu							\
-					menu/rect_menu								\
-					menu/scale_menu								\
-					menu/start_game								\
-					player/loop_player							\
-					player/position_player						\
-					player/rect_player							\
-					pnj/display_pnj								\
-					pnj/initialize_pnj							\
-					pnj/loop_pnj								\
-					pnj/position_pnj							\
-					pnj/script_pnj								\
-					pnj/rect_pnj								\
-					pnj/speech_pnj								\
-					inventory/initialize_inv					\
-					inventory/loop_inventory					\
-					inventory/position_inv						\
-					inventory/display_inv						\
-					inventory/rect_inv							\
-					utils/move_rect								\
-					utils/position								\
-					utils/init									\
 					display										\
 					event										\
 					music										\

@@ -56,6 +56,12 @@ typedef struct speech_s {
     sfVector2f pos;
 } speech_t;
 
+typedef struct text_s {
+    sfText *text;
+    int count;
+    char *str;
+} text_t;
+
 typedef struct pnj_s {
     sfTexture *texture;
     sfSprite *sprite;
@@ -78,16 +84,17 @@ typedef struct shape_s {
 } shape_t;
 
 typedef struct game_s {
-    element_t background[2];
+    element_t background[4];
+    element_t side_map[2];
     player_t player;
     window_t window;
     event_t event;
-    map_t map[2];
+    map_t map[4];
     inventory_t inventory;
     sfClock *clock;
     music_t sound;
     pnj_t pnj[11];
-    speech_t speech[3];
+    speech_t speech[4];
     float second_clock;
     int status;
     int story_steps;

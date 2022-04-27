@@ -32,6 +32,34 @@ int initialize_map_church(game_t *game)
     return (0);
 }
 
+int initialize_map_top(game_t *game)
+{
+    game->background[2].sprite =
+    init_sprite("ressources/map/top_map.png",
+    game->background[2].texture, 1.3, 1.3);
+    game->map[2].main_map = map_create("ressources/map/top_map.txt");
+    game->map[2].x_player = 10;
+    game->map[2].y_player = 18;
+    game->map[2].view_size = (sfVector2f){1820, 1080};
+    position_sprite
+    (game->background[2].sprite, &game->background[2].pos, -2300, -100);
+    return (0);
+}
+
+int initialize_castle_map(game_t *game)
+{
+    game->background[3].sprite =
+    init_sprite("ressources/map/castle_map.png",
+    game->background[3].texture, 1.3, 1.3);
+    game->map[3].main_map = map_create("ressources/map/castle_map.txt");
+    game->map[3].x_player = 15;
+    game->map[3].y_player = 16;
+    game->map[3].view_size = (sfVector2f){1920, 1080};
+    position_sprite
+    (game->background[3].sprite, &game->background[3].pos, -3300, -100);
+    return (0);
+}
+
 int initialize_map(game_t *game)
 {
     game->background[0].sprite =
@@ -42,6 +70,17 @@ int initialize_map(game_t *game)
     game->map[0].view_size = (sfVector2f){1745, 981};
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, 0, 0);
+    create_side_map(game);
     initialize_map_church(game);
+    initialize_map_top(game);
+    initialize_castle_map(game);
     return (0);
+}
+
+int create_side_map(game_t *game)
+{
+    game->side_map[0].sprite =
+    init_sprite("ressources/map/left_main_map.png", game->side_map[1].texture, 3, 3);
+    position_sprite(game->side_map[0].sprite, &game->side_map[0].pos, -928, -3490);
+    return 0;
 }

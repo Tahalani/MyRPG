@@ -8,15 +8,15 @@
 #include "my.h"
 #include "rpg.h"
 
-int initialize_player(player_t *player)
+int initialize_player(menu_t *menu, player_t *player)
 {
-    if (player->check_player == 0)
+    if (menu->brown_skin.status == 1)
         player->sprite =
         init_sprite("ressources/player/player.png", player->texture, 2, 2);
-    if (player->check_player == 1)
+    if (menu->red_skin.status == 1)
         player->sprite =
         init_sprite("ressources/player/player_2.png", player->texture, 2, 2);
-    if (player->check_player == 2)
+    if (menu->blue_skin.status == 1)
         player->sprite =
         init_sprite("ressources/player/player_3.png", player->texture, 2, 2);
     position_sprite(player->sprite, &player->position, 1936, 1027);

@@ -11,15 +11,17 @@
 
 int main(int ac, char **av)
 {
-    game_t game;
+    game_t *game = malloc(sizeof(game_t));
     menu_t *menu = malloc(sizeof(menu_t));
     btn_t btn;
 
-    if (ac <= 1 || my_strlen(av[1]) != 1) {
+    (void) av;
+    if (game == NULL || menu == NULL)
+        return 84;
+    if (ac > 1) {
         my_putstr("Invalid Argument l'hmar\n");
         return (84);
     }
-    game.player.check_player = my_getnbr(av[1]);
-    my_rpg(&game, menu, &btn);
+    my_rpg(game, menu, &btn);
     return (0);
 }

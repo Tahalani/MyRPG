@@ -30,7 +30,6 @@ typedef struct player_s {
     sfIntRect rect;
     sfClock *clock;
     float second;
-    int check_player;
 } player_t;
 
 #endif/* !PLAYER_H_ */

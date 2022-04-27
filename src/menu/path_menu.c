@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-static int set_path_menu_conf(menu_t *menu)
+int set_path_menu_conf(menu_t *menu)
 {
     menu->map1.sprite = init_sprite
     ("ressources/map/map.png", menu->map1.texture, 1, 1);
@@ -30,8 +30,11 @@ static int set_path_menu_conf(menu_t *menu)
     return (0);
 }
 
-static int set_path_menu_settings(menu_t *menu, btn_t *btn)
+int set_path_menu_settings(menu_t *menu, btn_t *btn)
 {
+    menu->volum.text = make_test("ressources/menu/font.ttf", 890, 485, 150);
+    sfText_setColor(menu->volum.text, sfColor_fromRGB(205,133,63));
+    sfText_setString(menu->volum.text, menu->volum.str);
     btn->down_btn.sprite = init_sprite
     ("ressources/menu/down_btn.png", btn->play_btn.texture, 1, 1);
     btn->up_btn.sprite = init_sprite
@@ -66,6 +69,8 @@ int set_path_menu(menu_t *menu, btn_t *btn)
     init_sprite("ressources/menu/next_btn.png", btn->next_btn.texture, 1, 1);
     btn->prev_btn.sprite =
     init_sprite("ressources/menu/prev_btn.png", btn->prev_btn.texture, 1, 1);
+    menu->rules.sprite =
+    init_sprite("ressources/menu/about_btn.png", menu->rules.texture, 1, 1);
     set_path_menu_conf(menu);
     set_path_menu_settings(menu, btn);
     return (0);

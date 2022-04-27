@@ -31,7 +31,7 @@ int test_plus(game_t *game, int operator, float *player, int i)
     return (0);
 }
 
-static int run_player_two(game_t *game, char check, int i)
+int run_player_two(game_t *game, char check, int i)
 {
     if (check == 'd' &&
     game->map[i].main_map[game->map[i].y_player][game->map[i].x_player + 1]

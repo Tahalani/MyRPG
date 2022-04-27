@@ -8,12 +8,18 @@
 #include "my.h"
 #include "rpg.h"
 
-static int check_for_the_good_view(game_t *game)
+int check_for_the_good_view(game_t *game)
 {
     int i = 0;
 
+    if (game->map[3].check == 1)
+        i = 3;
+    if (game->map[2].check == 1)
+        i = 2;
     if (game->map[1].check == 1)
         i = 1;
+    if (game->map[0].check == 1)
+        i = 0;
     return i;
 }
 

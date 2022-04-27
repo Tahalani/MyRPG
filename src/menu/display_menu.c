@@ -12,6 +12,7 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[0].sprite, NULL);
+    sfRenderWindow_drawText(game->window.window, menu->volum.text, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->down_btn.sprite, NULL);
     sfRenderWindow_drawSprite
@@ -27,7 +28,7 @@ int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-static int display_conf_skin(menu_t *menu, game_t *game)
+int display_conf_skin(menu_t *menu, game_t *game)
 {
     for (int i = 0; i != 3; ++i)
         sfRenderWindow_drawSprite
@@ -62,11 +63,14 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int display_menu(game_t *game, btn_t *btn)
+int display_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[0].sprite, NULL);
+    if (menu->rules.status == 1)
+        sfRenderWindow_drawSprite
+        (game->window.window, menu->rules.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->play_btn.sprite, NULL);
     sfRenderWindow_drawSprite
