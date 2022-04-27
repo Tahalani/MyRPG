@@ -29,7 +29,12 @@ int map_loop(game_t *game)
 
     game->map[i].view = sfView_create();
     sfView_setSize(game->map[i].view, game->map[i].view_size);
-    sfView_setCenter(game->map[i].view, game->player.position);
+    if (game->status == 0)
+        sfView_setCenter(game->map[i].view, game->player.position);
+    if (game->status == 4)
+        sfView_setCenter(game->map[i].view, (sfVector2f){900, 490});
+    if (game->status == 5)
+        sfView_setCenter(game->map[i].view, (sfVector2f){325, 350});
     sfRenderWindow_setView (game->window.window, game->map[i].view);
     if (game->map[0].check == 1) {
         sfRenderWindow_drawSprite
