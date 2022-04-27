@@ -103,6 +103,7 @@ typedef struct game_s {
     music_t sound;
     pnj_t pnj[11];
     speech_t speech[4];
+    text_t coins;
     float second_clock;
     int status;
     int story_steps;

@@ -47,6 +47,7 @@ int initialize_value(game_t *game)
     game->story_steps = 0;
     game->window.width = 1920;
     game->window.height = 1080;
+    game->coins.count = 0;
     game->player.sprite =
     init_sprite("ressources/player/player.png", game->player.texture, 2, 2);
     game->sound.game = music("ressources/music/back_music.ogg", 1);

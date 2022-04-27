@@ -21,6 +21,7 @@ int function_to_display(game_t *game)
             for (int i = 0; i <= 2; i++) {
                 sfRenderWindow_drawSprite
                 (game->window.window, game->side_map[i].sprite, NULL);
+            inventory_loop(game);
             }
             sfRenderWindow_drawSprite
             (game->window.window, game->background[0].sprite, NULL);
@@ -29,10 +30,12 @@ int function_to_display(game_t *game)
         if (game->map[1].check == 1) {
             sfRenderWindow_drawSprite
             (game->window.window, game->background[1].sprite, NULL);
+            inventory_loop(game);
         }
         if (game->map[2].check == 1) {
             sfRenderWindow_drawSprite
             (game->window.window, game->background[2].sprite, NULL);
+            inventory_loop(game);
         }
         sfRenderWindow_drawSprite(game->window.window, game->player.sprite, NULL);
     } else if (game->status == 5)

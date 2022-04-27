@@ -21,6 +21,8 @@ int condition_display_speech(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[3].sprite, NULL);
         game->story_steps = 4;
+        game->coins.count = 50;
+        sfText_setString(game->coins.text, int_to_char(game->coins.count));
     }
     if (game->map->x_player == 30 && game->map->y_player == 30)
         sfRenderWindow_drawSprite
