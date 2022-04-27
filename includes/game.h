@@ -48,6 +48,16 @@ typedef struct music_s {
     int status;
 } music_t;
 
+typedef struct fight_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f position;
+    int life;
+    sfView *view;
+} fight_t;
+
 typedef struct speech_s {
     sfTexture *texture;
     sfSprite *sprite;
@@ -104,6 +114,9 @@ typedef struct game_s {
     pnj_t pnj[11];
     speech_t speech[4];
     text_t coins;
+    fight_t player_fight;
+    fight_t monster_fight;
+    fight_t arena_fight;
     float second_clock;
     int status;
     int story_steps;

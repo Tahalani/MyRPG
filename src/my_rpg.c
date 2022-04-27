@@ -16,6 +16,7 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     initialize_map(game);
     initialize_menu(menu, btn);
     initialize_pnj(game);
+    initialize_fight(game);
     initialize_story_object(game);
     return (0);
 }
@@ -25,17 +26,23 @@ int in_loop(game_t *game)
     if (game->status == 5) {
         analyse_events_pause(game);
         inventory_loop(game);
-        return (0);
     }
-    game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-    player_loop(&game->player);
-    acces_to_church_map(game);
-    acces_to_top_map(game);
-    acces_to_castle_map(game);
-    pnj_loop(game);
-    analyse_events(game);
-    map_loop(game);
-    function_to_display(game);
+    if (game->status == 6) {
+        analyse_events_pause(game);
+        fight_loop(game);
+    }
+    if (game->status == 0) {
+        game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+        player_loop(&game->player);
+        acces_to_church_map(game);
+        acces_to_top_map(game);
+        acces_to_castle_map(game);
+        pnj_loop(game);
+        acces_fight(game);
+        analyse_events(game);
+        map_loop(game);
+        function_to_display(game);
+    }
     return (0);
 }
 

@@ -45,12 +45,17 @@ SRC			=		src/main.c									\
 					inventory/position_inv						\
 					inventory/display_inv						\
 					inventory/rect_inv							\
+					fight/display_fight							\
+					fight/initialize_fight						\
+					fight/loop_fight							\
+					fight/position_fight						\
+					fight/rect_fight							\
 					utils/move_rect								\
 					utils/make_text								\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\
-					destroy                                     \
+					destroy										\
 					display										\
 					event										\
 					music										\

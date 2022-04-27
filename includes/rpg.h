@@ -116,6 +116,14 @@ int set_scale_inv(game_t *game);
 int set_rect_inv(game_t *game);
 int display_inventory(game_t *game);
 
+// FIGHT //
+int acces_fight(game_t *game);
+int initialize_fight(game_t *game);
+int set_rect_fight(game_t *game);
+int set_position_fight(game_t *game);
+int display_fight(game_t *game);
+int fight_loop(game_t *game);
+
 // DISPLAY.C //
 int function_to_display(game_t *game);
 
