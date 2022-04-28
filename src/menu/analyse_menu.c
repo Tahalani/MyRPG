@@ -18,6 +18,9 @@ int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 3)
         manage_click_menu_conf(menu, game, btn);
+    if (game->event.event.type == sfEvtMouseButtonPressed &&
+        game->status == 4)
+        manage_click_menu_pause(menu, game, btn);
     return (0);
 }
 

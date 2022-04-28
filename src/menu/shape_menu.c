@@ -27,6 +27,8 @@ int init_pos_shape(menu_t *menu)
     menu->shape_btn[15].pos = (sfVector2f) {656, 692};
     menu->shape_btn[16].pos = (sfVector2f) {905, 692};
     menu->shape_btn[17].pos = (sfVector2f) {1156, 692};
+    menu->shape_btn[19].pos = (sfVector2f) {810, 842};
+    menu->shape_btn[20].pos = (sfVector2f) {995, 842};
     return (0);
 }
 
@@ -65,6 +67,12 @@ int init_shape_menu_conf(menu_t *menu)
     for (int i = 9; i != 11; ++i) {
         menu->shape_btn[i].size.y = 200;
         menu->shape_btn[i].size.x = 200;
+        menu->shape_btn[i].shape = make_shape(menu->shape_btn[i].texture,
+        menu->shape_btn[i].size, menu->shape_btn[i].pos);
+    }
+    for (int i = 18; i != 21; ++i) {
+        menu->shape_btn[i].size.y = 130;
+        menu->shape_btn[i].size.x = 130;
         menu->shape_btn[i].shape = make_shape(menu->shape_btn[i].texture,
         menu->shape_btn[i].size, menu->shape_btn[i].pos);
     }

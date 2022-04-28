@@ -25,6 +25,7 @@ SRC			=		src/main.c									\
 					menu/rect_menu								\
 					menu/scale_menu								\
 					menu/manage_click							\
+					menu/manage_click_pause						\
 					menu/manage_click_settings					\
 					menu/manage_click_conf						\
 					menu/animation_btn_menu						\

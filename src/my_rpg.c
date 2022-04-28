@@ -53,8 +53,6 @@ int initialize_value(game_t *game)
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);
     sfMusic_pause(game->sound.game);
-    game->window.window =
-    initialize_window(game->window.width, game->window.height, 32);
     for (int i = 0; i <= 3; i++)
         game->map[i].check = 0;
     game->map[0].check = 1;
@@ -68,6 +66,8 @@ int initialize_value(game_t *game)
 int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
 {
     before_loop(game, menu, btn);
+    game->window.window =
+    initialize_window(game->window.width, game->window.height, 30);
     while (sfRenderWindow_isOpen(game->window.window)) {
         if (game->status == 0 || game->status == 5)
             in_loop(game);

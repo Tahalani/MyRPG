@@ -7,6 +7,20 @@
 
 #include "rpg.h"
 
+int animation_menu_pause(menu_t *menu, game_t *game, btn_t *btn,
+sfFloatRect shape)
+{
+    sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);
+    for (int i = 19; i != 21; ++i) {
+        shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
+        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 19)
+            btn->wood_btn[5].scale = (sfVector2f){0.98, 0.98};
+        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 20)
+            btn->wood_btn[6].scale = (sfVector2f){0.98, 0.98};
+    }
+    return (0);
+}
+
 int animation_menu_settings(menu_t *menu, game_t *game, btn_t *btn,
 sfFloatRect shape)
 {
@@ -28,8 +42,10 @@ sfFloatRect shape)
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 17)
             btn->wood_btn[2].scale = (sfVector2f){0.98, 0.98};
     }
+    animation_menu_pause(menu, game, btn, shape);
     return (0);
 }
+
 
 int animation_menu_config(menu_t *menu, game_t *game, btn_t *btn,
 sfFloatRect shape)

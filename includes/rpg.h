@@ -38,6 +38,7 @@ int initialize_map(game_t *game);
 int initialize_castle_map(game_t *game);
 int check_for_the_good_view(game_t *game);
 int map_loop(game_t *game);
+int before_loop(game_t *game, menu_t *menu, btn_t *btn);
 
 // MENU //
 int analyse_click(menu_t *menu, game_t *game, btn_t *btn);
@@ -61,6 +62,7 @@ int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse, btn_t *bt
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
+int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
 
 // PAUSE //
 int analyse_events_pause(game_t *game);

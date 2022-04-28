@@ -41,7 +41,7 @@ typedef struct btn_s {
     param_t prev_btn;
     param_t down_btn;
     param_t up_btn;
-    param_t wood_btn[5];
+    param_t wood_btn[7];
 } btn_t;
 
 typedef struct menu_s {
@@ -58,7 +58,7 @@ typedef struct menu_s {
     param_t bg_square[3];
     music_t sound;
     text_t volum;
-    shape_t shape_btn[19];
+    shape_t shape_btn[21];
     sfColor opacity[2];
 } menu_t;
 

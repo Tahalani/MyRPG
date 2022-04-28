@@ -47,6 +47,7 @@ void destroy_all_sprite_two(btn_t *btn, player_t *player)
     sfSprite_destroy(btn->wood_btn[2].sprite);
     sfSprite_destroy(btn->wood_btn[3].sprite);
     sfSprite_destroy(btn->wood_btn[4].sprite);
+    sfSprite_destroy(btn->wood_btn[5].sprite);
     sfSprite_destroy(player->sprite);
 }
 
