@@ -10,7 +10,7 @@
 
 int function_to_display(game_t *game)
 {
-    // sfRenderWindow_clear(game->window.window, sfBlack);
+    sfRenderWindow_clear(game->window.window, sfBlack);
     if (game->status != 5) {
         if (game->map[3].check == 1) {
             sfRenderWindow_drawSprite
@@ -37,6 +37,5 @@ int function_to_display(game_t *game)
         sfRenderWindow_drawSprite(game->window.window, game->player.sprite, NULL);
     } else if (game->status == 5)
         display_inventory(game);
-    sfRenderWindow_display(game->window.window);
     return (0);
 }

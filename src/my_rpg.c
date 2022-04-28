@@ -22,6 +22,7 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 
 int in_loop(game_t *game)
 {
+    sfRenderWindow_clear(game->window.window, sfBlack);
     if (game->status == 5) {
         analyse_events_pause(game);
         inventory_loop(game);
@@ -37,7 +38,8 @@ int in_loop(game_t *game)
     map_loop(game);
     function_to_display(game);
     mini_map_loop(game);
-    function_to_display(game);
+    display_mini_map(game);
+    sfRenderWindow_display(game->window.window);
     return (0);
 }
 
