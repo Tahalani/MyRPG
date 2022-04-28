@@ -1,0 +1,12 @@
+pos.x:
+691
+pos.y:
+88
+arrow:
+1
+azerty:
+O
+story_steps:
+1
+coin:
+O
