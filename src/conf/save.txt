@@ -10,3 +10,5 @@ story_steps:
 O
 coin:
 O
+game_status:
+4

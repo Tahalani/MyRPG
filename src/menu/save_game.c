@@ -30,5 +30,6 @@ int save_game(game_t *game, menu_t *menu, btn_t *btn)
     write_save("azerty:", int_to_char(btn->wood_btn[4].status), fd);
     write_save("story_steps:", int_to_char(game->story_steps), fd);
     write_save("coin:", int_to_char(game->coins.count), fd);
+    write_save("game_status:", int_to_char(game->status), fd);
     return (0);
 }
