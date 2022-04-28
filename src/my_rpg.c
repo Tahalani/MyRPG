@@ -27,22 +27,25 @@ int in_loop(game_t *game)
         analyse_events_pause(game);
         inventory_loop(game);
     }
-    if (game->status == 6) {
-        analyse_events_pause(game);
-        fight_loop(game);
-    }
     if (game->status == 0) {
-        game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+        game->second_clock =
+        sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
         player_loop(&game->player);
         acces_to_church_map(game);
         acces_to_top_map(game);
         acces_to_castle_map(game);
         pnj_loop(game);
-        acces_fight(game);
         analyse_events(game);
         map_loop(game);
+        acces_fight(game);
         function_to_display(game);
     }
+    if (game->status == 6) {
+        analyse_events_pause(game);
+        fight_loop(game);
+    }
+    sfRenderWindow_drawSprite
+    (game->window.window, game->arena_fight.sprite, NULL);
     return (0);
 }
 
@@ -77,7 +80,7 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
 {
     before_loop(game, menu, btn);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 0 || game->status == 5)
+        if (game->status == 0 || game->status == 5 || game->status == 6)
             in_loop(game);
         else if (game->status != 0)
             loop_menu(menu, game, btn);

@@ -56,6 +56,8 @@ typedef struct fight_s {
     sfVector2f position;
     int life;
     sfView *view;
+    sfClock *clock;
+    float seconds;
 } fight_t;
 
 typedef struct speech_s {
