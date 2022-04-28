@@ -44,6 +44,8 @@ int initialize_pnj(game_t *game)
     init_script(game, 9, 96);
     init_pnj(game, 10, "ressources/pnj/path/path_pnj_eleven.txt", 33);
     init_script(game, 10, 99);
+    init_pnj(game, 11, "ressources/pnj/path/path_pnj_twelve.txt", 49);
+    init_script(game, 11, 147);
     game->pnj->seconds = 0;
     game->pnj->clock = sfClock_create();
     return (0);
@@ -73,6 +75,8 @@ int pnj_create(game_t *game)
     ("ressources/pnj/pnj_ten.png", game->pnj[9].texture, 2.2, 2.2);
     game->pnj[10].sprite = init_sprite
     ("ressources/pnj/pnj_eleven.png", game->pnj[10].texture, 2.2, 2.2);
+    game->pnj[11].sprite = init_sprite
+    ("ressources/pnj/pnj_twelve.png", game->pnj[11].texture, 2.2, 2.2);
     return (0);
 }
 

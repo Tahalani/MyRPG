@@ -93,7 +93,7 @@ typedef struct game_s {
     inventory_t inventory;
     sfClock *clock;
     music_t sound;
-    pnj_t pnj[11];
+    pnj_t pnj[12];
     speech_t speech[4];
     float second_clock;
     int status;
