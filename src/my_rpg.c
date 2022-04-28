@@ -28,6 +28,8 @@ int in_loop(game_t *game)
         inventory_loop(game);
     }
     if (game->status == 0) {
+        game->player.second_move_player =
+        sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock_move_player));
         game->second_clock =
         sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
         player_loop(&game->player);
@@ -51,8 +53,10 @@ int in_loop(game_t *game)
 
 int initialize_value(game_t *game)
 {
+    game->player.second_move_player = 0.00;
     game->second_clock = 0.00;
     game->clock = sfClock_create();
+    game->player.clock_move_player = sfClock_create();
     game->status = 2;
     game->story_steps = 0;
     game->window.width = 1920;

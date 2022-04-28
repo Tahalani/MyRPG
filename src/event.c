@@ -31,7 +31,10 @@ int analyse_events(game_t *game)
             game->status = 4;
             game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         }
-        analyse_move_player(game);
+        if (game->player.second_move_player >= 0.001) {
+            analyse_move_player(game);
+            sfClock_restart(game->player.clock_move_player);
+        }
         if (sfKeyboard_isKeyPressed(sfKeyTab))
             game->status = 5;
     }
