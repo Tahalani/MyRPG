@@ -55,21 +55,3 @@ void destroy_all(menu_t *menu, btn_t *btn, game_t *game, player_t *player)
     destroy_all_sprite_one(menu, game);
     destroy_all_sprite_two(btn, player);
 }
-
-    // sfSprite_destroy(game->inventory.object[i].sprite);
-    // sfSprite_destroy(game->speech[i].sprite);
-    // sfSprite_destroy(game->pnj[i].sprite);
-    // sfSprite_destroy(game->inventory.object[i].sprite);
-    // sfSprite_destroy(game->inventory.object[i].sprite);
-    // sfSprite_destroy(btn->wood_btn[i].sprite);
-    // sfSprite_destroy(menu->bg_skin[i].sprite);
-    // sfSprite_destroy(menu->bg_square[i].sprite);
-    // sfSprite_destroy(menu->bg_skin[i].sprite);
-    // sfSprite_destroy(menu->bg_square[i].sprite);
-    // sfSprite_destroy(btn->wood_btn[i].sprite);
-    // sfSprite_destroy(game->speech[i].sprite);
-    // sfSprite_destroy(game->pnj[i].sprite);
-    // sfSprite_destroy(btn->wood_btn[i].sprite);
-    // sfSprite_destroy(menu->bg_skin[i].sprite);
-    // sfSprite_destroy(menu->bg_square[i].sprite);
-    // sfSprite_destroy(game->inventory.object[i].sprite);

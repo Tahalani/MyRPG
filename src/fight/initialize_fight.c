@@ -10,8 +10,11 @@
 
 int initialize_fight(game_t *game)
 {
+    game->sound.status_fight = 0;
     game->arena_fight.clock = sfClock_create();
     game->arena_fight.seconds = 0;
+    game->sound.fight = music("ressources/music/ost_fight.ogg", 1);
+    sfMusic_pause(game->sound.fight);
     game->arena_fight.sprite = init_sprite
     ("ressources/fight/arena.jpg", game->arena_fight.texture, 1, 1);
     game->player_fight.sprite = init_sprite

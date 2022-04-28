@@ -8,13 +8,16 @@
 #include "my.h"
 #include "rpg.h"
 
-int rect_skin(param_t *player, int top)
+int rect_skin(param_t *player, int top, sfClock *clock, float seconds)
 {
-    player->rect.top = top;
-    player->rect.left += 64;
-    if (player->rect.left == 256)
-        player->rect.left = 0;
-    sfSprite_setTextureRect(player->sprite, player->rect);
+    if (seconds >= 0.1) {
+        player->rect.top = top;
+        player->rect.left += 64;
+        if (player->rect.left == 256)
+            player->rect.left = 0;
+        sfSprite_setTextureRect(player->sprite, player->rect);
+        sfClock_restart(clock);
+    }
     return (0);
 }
 

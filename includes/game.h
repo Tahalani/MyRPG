@@ -45,7 +45,9 @@ typedef struct music_s {
     sfMusic *menu;
     sfMusic *page_menu;
     sfMusic *dialogue;
+    sfMusic *fight;
     int status;
+    int status_fight;
 } music_t;
 
 typedef struct fight_s {

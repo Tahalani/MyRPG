@@ -34,15 +34,17 @@ sfFloatRect shape)
 int animation_menu_config(menu_t *menu, game_t *game, btn_t *btn,
 sfFloatRect shape)
 {
+    menu->seconds =
+        sfTime_asSeconds(sfClock_getElapsedTime(menu->clock));
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);
     for (int i = 6; i != 11; ++i) {
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 6)
-            rect_skin(&menu->red_skin, 0);
+            rect_skin(&menu->red_skin, 0, menu->clock, menu->seconds);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 7)
-            rect_skin(&menu->brown_skin, 0);
+            rect_skin(&menu->brown_skin, 0, menu->clock, menu->seconds);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 8)
-            rect_skin(&menu->blue_skin, 0);
+            rect_skin(&menu->blue_skin, 0, menu->clock, menu->seconds);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 9)
             menu->map1.scale = (sfVector2f){0.09, 0.09};
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 10)

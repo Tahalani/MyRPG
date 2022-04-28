@@ -60,6 +60,8 @@ typedef struct menu_s {
     text_t volum;
     shape_t shape_btn[19];
     sfColor opacity[2];
+    sfClock *clock;
+    float seconds;
 } menu_t;
 
 #endif/* !menu_H_ */

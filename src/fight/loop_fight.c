@@ -19,6 +19,11 @@ int acces_fight(game_t *game)
 
 int fight_loop(game_t *game)
 {
+    if (game->sound.status_fight == 0) {
+        sfMusic_play(game->sound.fight);
+        sfMusic_pause(game->sound.game);
+    }
+    game->sound.status_fight = 1;
     game->arena_fight.seconds =
         sfTime_asSeconds(sfClock_getElapsedTime(game->arena_fight.clock));
     if (game->arena_fight.seconds >= 0.008) {
