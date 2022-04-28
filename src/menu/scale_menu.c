@@ -26,7 +26,7 @@ int set_scale_config(menu_t *menu)
 int set_scale_menu(menu_t *menu, btn_t *btn)
 {
     set_scale_config(menu);
-    for (int i = 0; i != 5; ++i)
+    for (int i = 0; i != 7; ++i)
         sfSprite_setScale(btn->wood_btn[i].sprite, btn->wood_btn[i].scale);
     sfSprite_setScale(btn->play_btn.sprite, btn->play_btn.scale);
     sfSprite_setScale(btn->stop_btn.sprite, btn->stop_btn.scale);
@@ -56,7 +56,7 @@ int init_scale_conf(menu_t *menu)
 
 int init_scale_menu(menu_t *menu, btn_t *btn)
 {
-    for (int i = 0; i != 5; ++i)
+    for (int i = 0; i != 7; ++i)
         btn->wood_btn[i].scale = (sfVector2f){1, 1};
     btn->play_btn.scale = (sfVector2f){1.01, 1.01};
     btn->stop_btn.scale = (sfVector2f){0.95, 0.95};

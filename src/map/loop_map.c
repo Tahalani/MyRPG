@@ -32,7 +32,7 @@ int map_loop(game_t *game)
     if (game->status == 0)
         sfView_setCenter(game->map[i].view, game->player.position);
     if (game->status == 4)
-        sfView_setCenter(game->map[i].view, (sfVector2f){900, 490});
+        sfView_setCenter(game->map[i].view, (sfVector2f){950, 490});
     if (game->status == 5)
         sfView_setCenter(game->map[i].view, (sfVector2f){325, 350});
     if (game->map[0].check == 1) {

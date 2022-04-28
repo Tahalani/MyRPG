@@ -63,11 +63,22 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int display_menu_pause(menu_t *menu, game_t *game, btn_t *btn)
+int display_menu_pause(game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
     (game->window.window, game->background[4].sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, btn->play_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, btn->stop_btn.sprite, NULL);
+    for (int i = 5; i != 7; ++i)
+        sfRenderWindow_drawSprite
+        (game->window.window, btn->wood_btn[i].sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, btn->music_btn.sprite, NULL);
+    sfRenderWindow_drawSprite
+    (game->window.window, btn->about_btn.sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

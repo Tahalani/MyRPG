@@ -18,6 +18,9 @@ int analyse_click(menu_t *menu, game_t *game, btn_t *btn)
     if (game->event.event.type == sfEvtMouseButtonPressed &&
         game->status == 3)
         manage_click_menu_conf(menu, game, btn);
+    if (game->event.event.type == sfEvtMouseButtonPressed &&
+        game->status == 4)
+        manage_click_menu_pause(menu, game, btn);
     return (0);
 }
 
@@ -38,7 +41,6 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
     }
     if (sfKeyboard_isKeyPressed(sfKeyP) && game->status == 4) {
         game->status = 0;
-        game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         position_sprite
         (game->background[4].sprite, &game->background[4].pos, 0, 0);
     }
