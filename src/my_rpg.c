@@ -23,6 +23,7 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 
 int in_loop(game_t *game)
 {
+    sfRenderWindow_clear(game->window.window, sfBlack);
     if (game->status == 5) {
         analyse_events_pause(game);
         inventory_loop(game);
@@ -64,9 +65,13 @@ int initialize_value(game_t *game)
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);
     sfMusic_pause(game->sound.game);
-    for (int i = 0; i <= 3; i++)
+    for (int i = 0; i <= 3; i++) {
         game->map[i].check = 0;
+        game->map[i].view = sfView_create();
+    }
     game->map[0].check = 1;
+    game->mini_map.rect = (sfFloatRect){0, 0, 0.15, 0.2};
+    game->mini_map.view = sfView_create();
     game->background[4].sprite =
     init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
     position_sprite

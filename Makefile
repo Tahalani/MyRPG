@@ -17,6 +17,7 @@ SRC			=		src/main.c									\
 					map/initialize_side_map						\
 					map/initialize_map							\
 					map/loop_map								\
+					map/mini_map								\
 					menu/analyse_menu							\
 					menu/display_menu							\
 					menu/loop_menu								\
