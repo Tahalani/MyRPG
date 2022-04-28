@@ -23,29 +23,28 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 
 int in_loop(game_t *game)
 {
+    sfRenderWindow_clear(game->window.window, sfBlack);
     if (game->status == 5) {
         analyse_events_pause(game);
         inventory_loop(game);
     }
-    if (game->status == 0) {
-        game->second_clock =
-        sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-        player_loop(&game->player);
-        acces_to_church_map(game);
-        acces_to_top_map(game);
-        acces_to_castle_map(game);
-        pnj_loop(game);
-        analyse_events(game);
-        map_loop(game);
-        acces_fight(game);
-        function_to_display(game);
-    }
+    game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+    player_loop(&game->player);
+    acces_to_church_map(game);
+    acces_to_top_map(game);
+    acces_to_castle_map(game);
+    pnj_loop(game);
+    analyse_events(game);
+    map_loop(game);
+    acces_fight(game);
+    function_to_display(game);
     if (game->status == 6) {
         analyse_events_pause(game);
         fight_loop(game);
     }
-    sfRenderWindow_drawSprite
-    (game->window.window, game->arena_fight.sprite, NULL);
+    mini_map_loop(game);
+    display_mini_map(game);
+    sfRenderWindow_display(game->window.window);
     return (0);
 }
 
@@ -64,9 +63,13 @@ int initialize_value(game_t *game)
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);
     sfMusic_pause(game->sound.game);
-    for (int i = 0; i <= 3; i++)
+    for (int i = 0; i <= 3; i++) {
         game->map[i].check = 0;
+        game->map[i].view = sfView_create();
+    }
     game->map[0].check = 1;
+    game->mini_map.rect = (sfFloatRect){0, 0, 0.15, 0.2};
+    game->mini_map.view = sfView_create();
     game->background[4].sprite =
     init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
     position_sprite

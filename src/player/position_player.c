@@ -27,6 +27,9 @@ int test_plus(game_t *game, int operator, float *player, int i)
         sfSprite_setPosition(game->player.sprite, game->player.position);
         function_to_display(game);
         pnj_loop(game);
+        mini_map_loop(game);
+        display_mini_map(game);
+        sfRenderWindow_display(game->window.window);
     }
     return (0);
 }

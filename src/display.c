@@ -40,6 +40,5 @@ int function_to_display(game_t *game)
         sfRenderWindow_drawSprite(game->window.window, game->player.sprite, NULL);
     } else if (game->status == 5)
         display_inventory(game);
-    sfRenderWindow_display(game->window.window);
     return (0);
 }

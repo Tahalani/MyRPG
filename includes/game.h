@@ -104,7 +104,14 @@ typedef struct move_s {
     sfKeyCode right;
 } move_t;
 
+typedef struct mini_map_s {
+    sfFloatRect rect;
+    sfView *view;
+} mini_map_t;
+
 typedef struct game_s {
+    element_t map_utils;
+    mini_map_t mini_map;
     element_t side_map[3];
     element_t background[5];
     player_t player;

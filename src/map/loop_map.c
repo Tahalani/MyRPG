@@ -27,7 +27,6 @@ int map_loop(game_t *game)
 {
     int i = check_for_the_good_view(game);
 
-    game->map[i].view = sfView_create();
     sfView_setSize(game->map[i].view, game->map[i].view_size);
     if (game->status == 0)
         sfView_setCenter(game->map[i].view, game->player.position);
