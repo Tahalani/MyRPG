@@ -27,6 +27,7 @@ sfText *make_test(char *path, int pos_x, int pos_y, int size);
 char *int_to_char(int nb);
 
 // MAP //
+int frame_for_mini_map(game_t *game);
 int display_mini_map(game_t *game);
 int mini_map_loop(game_t *game);
 int create_side_map(game_t *game);
