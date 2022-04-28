@@ -36,6 +36,8 @@ int in_loop(game_t *game)
     analyse_events(game);
     map_loop(game);
     function_to_display(game);
+    mini_map_loop(game);
+    function_to_display(game);
     return (0);
 }
 
@@ -55,9 +57,13 @@ int initialize_value(game_t *game)
     sfMusic_pause(game->sound.game);
     game->window.window =
     initialize_window(game->window.width, game->window.height, 32);
-    for (int i = 0; i <= 3; i++)
+    for (int i = 0; i <= 3; i++) {
         game->map[i].check = 0;
+        game->map[i].view = sfView_create();
+    }
     game->map[0].check = 1;
+    game->mini_map.rect = (sfFloatRect){0, 0, 0.15, 0.2};
+    game->mini_map.view = sfView_create();
     game->background[4].sprite =
     init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
     position_sprite

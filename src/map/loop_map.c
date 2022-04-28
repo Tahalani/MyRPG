@@ -27,7 +27,6 @@ int map_loop(game_t *game)
 {
     int i = check_for_the_good_view(game);
 
-    game->map[i].view = sfView_create();
     sfView_setSize(game->map[i].view, game->map[i].view_size);
     if (game->status == 0)
         sfView_setCenter(game->map[i].view, game->player.position);
@@ -35,7 +34,6 @@ int map_loop(game_t *game)
         sfView_setCenter(game->map[i].view, (sfVector2f){900, 490});
     if (game->status == 5)
         sfView_setCenter(game->map[i].view, (sfVector2f){325, 350});
-    sfRenderWindow_setView (game->window.window, game->map[i].view);
     if (game->map[0].check == 1) {
         sfRenderWindow_drawSprite
         (game->window.window, game->background[0].sprite, NULL);
@@ -45,5 +43,6 @@ int map_loop(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[1].sprite, NULL);
     }
+    sfRenderWindow_setView (game->window.window, game->map[i].view);
     return (0);
 }
