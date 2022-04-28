@@ -70,8 +70,6 @@ void destroy_all_texture_two(btn_t *btn)
     sfTexture_destroy(btn->wood_btn[3].texture);
     sfTexture_destroy(btn->wood_btn[4].texture);
 }
-<<<<<<< HEAD
-=======
 
 void destroy_all(menu_t *menu, btn_t *btn, game_t *game)
 {
@@ -79,4 +77,3 @@ void destroy_all(menu_t *menu, btn_t *btn, game_t *game)
     destroy_all_sprite_two(btn);
     loop_for_destroy(game, menu);
 }
->>>>>>> pnj
