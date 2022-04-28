@@ -119,7 +119,9 @@ OBJ			=		$(SRC:$(EXTENSION)=.o)
 
 OBJT		=		$(SRCT:$(EXTENSION)=.o)
 
-CFLAGS		=		-I./includes -Wall -Wextra
+CPPFLAGS	=		-I./includes 
+
+CFLAGS		=		-Wall -Wextra
 
 LDFLAGS		=		-l csfml-graphics -l csfml-window	\
 					-l csfml-system -l csfml-audio
@@ -127,8 +129,6 @@ LDFLAGS		=		-l csfml-graphics -l csfml-window	\
 CC			=		gcc
 
 MKU			=		mkdir $(NAME_DIR)
-
-RM			=		rm -rf
 
 MV			=		mv
 
@@ -163,7 +163,7 @@ re:		fclean all
 
 units_tests:	fclean $(OBJT)
 	$(MAKE) -C lib/my
-	$(CC) -o $(NAME_CRI) $(SRCT) $(CFLAGS) $(LDFLAGS) -L./lib/my -lmy	\
+	$(CC) -o $(NAME_CRI) $(SRCT) $(CPPFLAGS) $(LDFLAGS) -L./lib/my -lmy	\
 	-lcriterion --coverage
 	$(MKU)
 	$(MV) *.gcno $(NAME_DIR)
