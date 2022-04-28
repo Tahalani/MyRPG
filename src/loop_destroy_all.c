@@ -25,8 +25,8 @@ void loop_for_destroy(game_t *game, menu_t *menu)
         sfSprite_destroy(menu->bg_square[i].sprite);
         sfTexture_destroy(menu->bg_square[i].texture);
     }
-    for (int i = 0; i <= 4; i++) {
-        sfSprite_destroy(game->inventory.object[i].sprite);
-        sfTexture_destroy(game->inventory.object[i].texture);
-    }
+    // for (int i = 0; i <= 4; i++) {
+    //     sfSprite_destroy(game->inventory.sprite);
+    //     sfTexture_destroy(game->inventory.texture);
+    // }
 }

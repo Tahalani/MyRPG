@@ -10,7 +10,7 @@
 #include "game.h"
 #include "menu.h"
 
-static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
+int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
@@ -20,8 +20,13 @@ static int before_loop(game_t *game, menu_t *menu, btn_t *btn)
     return (0);
 }
 
-static int in_loop(game_t *game)
+int in_loop(game_t *game)
 {
+    if (game->status == 5) {
+        analyse_events_pause(game);
+        inventory_loop(game);
+        return (0);
+    }
     game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
     player_loop(&game->player);
     acces_to_church_map(game);
@@ -30,7 +35,6 @@ static int in_loop(game_t *game)
     pnj_loop(game);
     analyse_events(game);
     map_loop(game);
-    inventory_loop(game);
     function_to_display(game);
     return (0);
 }
@@ -54,6 +58,10 @@ int initialize_value(game_t *game)
     for (int i = 0; i <= 3; i++)
         game->map[i].check = 0;
     game->map[0].check = 1;
+    game->background[4].sprite =
+    init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
+    position_sprite
+    (game->background[4].sprite, &game->background[4].pos, 0, 0);
     return (0);
 }
 
@@ -61,7 +69,7 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
 {
     before_loop(game, menu, btn);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 0)
+        if (game->status == 0 || game->status == 5)
             in_loop(game);
         else if (game->status != 0)
             loop_menu(menu, game, btn);

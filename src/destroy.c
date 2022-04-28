@@ -20,7 +20,6 @@ void destroy_all_sprite(menu_t *menu, game_t *game)
     sfSprite_destroy(menu->sign_skin.sprite);
     sfMusic_destroy(menu->sound.game);
     sfMusic_destroy(menu->sound.menu);
-    sfSprite_destroy(game->inventory.object[0].sprite);
     sfSprite_destroy(game->player.sprite);
     sfMusic_destroy(game->sound.dialogue);
     sfRenderWindow_destroy(game->window.window);
@@ -52,7 +51,6 @@ void destroy_all_texture(menu_t *menu, game_t *game)
     sfTexture_destroy(menu->sign_settings.texture);
     sfTexture_destroy(menu->blue_skin.texture);
     sfTexture_destroy(menu->sign_skin.texture);
-    sfTexture_destroy(game->inventory.object[0].texture);
     sfTexture_destroy(game->player.texture);
 }
 
