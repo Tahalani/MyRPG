@@ -134,4 +134,7 @@ sfRenderWindow *initialize_window(int, int, int);
 int initialize_value(game_t *game);
 int my_rpg(game_t *, menu_t *, btn_t *);
 
+// DESTROY //
+void destroy_all(menu_t *menu, btn_t *btn, game_t *game, player_t *player);
+
 #endif/* !PROJET_H_ */

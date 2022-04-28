@@ -51,6 +51,7 @@ SRC			=		src/main.c									\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\
+					destroy                                     \
 					display										\
 					event										\
 					music										\
