@@ -19,7 +19,7 @@ int loop_menu(menu_t *menu, game_t *game, btn_t *btn)
     if (game->status == 3)
         display_menu_conf(menu, game, btn);
     if (game->status == 4)
-        display_menu_pause(menu, game, btn);
+        display_menu_pause(game, btn);
     return (0);
 }
 

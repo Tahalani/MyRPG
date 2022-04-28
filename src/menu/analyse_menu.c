@@ -41,7 +41,6 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
     }
     if (sfKeyboard_isKeyPressed(sfKeyP) && game->status == 4) {
         game->status = 0;
-        game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         position_sprite
         (game->background[4].sprite, &game->background[4].pos, 0, 0);
     }
