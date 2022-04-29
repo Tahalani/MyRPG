@@ -21,6 +21,12 @@ int initialize_fight(game_t *game)
     ("ressources/fight/player_fight.png", game->player_fight.texture, 2.4, 2.4);
     game->monster_fight.sprite = init_sprite
     ("ressources/fight/monster_fight.png", game->monster_fight.texture, 0.4, 0.4);
+    game->life[0].sprite = init_sprite
+    ("ressources/fight/life_bar.png", game->life[0].texture, 4, 2);
+    game->life[1].sprite = init_sprite
+    ("ressources/fight/life_bar.png", game->life[1].texture, -4, -2);
+    game->life[2].sprite = init_sprite
+    ("ressources/fight/pokeball.png", game->life[2].texture, 0.5, 0.5);
     set_position_fight(game);
     set_rect_fight(game);
     return (0);

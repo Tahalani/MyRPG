@@ -128,6 +128,7 @@ typedef struct game_s {
     fight_t player_fight;
     fight_t monster_fight;
     fight_t arena_fight;
+    fight_t life[3];
     float second_clock;
     int status;
     int story_steps;

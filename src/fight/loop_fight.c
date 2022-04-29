@@ -30,6 +30,8 @@ int fight_loop(game_t *game)
     if (game->arena_fight.seconds >= 0.008) {
         move_rect_player_fight(game);
         move_rect_monster_fight(game);
+        move_rect(&game->life[2].rect, 256, 2304, 0);
+        sfSprite_setTextureRect(game->life[2].sprite, game->life[2].rect);
         sfClock_restart(game->arena_fight.clock);
     }
     return (0);
