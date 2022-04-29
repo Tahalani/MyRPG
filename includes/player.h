@@ -29,9 +29,7 @@ typedef struct player_s {
     sfVector2f position;
     sfIntRect rect;
     sfClock *clock;
-    sfClock *clock_move_player;
     float second;
-    float second_move_player;
 } player_t;
 
 #endif/* !PLAYER_H_ */

@@ -8,7 +8,6 @@
 #include "my.h"
 #include "rpg.h"
 
-
 int analyse_events_pause(game_t *game)
 {
     while (sfRenderWindow_pollEvent(game->window.window, &game->event.event)) {
@@ -31,10 +30,7 @@ int analyse_events(game_t *game)
             game->status = 4;
             game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
         }
-        if (game->player.second_move_player >= 0.001) {
-            analyse_move_player(game);
-            sfClock_restart(game->player.clock_move_player);
-        }
+        analyse_move_player(game);
         if (sfKeyboard_isKeyPressed(sfKeyTab))
             game->status = 5;
     }

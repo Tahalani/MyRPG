@@ -18,6 +18,7 @@ SRC			=		src/main.c									\
 					map/initialize_side_map						\
 					map/initialize_map							\
 					map/loop_map								\
+					map/view_map								\
 					menu/analyse_menu							\
 					menu/display_menu							\
 					menu/loop_menu								\
@@ -43,6 +44,7 @@ SRC			=		src/main.c									\
 					pnj/script_pnj								\
 					pnj/rect_pnj								\
 					pnj/speech_pnj								\
+					pnj/path_pnj								\
 					inventory/initialize_inv					\
 					inventory/loop_inventory					\
 					inventory/position_inv						\

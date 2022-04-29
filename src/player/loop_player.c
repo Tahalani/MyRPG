@@ -10,6 +10,8 @@
 
 int initialize_player(menu_t *menu, player_t *player)
 {
+    player->sprite =
+    init_sprite("ressources/player/player.png", player->texture, 2, 2);
     if (menu->brown_skin.status == 1)
         player->sprite =
         init_sprite("ressources/player/player.png", player->texture, 2, 2);

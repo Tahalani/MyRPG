@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-int check_pos(game_t *game, int i, char **script)
+void check_pos(game_t *game, int i, char **script)
 {
     if (game->pnj[i].position.x < my_getnbr(script[game->pnj[i].count])) {
         move_rect(&game->pnj[i].rect, game->pnj[i].offset,
@@ -30,7 +30,6 @@ int check_pos(game_t *game, int i, char **script)
         game->pnj[i].max_value, 0);
         game->pnj[i].position.y += 7;
     }
-    return (0);
 }
 
 int next_pos(game_t *game, int i, char **script)

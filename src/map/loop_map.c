@@ -40,10 +40,9 @@ int map_loop(game_t *game)
         (game->window.window, game->background[0].sprite, NULL);
         display_pnj(game);
     }
-    if (game->map[1].check == 1) {
+    if (game->map[1].check == 1)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[1].sprite, NULL);
-    }
     sfRenderWindow_setView(game->window.window, game->map[i].view);
     return (0);
 }

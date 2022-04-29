@@ -8,6 +8,21 @@
 #include "my.h"
 #include "rpg.h"
 
+int condition_display_speech_two(game_t *game)
+{
+    if (game->map->x_player == 30 && game->map->y_player == 30)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[1].sprite, NULL);
+    if (game->map->x_player == 54 && game->map->y_player == 45)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[2].sprite, NULL);
+    if ((game->map->x_player == 22 && game->map->y_player == 20) ||
+    (game->map->x_player == 30 && game->map->y_player == 31) ||
+    (game->map->x_player == 54 && game->map->y_player == 46))
+        sfMusic_play(game->sound.dialogue);
+    return (0);
+}
+
 int condition_display_speech(game_t *game)
 {
     if ((game->map->x_player == 22 && game->map->y_player == 19) &&
@@ -24,15 +39,6 @@ int condition_display_speech(game_t *game)
         game->coins.count = 50;
         sfText_setString(game->coins.text, int_to_char(game->coins.count));
     }
-    if (game->map->x_player == 30 && game->map->y_player == 30)
-        sfRenderWindow_drawSprite
-        (game->window.window, game->speech[1].sprite, NULL);
-    if (game->map->x_player == 54 && game->map->y_player == 45)
-        sfRenderWindow_drawSprite
-        (game->window.window, game->speech[2].sprite, NULL);
-    if ((game->map->x_player == 22 && game->map->y_player == 20) ||
-    (game->map->x_player == 30 && game->map->y_player == 31) ||
-    (game->map->x_player == 54 && game->map->y_player == 46))
-        sfMusic_play(game->sound.dialogue);
+    condition_display_speech_two(game);
     return (0);
 }

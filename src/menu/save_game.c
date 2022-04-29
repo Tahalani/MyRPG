@@ -19,7 +19,7 @@ int write_save(char *name, char *path, FILE *fd)
     return (0);
 }
 
-int save_game(game_t *game, menu_t *menu, btn_t *btn)
+int save_game(game_t *game, btn_t *btn)
 {
     FILE *fd = fopen("src/conf/save.txt", "w+");
     if (fd == NULL)

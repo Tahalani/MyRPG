@@ -18,7 +18,7 @@
     #include "inventory.h"
 
 // UTILS //
-sfRectangleShape *make_shape(sfTexture *texture, sfVector2f size, sfVector2f pos);
+sfRectangleShape *make_shape(sfTexture *, sfVector2f, sfVector2f);
 sfSprite *init_sprite(char *path, sfTexture *texture, float x, float y);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
 int rect_skin(param_t *player, int top, sfClock *clock, float seconds);
@@ -42,26 +42,28 @@ int initialize_castle_map(game_t *game);
 int check_for_the_good_view(game_t *game);
 int map_loop(game_t *game);
 int before_loop(game_t *game, menu_t *menu, btn_t *btn);
+int initialize_mini_map(game_t *game);
+int set_view_value(game_t *game);
 
 // MENU //
 int analyse_click(menu_t *menu, game_t *game, btn_t *btn);
 int analyse_key(menu_t *menu, game_t *game, btn_t *btn);
 int analyse_menu(menu_t *menu, game_t *game, btn_t *btn);
-int animation_menu_settings(menu_t *menu, game_t *game, btn_t *btn, sfFloatRect shape);
-int animation_menu_config(menu_t *menu, game_t *game, btn_t *btn, sfFloatRect shape);
+int animation_menu_settings(menu_t *, game_t *, btn_t *, sfFloatRect);
+int animation_menu_config(menu_t *, game_t *, btn_t *, sfFloatRect );
 int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
 int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int display_conf_skin(menu_t *menu, game_t *game);
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
 int display_menu(menu_t *menu, game_t *game, btn_t *btn);
 int loop_menu(menu_t *menu, game_t *game, btn_t *btn);
-int initialize_menu(menu_t *menu, btn_t *btn);
+int initialize_menu(menu_t *menu, btn_t *btn, game_t *game);
 int manage_conf_map(menu_t *menu, sfVector2i mouse, sfFloatRect shape);
 int manage_conf_skin(menu_t *menu, sfVector2i mouse, sfFloatRect shape);
 int manage_click_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
-int manage_settings_volume(menu_t *menu, game_t *game, sfVector2i mouse, btn_t *btn);
+int manage_settings_volume(menu_t *, game_t *, sfVector2i, btn_t *);
 int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn);
-int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse, btn_t *btn);
+int manage_settings_wood(menu_t *, game_t *, sfVector2i, btn_t *);
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
@@ -71,8 +73,8 @@ int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
 int analyse_events_pause(game_t *game);
 
 // SET_MENU //
-int set_path_menu_settings(menu_t *menu, btn_t *btn);
-int set_path_menu(menu_t *menu, btn_t *btn);
+int set_path_menu_settings(menu_t *menu, btn_t *btn, game_t *game);
+int set_path_menu(menu_t *menu, btn_t *btn, game_t *game);
 int set_pos_menu_conf(menu_t *menu);
 int set_pos_menu(menu_t *menu, btn_t *btn);
 int init_pos_conf(menu_t *menu);
@@ -83,18 +85,18 @@ int set_scale_config(menu_t *menu);
 int set_scale_menu(menu_t *menu, btn_t *btn);
 int init_scale_conf(menu_t *menu);
 int init_scale_menu(menu_t *menu, btn_t *btn);
-int init_pos_shape(menu_t *menu);
 int init_shape_menu_settings(menu_t *menu);
 int init_shape_menu_conf(menu_t *menu);
-int init_shape_menu(menu_t *menu);
 int start_game(game_t *game, menu_t *menu, btn_t *btn);
 int display_menu_pause(game_t *game, btn_t *btn);
-int save_game(game_t *game, menu_t *menu, btn_t *btn);
+int save_game(game_t *game, btn_t *btn);
+void init_shape_menu(menu_t *menu);
+void init_pos_shape(menu_t *menu);
 
 // PLAYER //
 int initialize_player(menu_t *menu, player_t *player);
 int player_loop(player_t *player);
-int test_plus(game_t *game, int operator, float *player, int i);
+int player_function_move(game_t *game, int operator, float *player, int i);
 int run_player_two(game_t *game, char check, int i);
 int run_player(game_t *game, char check, int i);
 int rect_player(player_t *player, int top);
@@ -112,6 +114,9 @@ int pnj_loop(game_t *game);
 int speech_create(game_t *game);
 int condition_display_speech(game_t *game);
 int put_key(game_t *game, btn_t *btn);
+int path_script_pnj(game_t *game);
+int pnj_create_two(game_t *game);
+int init_pnj(game_t *game, int i, char *path, int offset);
 
 // INVENTORY //
 int initialize_story_object(game_t *game);
@@ -139,10 +144,12 @@ int function_to_display(game_t *game);
 int analyse_events(game_t *);
 
 // MUSIC.C //
-sfMusic *music(char *, int);
+int set_music_value(game_t *game);
+sfMusic *music(char *path, int loop);
 
 // WINDOW.C //
-sfRenderWindow *initialize_window(int, int, int);
+int set_value_window(game_t *game);
+sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
 
 // MY_RPG //
 int initialize_value(game_t *game);

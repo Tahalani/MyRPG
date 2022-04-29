@@ -28,24 +28,17 @@ int initialize_pnj(game_t *game)
     speech_create(game);
     pnj_create(game);
     set_position_pnj(game);
-    init_pnj(game, 3, "src/conf/path_pnj_four.txt", 34);
+    path_script_pnj(game);
     init_script(game, 3, 136);
-    init_pnj(game, 4, "src/conf/path_pnj_five.txt", 31);
     init_script(game, 4, 93);
-    init_pnj(game, 5, "src/conf/path_pnj_six.txt", 31);
     init_script(game, 5, 93);
-    init_pnj(game, 6, "src/conf/path_pnj_seven.txt", 32);
     init_script(game, 6, 96);
-    init_pnj(game, 7, "src/conf/path_pnj_eight.txt", 34);
     init_script(game, 7, 102);
-    init_pnj(game, 8, "src/conf/path_pnj_nine.txt", 33);
     init_script(game, 8, 99);
-    init_pnj(game, 9, "src/conf/path_pnj_ten.txt", 32);
     init_script(game, 9, 96);
-    init_pnj(game, 10, "src/conf/path_pnj_eleven.txt", 33);
     init_script(game, 10, 99);
-    game->pnj->seconds = 0;
     game->pnj->clock = sfClock_create();
+    game->pnj->seconds = 0;
     return (0);
 }
 
@@ -61,18 +54,7 @@ int pnj_create(game_t *game)
     ("ressources/pnj/pnj_four.png", game->pnj[3].texture, 2.2, 2.2);
     game->pnj[4].sprite = init_sprite
     ("ressources/pnj/pnj_five.png", game->pnj[4].texture, 2.2, 2.2);
-    game->pnj[5].sprite = init_sprite
-    ("ressources/pnj/pnj_six.png", game->pnj[5].texture, 2.2, 2.2);
-    game->pnj[6].sprite = init_sprite
-    ("ressources/pnj/pnj_seven.png", game->pnj[6].texture, 2.2, 2.2);
-    game->pnj[7].sprite = init_sprite
-    ("ressources/pnj/pnj_eight.png", game->pnj[7].texture, 2.2, 2.2);
-    game->pnj[8].sprite = init_sprite
-    ("ressources/pnj/pnj_nine.png", game->pnj[8].texture, 2.2, 2.2);
-    game->pnj[9].sprite = init_sprite
-    ("ressources/pnj/pnj_ten.png", game->pnj[9].texture, 2.2, 2.2);
-    game->pnj[10].sprite = init_sprite
-    ("ressources/pnj/pnj_eleven.png", game->pnj[10].texture, 2.2, 2.2);
+    pnj_create_two(game);
     return (0);
 }
 

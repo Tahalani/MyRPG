@@ -8,6 +8,12 @@
 #include "map.h"
 #include "rpg.h"
 
+int initialize_mini_map(game_t *game)
+{
+    game->mini_map.rect = (sfFloatRect){0, 0, 0.15, 0.2};
+    return (0);
+}
+
 int mini_map_loop(game_t *game)
 {
     if (game->status == 0) {
@@ -31,7 +37,8 @@ int display_mini_map(game_t *game)
             (game->window.window, game->background[0].sprite, NULL);
             display_pnj(game);
         }
-        sfRenderWindow_drawSprite(game->window.window, game->player.sprite, NULL);
+        sfRenderWindow_drawSprite
+        (game->window.window, game->player.sprite, NULL);
     }
     return (0);
 }

@@ -37,7 +37,7 @@ static int manage_click_menu_bot(menu_t *menu, game_t *game, btn_t *btn)
     sfFloatRect shape;
 
     shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[5].shape);
-    if (sfFloatRect_contains(&shape, mouse.x, mouse.y)&&
+    if (sfFloatRect_contains(&shape, mouse.x, mouse.y) &&
         menu->rules.status == 0) {
         sfSprite_setColor(btn->about_btn.sprite, menu->opacity[1]);
         btn->about_btn.scale = (sfVector2f) {0.78, 0.78};

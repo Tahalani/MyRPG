@@ -14,25 +14,20 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
-    initialize_menu(menu, btn);
+    initialize_menu(menu, btn, game);
     initialize_pnj(game);
     initialize_fight(game);
     initialize_story_object(game);
     return (0);
 }
 
-int in_loop(game_t *game)
+void check_status_game(game_t *game)
 {
-    sfRenderWindow_clear(game->window.window, sfBlack);
     if (game->status == 5) {
         analyse_events_pause(game);
         inventory_loop(game);
     }
     if (game->status == 0) {
-        game->player.second_move_player =
-        sfTime_asSeconds(sfClock_getElapsedTime(game->player.clock_move_player));
-        game->second_clock =
-        sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
         player_loop(&game->player);
         acces_to_church_map(game);
         acces_to_top_map(game);
@@ -48,6 +43,12 @@ int in_loop(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->arena_fight.sprite, NULL);
     }
+}
+
+int in_loop(game_t *game)
+{
+    sfRenderWindow_clear(game->window.window, sfBlack);
+    check_status_game(game);
     function_to_display(game);
     mini_map_loop(game);
     display_mini_map(game);
@@ -55,34 +56,21 @@ int in_loop(game_t *game)
     return (0);
 }
 
+int initialize_story_value(game_t *game)
+{
+    game->story_steps = 0;
+    game->coins.count = 0;
+    return (0);
+}
+
 int initialize_value(game_t *game)
 {
-    game->player.second_move_player = 0.00;
-    game->second_clock = 0.00;
-    game->clock = sfClock_create();
-    game->player.clock_move_player = sfClock_create();
     game->status = 2;
-    game->story_steps = 0;
-    game->window.width = 1920;
-    game->window.height = 1080;
-    game->coins.count = 0;
-    game->player.sprite =
-    init_sprite("ressources/player/player.png", game->player.texture, 2, 2);
-    game->sound.game = music("ressources/music/back_music.ogg", 1);
-    game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
-    sfMusic_pause(game->sound.dialogue);
-    sfMusic_pause(game->sound.game);
-    for (int i = 0; i <= 3; i++) {
-        game->map[i].check = 0;
-        game->map[i].view = sfView_create();
-    }
-    game->map[0].check = 1;
-    game->mini_map.rect = (sfFloatRect){0, 0, 0.15, 0.2};
-    game->mini_map.view = sfView_create();
-    game->background[4].sprite =
-    init_sprite("ressources/menu/bg.jpg", game->background[4].texture, 1, 1);
-    position_sprite
-    (game->background[4].sprite, &game->background[4].pos, 0, 0);
+    set_value_window(game);
+    initialize_story_value(game);
+    set_music_value(game);
+    initialize_mini_map(game);
+    set_view_value(game);
     return (0);
 }
 

@@ -46,7 +46,6 @@ sfFloatRect shape)
     return (0);
 }
 
-
 int animation_menu_config(menu_t *menu, game_t *game, btn_t *btn,
 sfFloatRect shape)
 {

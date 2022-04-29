@@ -8,7 +8,20 @@
 #include "my.h"
 #include "rpg.h"
 
-int test_plus(game_t *game, int operator, float *player, int i)
+int function_after_condition_moove(game_t *game, int i)
+{
+    sfView_setCenter(game->map[i].view, game->player.position);
+    sfRenderWindow_setView(game->window.window, game->map[i].view);
+    sfSprite_setPosition(game->player.sprite, game->player.position);
+    function_to_display(game);
+    pnj_loop(game);
+    mini_map_loop(game);
+    display_mini_map(game);
+    sfRenderWindow_display(game->window.window);
+    return (0);
+}
+
+int player_function_move(game_t *game, int operator, float *player, int i)
 {
     for (int count = 0; count != 4;) {
         game->player.second =
@@ -22,14 +35,7 @@ int test_plus(game_t *game, int operator, float *player, int i)
             count++;
             sfClock_restart(game->player.clock);
         }
-        sfView_setCenter(game->map[i].view, game->player.position);
-        sfRenderWindow_setView(game->window.window, game->map[i].view);
-        sfSprite_setPosition(game->player.sprite, game->player.position);
-        function_to_display(game);
-        pnj_loop(game);
-        mini_map_loop(game);
-        display_mini_map(game);
-        sfRenderWindow_display(game->window.window);
+        function_after_condition_moove(game, i);
     }
     return (0);
 }
@@ -40,13 +46,13 @@ int run_player_two(game_t *game, char check, int i)
     game->map[i].main_map[game->map[i].y_player][game->map[i].x_player + 1]
     == '1') {
         game->map[i].x_player += 1;
-        test_plus(game, 1, &game->player.position.x, i);
+        player_function_move(game, 1, &game->player.position.x, i);
     }
     if (check == 'z' &&
     game->map[i].main_map[game->map[i].y_player - 1][game->map[i].x_player]
     == '1') {
         game->map[i].y_player -= 1;
-        test_plus(game, 0, &game->player.position.y, i);
+        player_function_move(game, 0, &game->player.position.y, i);
     }
     return (i);
 }
@@ -57,13 +63,13 @@ int run_player(game_t *game, char check, int i)
     game->map[i].main_map[game->map[i].y_player + 1][game->map[i].x_player]
     == '1') {
         game->map[i].y_player += 1;
-        test_plus(game, 1, &game->player.position.y, i);
+        player_function_move(game, 1, &game->player.position.y, i);
     }
     if (check == 'q' &&
     game->map[i].main_map[game->map[i].y_player][game->map[i].x_player - 1]
     == '1') {
         game->map[i].x_player -= 1;
-        test_plus(game, 0, &game->player.position.x, i);
+        player_function_move(game, 0, &game->player.position.x, i);
     }
     i = run_player_two(game, check, i);
     return (i);
