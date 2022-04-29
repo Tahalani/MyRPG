@@ -16,12 +16,13 @@ static int manage_click_menu_pausebot(menu_t *menu, game_t *game, btn_t *btn)
         shape = sfRectangleShape_getGlobalBounds(menu->shape_btn[i].shape);
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 19) {
             btn->wood_btn[5].scale = (sfVector2f){0.96, 0.96};
+            save_game(game, menu, btn);
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 20) {
             btn->wood_btn[6].scale = (sfVector2f){0.96, 0.96};
             sfMusic_stop(game->sound.game);
             before_loop(game, menu, btn);
-            start_game(game, menu, btn);
+            game->status = 2;
         }
     }
     return (0);

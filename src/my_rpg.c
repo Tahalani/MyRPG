@@ -28,20 +28,24 @@ int in_loop(game_t *game)
         analyse_events_pause(game);
         inventory_loop(game);
     }
-    game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
-    player_loop(&game->player);
-    acces_to_church_map(game);
-    acces_to_top_map(game);
-    acces_to_castle_map(game);
-    pnj_loop(game);
-    analyse_events(game);
-    map_loop(game);
-    acces_fight(game);
-    function_to_display(game);
+    if (game->status == 0) {
+        game->second_clock = sfTime_asSeconds(sfClock_getElapsedTime(game->clock));
+        player_loop(&game->player);
+        acces_to_church_map(game);
+        acces_to_top_map(game);
+        acces_to_castle_map(game);
+        pnj_loop(game);
+        analyse_events(game);
+        map_loop(game);
+        acces_fight(game);
+    }
     if (game->status == 6) {
         analyse_events_pause(game);
         fight_loop(game);
+        sfRenderWindow_drawSprite
+        (game->window.window, game->arena_fight.sprite, NULL);
     }
+    function_to_display(game);
     mini_map_loop(game);
     display_mini_map(game);
     sfRenderWindow_display(game->window.window);

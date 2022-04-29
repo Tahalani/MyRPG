@@ -13,6 +13,7 @@ int acces_fight(game_t *game)
     if (game->map[3].check == 1 &&
     game->map[3].x_player == 15 && game->map[3].y_player == 10) {
         game->status = 6;
+        game->map[3].check = 0;
     }
     return (0);
 }
@@ -31,6 +32,5 @@ int fight_loop(game_t *game)
         move_rect_monster_fight(game);
         sfClock_restart(game->arena_fight.clock);
     }
-    display_fight(game);
     return (0);
 }
