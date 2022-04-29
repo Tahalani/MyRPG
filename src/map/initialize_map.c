@@ -74,5 +74,6 @@ int initialize_map(game_t *game)
     initialize_map_church(game);
     initialize_map_top(game);
     initialize_castle_map(game);
+    init_mini_map_utils(game);
     return (0);
 }

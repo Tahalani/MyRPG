@@ -10,6 +10,7 @@
 
 int function_after_condition_moove(game_t *game, int i)
 {
+    mini_map_utils(game);
     sfView_setCenter(game->map[i].view, game->player.position);
     sfRenderWindow_setView(game->window.window, game->map[i].view);
     sfSprite_setPosition(game->player.sprite, game->player.position);

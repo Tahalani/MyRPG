@@ -25,6 +25,15 @@ int mini_map_loop(game_t *game)
     return 0;
 }
 
+static int display_pnj_mini_map(game_t *game)
+{
+    for (int i = 0; i != 11; i++) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->pnj[i].sprite, NULL);
+    }
+    return (0);
+}
+
 int display_mini_map(game_t *game)
 {
     if (game->status == 0) {
@@ -35,10 +44,21 @@ int display_mini_map(game_t *game)
             }
             sfRenderWindow_drawSprite
             (game->window.window, game->background[0].sprite, NULL);
-            display_pnj(game);
+            display_pnj_mini_map(game);
         }
         sfRenderWindow_drawSprite
-        (game->window.window, game->player.sprite, NULL);
+        (game->window.window, game->map_utils[0].sprite, NULL);
     }
+    return (0);
+}
+
+int init_mini_map_utils(game_t *game)
+{
+    game->map_utils[0].sprite =
+    init_sprite("ressources/map/epingle.png",
+    game->map_utils[0].texture, 1, 1);
+    position_sprite
+    (game->map_utils[0].sprite, &game->map_utils[0].pos,
+    game->map_utils->pos.x, game->map_utils->pos.y);
     return (0);
 }
