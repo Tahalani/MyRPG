@@ -60,6 +60,7 @@ int initialize_story_value(game_t *game)
 {
     game->story_steps = 0;
     game->coins.count = 0;
+    game->level_player = 0;
     return (0);
 }
 

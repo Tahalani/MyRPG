@@ -118,12 +118,12 @@ typedef struct game_s {
     window_t window;
     event_t event;
     map_t map[4];
-    inventory_t inventory[3];
+    inventory_t inventory[4];
     sfClock *clock;
     move_t key;
     music_t sound;
     pnj_t pnj[11];
-    speech_t speech[4];
+    speech_t speech[8];
     text_t coins;
     fight_t player_fight;
     fight_t monster_fight;
@@ -131,6 +131,7 @@ typedef struct game_s {
     fight_t life[3];
     int status;
     int story_steps;
+    int level_player;
 } game_t;
 
 #endif/* !GAME_H_ */

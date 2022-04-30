@@ -12,7 +12,9 @@ int set_scale_inv(game_t *game)
 {
     game->inventory[0].scale = (sfVector2f){0.1, 0.1};
     game->inventory[1].scale = (sfVector2f){1, 1};
-    for (int i = 0; i != 2; i++) {
+    game->inventory[2].scale = (sfVector2f){0.08, 0.08};
+    game->inventory[3].scale = (sfVector2f){0.08, 0.08};
+    for (int i = 0; i != 4; i++) {
         sfSprite_setScale
         (game->inventory[i].sprite, game->inventory[i].scale);
     }

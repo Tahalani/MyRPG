@@ -10,7 +10,8 @@
 
 int condition_display_speech_two(game_t *game)
 {
-    if (game->map->x_player == 30 && game->map->y_player == 30)
+    if ((game->map->x_player == 30 && game->map->y_player == 30) &&
+    game->story_steps < 5)
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[1].sprite, NULL);
     if (game->map->x_player == 54 && game->map->y_player == 45)
@@ -20,6 +21,40 @@ int condition_display_speech_two(game_t *game)
     (game->map->x_player == 30 && game->map->y_player == 31) ||
     (game->map->x_player == 54 && game->map->y_player == 46))
         sfMusic_play(game->sound.dialogue);
+    return (0);
+}
+
+int condition_display_speech_three(game_t *game)
+{
+    if ((game->map->x_player == 30 && game->map->y_player == 30) &&
+    (game->story_steps == 4 || game->story_steps == 5)) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[4].sprite, NULL);
+        game->story_steps = 5;
+        game->coins.count = 0;
+        sfText_setString(game->coins.text, int_to_char(game->coins.count));
+    }
+    if ((game->map->x_player == 11 && game->map->y_player == 49) &&
+    (game->story_steps == 5 || game->story_steps == 6)) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[6].sprite, NULL);
+        game->story_steps = 6;
+        game->coins.count = 0;
+        sfText_setString(game->coins.text, int_to_char(game->coins.count));
+    }
+    return (0);
+}
+
+int condition_display_speech_four(game_t *game)
+{
+    if ((game->map->x_player == 11 && game->map->y_player == 49) &&
+    (game->story_steps == 7 || game->story_steps == 8)) {
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[6].sprite, NULL);
+        game->story_steps = 8;
+        game->coins.count = 0;
+        sfText_setString(game->coins.text, int_to_char(game->coins.count));
+    }
     return (0);
 }
 
@@ -39,6 +74,8 @@ int condition_display_speech(game_t *game)
         game->coins.count = 50;
         sfText_setString(game->coins.text, int_to_char(game->coins.count));
     }
+    condition_display_speech_three(game);
+    condition_display_speech_four(game);
     condition_display_speech_two(game);
     return (0);
 }
