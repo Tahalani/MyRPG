@@ -20,7 +20,7 @@ static int manage_click_menu_pausebot(menu_t *menu, game_t *game, btn_t *btn)
         }
         if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 20) {
             btn->wood_btn[6].scale = (sfVector2f){0.96, 0.96};
-            sfMusic_stop(game->sound.game);
+            destroy_music(game, menu);
             before_loop(game, menu, btn);
             game->status = 2;
         }
