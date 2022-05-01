@@ -25,18 +25,24 @@ int mini_map_loop(game_t *game)
     return 0;
 }
 
+int loop_in_display_mini_map(game_t *game)
+{
+    if (game->map[0].check == 1) {
+        for (int i = 0; i <= 2; i++) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->side_map[i].sprite, NULL);
+        }
+        sfRenderWindow_drawSprite
+        (game->window.window, game->background[0].sprite, NULL);
+        display_pnj(game);
+    }
+    return (0);
+}
+
 int display_mini_map(game_t *game)
 {
     if (game->status == 0) {
-        if (game->map[0].check == 1) {
-            for (int i = 0; i <= 2; i++) {
-                sfRenderWindow_drawSprite
-                (game->window.window, game->side_map[i].sprite, NULL);
-            }
-            sfRenderWindow_drawSprite
-            (game->window.window, game->background[0].sprite, NULL);
-            display_pnj(game);
-        }
+        loop_in_display_mini_map(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->player.sprite, NULL);
     }

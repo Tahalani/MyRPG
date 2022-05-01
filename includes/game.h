@@ -129,6 +129,7 @@ typedef struct game_s {
     fight_t monster_fight;
     fight_t arena_fight;
     fight_t life[3];
+    lamp_t lamp[6];
     int status;
     int story_steps;
     int level_player;

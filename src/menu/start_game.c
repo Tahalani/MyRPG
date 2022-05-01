@@ -34,9 +34,14 @@ int start_game(game_t *game, menu_t *menu, btn_t *btn)
     initialize_player(menu, &game->player);
     sfMusic_stop(menu->sound.menu);
     sfMusic_play(game->sound.game);
-    game->background[0].sprite =
-    init_sprite
-    ("ressources/map/map.png", game->background[0].texture, 2.3, 2.3);
+    if (menu->map1.status == 1)
+        game->background[0].sprite =
+        init_sprite
+        ("ressources/map/map.png", game->background[0].texture, 2.3, 2.3);
+    if (menu->map2.status == 1)
+        game->background[0].sprite =
+        init_sprite
+        ("ressources/map/map_night.png", game->background[0].texture, 2.3, 2.3);
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, -1000, -400);
     game->status = 0;

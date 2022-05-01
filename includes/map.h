@@ -22,6 +22,14 @@
     #include <unistd.h>
     #include <stdio.h>
 
+typedef struct lamp_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f position;
+} lamp_t;
+
 typedef struct map_s {
     char **main_map;
     int x_player;

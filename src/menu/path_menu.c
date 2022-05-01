@@ -12,7 +12,7 @@ int set_path_menu_conf(menu_t *menu)
     menu->map1.sprite = init_sprite
     ("ressources/map/map.png", menu->map1.texture, 1, 1);
     menu->map2.sprite = init_sprite
-    ("ressources/map/map.png", menu->map2.texture, 1, 1);
+    ("ressources/map/map_night.png", menu->map2.texture, 1, 1);
     menu->red_skin.sprite = init_sprite
     ("ressources/player/player_2.png", menu->red_skin.texture, 1, 1);
     menu->brown_skin.sprite = init_sprite

@@ -24,6 +24,6 @@ sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel)
     video_mode.height = height;
     video_mode.bitsPerPixel = bitsPerPixel;
     window = sfRenderWindow_create(video_mode, "My rpg", sfDefaultStyle, NULL);
-    sfRenderWindow_setFramerateLimit(window, 30);
+    sfRenderWindow_setFramerateLimit(window, 60);
     return (window);
 }

@@ -68,6 +68,17 @@ int initialize_map(game_t *game)
     game->map[0].x_player = 28;
     game->map[0].y_player = 55;
     game->map[0].view_size = (sfVector2f){1745, 981};
+    for (int i = 0; i != 6; i++)
+        game->lamp[i].sprite = init_sprite
+        ("ressources/map/lamp.png", game->lamp[i].texture, 2.3, 2.3);
+    position_sprite
+    (game->lamp[0].sprite, &game->lamp[0].position, -1000, -400);
+    position_sprite
+    (game->lamp[1].sprite, &game->lamp[1].position, -1000, 150);
+    position_sprite
+    (game->lamp[2].sprite, &game->lamp[2].position, -1221, -1173);
+    position_sprite
+    (game->lamp[3].sprite, &game->lamp[3].position, -1221, 1587);
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, -1000, -400);
     create_side_map(game);

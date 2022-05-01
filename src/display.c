@@ -14,10 +14,9 @@ int check_number_map(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[3].sprite, NULL);
     if (game->map[0].check == 1) {
-        for (int i = 0; i <= 2; i++) {
+        for (int i = 0; i <= 2; i++)
             sfRenderWindow_drawSprite
             (game->window.window, game->side_map[i].sprite, NULL);
-        }
         sfRenderWindow_drawSprite
         (game->window.window, game->background[0].sprite, NULL);
         display_pnj(game);
@@ -39,6 +38,10 @@ int function_to_display(game_t *game)
         inventory_loop(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->player.sprite, NULL);
+        if (game->map[0].check == 1)
+            for (int i = 0; i != 6; i++)
+                sfRenderWindow_drawSprite
+                (game->window.window, game->lamp[i].sprite, NULL);
         if (game->status == 6)
             display_fight(game);
     } else if (game->status == 5)
