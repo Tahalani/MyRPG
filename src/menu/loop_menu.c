@@ -38,6 +38,8 @@ static int init_status_menu(menu_t *menu, btn_t *btn)
 int initialize_menu(menu_t *menu, btn_t *btn, game_t *game)
 {
     menu->clock = sfClock_create();
+    menu->map1.status = 1;
+    menu->map2.status = 0;
     menu->seconds = 0;
     menu->opacity[0] = sfColor_fromRGB(255, 255, 255);
     menu->opacity[1] = sfColor_fromRGB(150, 150, 150);
