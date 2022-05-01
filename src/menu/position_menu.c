@@ -33,6 +33,7 @@ int set_pos_menu(menu_t *menu, btn_t *btn)
     sfSprite_setPosition(btn->about_btn.sprite, btn->about_btn.pos);
     sfSprite_setPosition(btn->next_btn.sprite, btn->next_btn.pos);
     sfSprite_setPosition(btn->prev_btn.sprite, btn->prev_btn.pos);
+    sfSprite_setPosition(menu->rules.sprite, menu->rules.pos);
     sfSprite_setPosition(menu->sign_settings.sprite, menu->sign_settings.pos);
     for (int i = 0; i != 7; i++)
         sfSprite_setPosition
@@ -78,6 +79,7 @@ int init_pos_menu(menu_t *menu, btn_t *btn)
     for (int i = 1; i != 3; i++)
         btn->wood_btn[i].pos =
         (sfVector2f){btn->wood_btn[i - 1].pos.x + 250, 650};
+    menu->rules.pos = (sfVector2f){1100, 175};
     init_pos_conf(menu);
     set_pos_menu(menu, btn);
     return (0);

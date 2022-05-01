@@ -78,7 +78,7 @@ int set_path_menu(menu_t *menu, btn_t *btn, game_t *game)
     btn->prev_btn.sprite =
     init_sprite("ressources/menu/prev_btn.png", btn->prev_btn.texture, 1, 1);
     menu->rules.sprite =
-    init_sprite("ressources/menu/about_btn.png", menu->rules.texture, 1, 1);
+    init_sprite("ressources/menu/about_btn.png", menu->rules.texture, 0.5, 0.5);
     btn->wood_btn[5].sprite = init_sprite
     ("ressources/menu/save_btn.png", btn->wood_btn[5].texture, 1, 1);
     btn->wood_btn[6].sprite = init_sprite
