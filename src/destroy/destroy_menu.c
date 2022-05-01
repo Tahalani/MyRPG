@@ -11,11 +11,11 @@
 
 int destroy_sprite_menu(menu_t *menu)
 {
-    for (int i = 0; i != 4; i++)
-        sfSprite_destroy(menu->bg_skin[i].sprite);
-    for (int i = 0; i != 3; i++)
-        sfSprite_destroy(menu->bg_square[i].sprite);
-    sfSprite_destroy(menu->cursor.sprite);
+    // for (int i = 0; i != 4; i++)
+    //     sfSprite_destroy(menu->bg_skin[i].sprite);
+    // for (int i = 0; i != 3; i++)
+    //     sfSprite_destroy(menu->bg_square[i].sprite);
+    // sfSprite_destroy(menu->cursor.sprite);
     sfSprite_destroy(menu->red_skin.sprite);
     sfSprite_destroy(menu->brown_skin.sprite);
     sfSprite_destroy(menu->blue_skin.sprite);
@@ -57,7 +57,7 @@ int destroy_other_menu(menu_t *menu)
 int destroy_all_menu(menu_t *menu)
 {
     destroy_sprite_menu(menu);
-    destroy_texture_menu(menu);
+    // destroy_texture_menu(menu);
     destroy_other_menu(menu);
     return (0);
 }

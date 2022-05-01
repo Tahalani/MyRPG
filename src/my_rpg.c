@@ -56,7 +56,6 @@ int initialize_value(game_t *game)
 int destroy_all(menu_t *menu, btn_t *btn, game_t *game)
 {
     sfRenderWindow_destroy(game->window.window);
-    destroy_music(game, menu);
     // destroy_all_btn(btn);
     destroy_all_game(game);
     destroy_all_inventory(game->inventory);
@@ -76,7 +75,7 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
         else if (game->status != 0)
             loop_menu(menu, game, btn);
     }
-    // destroy_all(menu, btn, game);
+    destroy_all(menu, btn, game);
     destroy_music(game, menu);
     return (0);
 }

@@ -38,10 +38,12 @@ int function_to_display(game_t *game)
         inventory_loop(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->player.sprite, NULL);
-        if (game->map[0].check == 1)
+        if (game->map[0].check == 1) {
             for (int i = 0; i != 6; i++)
                 sfRenderWindow_drawSprite
                 (game->window.window, game->lamp[i].sprite, NULL);
+            display_pnj(game);
+        }
         if (game->status == 6)
             display_fight(game);
     } else if (game->status == 5)

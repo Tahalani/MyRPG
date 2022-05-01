@@ -46,6 +46,7 @@ int scipt_pnj(game_t *game, int i)
     char *buffer = my_file_in_str(game->pnj[i].path);
     char **script = my_str_to_word_array(buffer, ' ');
 
+    free(buffer);
     if (game->pnj->seconds >= 0.1) {
         if (game->pnj[i].position.y !=
         my_getnbr(script[game->pnj[i].count + 1]) ||
@@ -54,9 +55,11 @@ int scipt_pnj(game_t *game, int i)
             sfSprite_setPosition(game->pnj[i].sprite, game->pnj[i].position);
             sfSprite_setTextureRect(game->pnj[i].sprite, game->pnj[i].rect);
             sfClock_restart(game->pnj->clock);
+            my_free_array(script);
             return (0);
         }
         next_pos(game, i, script);
     }
+    my_free_array(script);
     return (0);
 }

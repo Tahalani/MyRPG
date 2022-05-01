@@ -36,7 +36,7 @@ int destroy_other_pnj(pnj_t *pnj)
 int destroy_all_pnj(pnj_t *pnj, speech_t *speech)
 {
     destroy_sprite_pnj(pnj, speech);
-    destroy_texture_pnj(pnj, speech);
+    // destroy_texture_pnj(pnj, speech);
     destroy_other_pnj(pnj);
     return (0);
 }

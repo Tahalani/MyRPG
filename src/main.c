@@ -23,5 +23,7 @@ int main(int ac, char **av)
         return (84);
     }
     my_rpg(game, menu, &btn);
+    free(game);
+    free(menu);
     return (0);
 }
