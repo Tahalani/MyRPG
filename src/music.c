@@ -10,6 +10,8 @@
 
 int set_music_value(game_t *game)
 {
+    game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+    sfMusic_pause(game->sound.page_menu);
     game->sound.game = music("ressources/music/back_music.ogg", 1);
     game->sound.dialogue = music("ressources/music/sound_dialogue.ogg", 0);
     sfMusic_pause(game->sound.dialogue);

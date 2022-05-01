@@ -44,6 +44,8 @@ int initialize_menu(menu_t *menu, btn_t *btn, game_t *game)
     init_status_menu(menu, btn);
     menu->volum.str = malloc(sizeof(char) * (3 + 1));
     menu->volum.str = "100";
+    menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+    sfMusic_pause(menu->sound.page_menu);
     menu->sound.menu = music("ressources/music/ost_menu.ogg", 1);
     sfMusic_setVolume(menu->sound.menu, 75.0);
     init_shape_menu(menu);

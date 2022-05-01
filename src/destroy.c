@@ -51,6 +51,16 @@ void destroy_all_sprite_two(btn_t *btn, player_t *player)
     sfSprite_destroy(player->sprite);
 }
 
+void destroy_music(game_t *game, menu_t *menu)
+{
+    sfMusic_destroy(game->sound.page_menu);
+    sfMusic_destroy(menu->sound.page_menu);
+    sfMusic_destroy(game->sound.dialogue);
+    sfMusic_destroy(game->sound.fight);
+    sfMusic_destroy(menu->sound.menu);
+    sfMusic_destroy(game->sound.game);
+}
+
 void destroy_all(menu_t *menu, btn_t *btn, game_t *game, player_t *player)
 {
     destroy_all_sprite_one(menu, game);

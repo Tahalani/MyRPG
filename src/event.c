@@ -28,7 +28,7 @@ int analyse_events(game_t *game)
             sfRenderWindow_close(game->window.window);
         if (sfKeyboard_isKeyPressed(sfKeyP)) {
             game->status = 4;
-            game->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+            sfMusic_play(game->sound.page_menu);
         }
         analyse_move_player(game);
         if (sfKeyboard_isKeyPressed(sfKeyTab))

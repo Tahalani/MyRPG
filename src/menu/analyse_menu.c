@@ -33,11 +33,11 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn)
         start_game(game, menu, btn);
     if (game->status < 3 && sfKeyboard_isKeyPressed(sfKeyRight)) {
         game->status++;
-        menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+        sfMusic_play(menu->sound.page_menu);
     } else if (game->status != 4 &&
         game->status > 1 && sfKeyboard_isKeyPressed(sfKeyLeft)) {
         game->status--;
-        menu->sound.page_menu = music("ressources/music/menu_page.ogg", 0);
+        sfMusic_play(menu->sound.page_menu);
     }
     if (sfKeyboard_isKeyPressed(sfKeyP) && game->status == 4) {
         game->status = 0;

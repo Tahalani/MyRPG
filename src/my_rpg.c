@@ -86,5 +86,6 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
         else if (game->status != 0)
             loop_menu(menu, game, btn);
     }
+    destroy_music(game, menu);
     return (0);
 }
