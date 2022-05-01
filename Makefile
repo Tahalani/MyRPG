@@ -60,21 +60,28 @@ SRC			=		src/main.c									\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\
-					destroy										\
+					destroy/destroy_menu						\
+					destroy/destroy_btn							\
+					destroy/destroy_game						\
+					destroy/destroy_inventory					\
+					destroy/destroy_pnj							\
 					display										\
 					event										\
 					music										\
+					loop										\
 					window										\
 					))											\
 
 SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
 					map/church_map								\
+					map/mini_map								\
 					map/top_map									\
 					map/castle_map								\
 					map/initialize_side_map						\
 					map/initialize_map							\
 					map/loop_map								\
+					map/view_map								\
 					menu/analyse_menu							\
 					menu/display_menu							\
 					menu/loop_menu								\
@@ -83,6 +90,8 @@ SRCT 		=		tests/tests_rpg.c							\
 					menu/rect_menu								\
 					menu/scale_menu								\
 					menu/manage_click							\
+					menu/manage_click_pause						\
+					menu/save_game								\
 					menu/manage_click_settings					\
 					menu/manage_click_conf						\
 					menu/animation_btn_menu						\
@@ -98,6 +107,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					pnj/script_pnj								\
 					pnj/rect_pnj								\
 					pnj/speech_pnj								\
+					pnj/path_pnj								\
 					inventory/initialize_inv					\
 					inventory/loop_inventory					\
 					inventory/position_inv						\
@@ -113,10 +123,15 @@ SRCT 		=		tests/tests_rpg.c							\
 					utils/position								\
 					utils/init									\
 					utils/make_shape							\
-					destroy										\
+					destroy/destroy_menu						\
+					destroy/destroy_btn							\
+					destroy/destroy_game						\
+					destroy/destroy_inventory					\
+					destroy/destroy_pnj							\
 					display										\
 					event										\
 					music										\
+					loop										\
 					window										\
 					))											\
 

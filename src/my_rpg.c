@@ -10,17 +10,6 @@
 #include "game.h"
 #include "menu.h"
 
-int before_loop(game_t *game, menu_t *menu, btn_t *btn)
-{
-    initialize_value(game);
-    initialize_map(game);
-    initialize_menu(menu, btn, game);
-    initialize_pnj(game);
-    initialize_fight(game);
-    initialize_story_object(game);
-    return (0);
-}
-
 void check_status_game(game_t *game)
 {
     if (game->status == 5) {
@@ -45,17 +34,6 @@ void check_status_game(game_t *game)
     }
 }
 
-int in_loop(game_t *game)
-{
-    sfRenderWindow_clear(game->window.window, sfBlack);
-    check_status_game(game);
-    function_to_display(game);
-    mini_map_loop(game);
-    display_mini_map(game);
-    sfRenderWindow_display(game->window.window);
-    return (0);
-}
-
 int initialize_story_value(game_t *game)
 {
     game->story_steps = 0;
@@ -75,6 +53,18 @@ int initialize_value(game_t *game)
     return (0);
 }
 
+int destroy_all(menu_t *menu, btn_t *btn, game_t *game)
+{
+    sfRenderWindow_destroy(game->window.window);
+    destroy_music(game, menu);
+    // destroy_all_btn(btn);
+    destroy_all_game(game);
+    destroy_all_inventory(game->inventory);
+    destroy_all_menu(menu);
+    destroy_all_pnj(game->pnj, game->speech);
+    return (0);
+}
+
 int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
 {
     before_loop(game, menu, btn);
@@ -86,6 +76,7 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
         else if (game->status != 0)
             loop_menu(menu, game, btn);
     }
+    // destroy_all(menu, btn, game);
     destroy_music(game, menu);
     return (0);
 }

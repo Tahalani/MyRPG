@@ -44,7 +44,7 @@ int map_loop(game_t *game);
 int before_loop(game_t *game, menu_t *menu, btn_t *btn);
 int initialize_mini_map(game_t *game);
 int set_view_value(game_t *game);
-void destroy_music(game_t *game, menu_t *menu);
+int destroy_music(game_t *game, menu_t *menu);
 
 // MENU //
 int analyse_click(menu_t *menu, game_t *game, btn_t *btn);
@@ -153,10 +153,18 @@ int set_value_window(game_t *game);
 sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
 
 // MY_RPG //
+void check_status_game(game_t *game);
+int before_loop(game_t *game, menu_t *menu, btn_t *btn);
+int in_loop(game_t *game);
 int initialize_value(game_t *game);
 int my_rpg(game_t *, menu_t *, btn_t *);
 
 // DESTROY //
-void destroy_all(menu_t *menu, btn_t *btn, game_t *game, player_t *player);
+int destroy_all_game(game_t *game);
+int destroy_all_inventory(inventory_t *inventory);
+int destroy_all_menu(menu_t *menu);
+int destroy_all_btn(btn_t *btn);
+int destroy_all_pnj(pnj_t *pnj, speech_t *speech);
+int destroy_all(menu_t *menu, btn_t *btn, game_t *game);
 
 #endif/* !PROJET_H_ */

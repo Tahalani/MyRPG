@@ -111,9 +111,9 @@ typedef struct mini_map_s {
 
 typedef struct game_s {
     element_t map_utils;
-    mini_map_t mini_map;
     element_t side_map[3];
     element_t background[5];
+    mini_map_t mini_map;
     player_t player;
     window_t window;
     event_t event;
