@@ -44,6 +44,7 @@ int map_loop(game_t *game);
 int before_loop(game_t *game, menu_t *menu, btn_t *btn);
 int initialize_mini_map(game_t *game);
 int set_view_value(game_t *game);
+void destroy_music(game_t *game, menu_t *menu);
 
 // MENU //
 int analyse_click(menu_t *menu, game_t *game, btn_t *btn);
