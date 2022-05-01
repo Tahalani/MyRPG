@@ -63,7 +63,7 @@ int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int display_menu_pause(game_t *game, btn_t *btn)
+int display_menu_pause(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
     sfRenderWindow_drawSprite
@@ -75,6 +75,9 @@ int display_menu_pause(game_t *game, btn_t *btn)
     for (int i = 5; i != 7; ++i)
         sfRenderWindow_drawSprite
         (game->window.window, btn->wood_btn[i].sprite, NULL);
+    if (menu->rules.status == 1)
+        sfRenderWindow_drawSprite
+        (game->window.window, menu->rules.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, btn->music_btn.sprite, NULL);
     sfRenderWindow_drawSprite
