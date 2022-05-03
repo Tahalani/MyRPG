@@ -29,7 +29,7 @@ int destroy_sprite_game(game_t *game)
 
 int destroy_texture_game(game_t *game)
 {
-    sfTexture_destroy(game->map_utils.texture);
+    // sfTexture_destroy(game->map_utils.texture);
     sfTexture_destroy(game->player.texture);
     sfTexture_destroy(game->player_fight.texture);
     sfTexture_destroy(game->monster_fight.texture);
@@ -68,8 +68,10 @@ int destroy_music(game_t *game, menu_t *menu)
 
 int destroy_all_game(game_t *game)
 {
+    for (int i = 0; i != 4; i++)
+        my_free_array(game->map[i].main_map);
+    destroy_texture_game(game);
     destroy_sprite_game(game);
-    // destroy_texture_game(game);
     destroy_other_game(game);
     return (0);
 }
