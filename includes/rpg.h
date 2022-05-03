@@ -138,6 +138,7 @@ int display_fight(game_t *game);
 int fight_loop(game_t *game);
 int move_rect_player_fight(game_t *game);
 int move_rect_monster_fight(game_t *game);
+int gameplay_fight(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);

@@ -55,6 +55,7 @@ SRC			=		src/main.c									\
 					fight/loop_fight							\
 					fight/position_fight						\
 					fight/rect_fight							\
+					fight/gameplay								\
 					utils/move_rect								\
 					utils/make_text								\
 					utils/position								\
@@ -118,6 +119,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					fight/loop_fight							\
 					fight/position_fight						\
 					fight/rect_fight							\
+					fight/gameplay								\
 					utils/move_rect								\
 					utils/make_text								\
 					utils/position								\

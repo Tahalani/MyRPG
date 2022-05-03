@@ -15,7 +15,6 @@ int destroy_sprite_menu(menu_t *menu)
         sfSprite_destroy(menu->bg_skin[i].sprite);
     for (int i = 0; i != 2; i++)
         sfSprite_destroy(menu->bg_square[i].sprite);
-    // sfSprite_destroy(menu->cursor.sprite);
     sfSprite_destroy(menu->red_skin.sprite);
     sfSprite_destroy(menu->brown_skin.sprite);
     sfSprite_destroy(menu->blue_skin.sprite);
@@ -33,7 +32,6 @@ int destroy_texture_menu(menu_t *menu)
         sfTexture_destroy(menu->bg_skin[i].texture);
     for (int i = 0; i != 2; i++)
         sfTexture_destroy(menu->bg_square[i].texture);
-    // sfTexture_destroy(menu->cursor.texture);
     sfTexture_destroy(menu->red_skin.texture);
     sfTexture_destroy(menu->brown_skin.texture);
     sfTexture_destroy(menu->blue_skin.texture);
