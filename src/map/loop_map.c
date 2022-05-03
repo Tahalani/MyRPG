@@ -23,6 +23,14 @@ int check_for_the_good_view(game_t *game)
     return i;
 }
 
+int mini_map_utils(game_t *game)
+{
+    game->map_utils->pos.x = game->player.position.x - 115;
+    game->map_utils->pos.y = game->player.position.y - 260;
+    sfSprite_setPosition(game->map_utils[0].sprite, game->map_utils[0].pos);
+    return 0;
+}
+
 int map_loop(game_t *game)
 {
     int i = check_for_the_good_view(game);
@@ -42,5 +50,6 @@ int map_loop(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[1].sprite, NULL);
     sfRenderWindow_setView(game->window.window, game->map[i].view);
+    mini_map_utils(game);
     return (0);
 }

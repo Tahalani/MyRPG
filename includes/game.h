@@ -52,10 +52,10 @@ typedef struct move_s {
 } move_t;
 
 typedef struct game_s {
-    element_t map_utils;
+    element_t map_utils[2];
+    mini_map_t mini_map;
     element_t side_map[3];
     element_t background[5];
-    mini_map_t mini_map;
     player_t player;
     window_t window;
     event_t event;

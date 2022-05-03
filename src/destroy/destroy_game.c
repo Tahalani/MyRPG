@@ -29,7 +29,6 @@ int destroy_sprite_game(game_t *game)
 
 int destroy_texture_game(game_t *game)
 {
-    sfTexture_destroy(game->map_utils.texture);
     sfTexture_destroy(game->player.texture);
     sfTexture_destroy(game->player_fight.texture);
     sfTexture_destroy(game->monster_fight.texture);
