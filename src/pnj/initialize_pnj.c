@@ -45,15 +45,15 @@ int initialize_pnj(game_t *game)
 int pnj_create(game_t *game)
 {
     game->pnj[0].sprite = init_sprite
-    ("ressources/pnj/pnj_one.png", game->pnj[0].texture, 2.3, 2.3);
+    ("ressources/pnj/pnj_one.png", &game->pnj[0].texture, 2.3, 2.3);
     game->pnj[1].sprite = init_sprite
-    ("ressources/pnj/pnj_two.png", game->pnj[1].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_two.png", &game->pnj[1].texture, 2.2, 2.2);
     game->pnj[2].sprite = init_sprite
-    ("ressources/pnj/pnj_three.png", game->pnj[2].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_three.png", &game->pnj[2].texture, 2.2, 2.2);
     game->pnj[3].sprite = init_sprite
-    ("ressources/pnj/pnj_four.png", game->pnj[3].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_four.png", &game->pnj[3].texture, 2.2, 2.2);
     game->pnj[4].sprite = init_sprite
-    ("ressources/pnj/pnj_five.png", game->pnj[4].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_five.png", &game->pnj[4].texture, 2.2, 2.2);
     pnj_create_two(game);
     return (0);
 }
@@ -61,21 +61,21 @@ int pnj_create(game_t *game)
 int speech_create(game_t *game)
 {
     game->speech[0].sprite = init_sprite
-    ("ressources/speech/Flora_speech_one.png", game->speech[0].texture, 1, 1);
+    ("ressources/speech/Flora_speech_one.png", &game->speech[0].texture, 1, 1);
     game->speech[1].sprite = init_sprite
-    ("ressources/speech/bilal_speech.png", game->speech[1].texture, 1, 1);
+    ("ressources/speech/bilal_speech.png", &game->speech[1].texture, 1, 1);
     game->speech[2].sprite = init_sprite
-    ("ressources/speech/emeric_speech.png", game->speech[2].texture, 1, 1);
+    ("ressources/speech/emeric_speech.png", &game->speech[2].texture, 1, 1);
     game->speech[3].sprite = init_sprite
-    ("ressources/speech/Flora_speech_two.png", game->speech[3].texture, 1, 1);
+    ("ressources/speech/Flora_speech_two.png", &game->speech[3].texture, 1, 1);
     game->speech[4].sprite = init_sprite
-    ("ressources/speech/bilal_speech_two.png", game->speech[4].texture, 1, 1);
+    ("ressources/speech/bilal_speech_two.png", &game->speech[4].texture, 1, 1);
     game->speech[5].sprite = init_sprite
     ("ressources/speech/bilal_speech_three.png",
-    game->speech[5].texture, 1, 1);
+    &game->speech[5].texture, 1, 1);
     game->speech[6].sprite = init_sprite
-    ("ressources/speech/nelly_speech_one.png", game->speech[6].texture, 1, 1);
+    ("ressources/speech/nelly_speech_one.png", &game->speech[6].texture, 1, 1);
     game->speech[7].sprite = init_sprite
-    ("ressources/speech/nelly_speech_two.png", game->speech[7].texture, 1, 1);
+    ("ressources/speech/nelly_speech_two.png", &game->speech[7].texture, 1, 1);
     return (0);
 }

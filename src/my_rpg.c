@@ -56,7 +56,7 @@ int initialize_value(game_t *game)
 int destroy_all(menu_t *menu, btn_t *btn, game_t *game)
 {
     sfRenderWindow_destroy(game->window.window);
-    // destroy_all_btn(btn);
+    destroy_all_btn(btn);
     destroy_all_game(game);
     destroy_all_inventory(game->inventory);
     destroy_all_menu(menu);

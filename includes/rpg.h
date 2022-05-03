@@ -19,7 +19,7 @@
 
 // UTILS //
 sfRectangleShape *make_shape(sfTexture *, sfVector2f, sfVector2f);
-sfSprite *init_sprite(char *path, sfTexture *texture, float x, float y);
+sfSprite *init_sprite(char *path, sfTexture **texture, float x, float y);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
 int rect_skin(param_t *player, int top, sfClock *clock, float seconds);
 int move_rect(sfIntRect *rect, int offset, int max_value, int top);

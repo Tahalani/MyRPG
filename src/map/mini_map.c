@@ -56,7 +56,7 @@ int init_mini_map_utils(game_t *game)
 {
     game->map_utils[0].sprite =
     init_sprite("ressources/map/epingle.png",
-    game->map_utils[0].texture, 1, 1);
+    &game->map_utils[0].texture, 1, 1);
     position_sprite
     (game->map_utils[0].sprite, &game->map_utils[0].pos,
     game->map_utils->pos.x, game->map_utils->pos.y);
