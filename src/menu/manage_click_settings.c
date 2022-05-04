@@ -7,7 +7,7 @@
 
 #include "rpg.h"
 
-int manage_settings_volume(menu_t *menu, game_t *game, sfVector2i mouse,
+void manage_settings_volume(menu_t *menu, game_t *game, sfVector2i mouse,
 btn_t *btn)
 {
     sfFloatRect shape;
@@ -30,7 +30,6 @@ btn_t *btn)
             sfMusic_setVolume(game->sound.game, vol);
         }
     }
-    return (0);
 }
 
 int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
@@ -57,6 +56,16 @@ int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn)
     return (0);
 }
 
+int manage_setting_wood_two(menu_t *menu, game_t *game, btn_t *btn)
+{
+    sfRenderWindow_setFramerateLimit(game->window.window, 60);
+    sfSprite_setColor(btn->wood_btn[0].sprite, menu->opacity[1]);
+    sfSprite_setColor(btn->wood_btn[1].sprite, menu->opacity[1]);
+    sfSprite_setColor(btn->wood_btn[2].sprite, menu->opacity[0]);
+    btn->wood_btn[2].scale = (sfVector2f){0.94, 0.94};
+    return (0);
+}
+
 int manage_settings_wood(menu_t *menu, game_t *game, sfVector2i mouse,
 btn_t *btn)
 {
@@ -72,20 +81,10 @@ btn_t *btn)
             sfSprite_setColor(btn->wood_btn[2].sprite, menu->opacity[1]);
             btn->wood_btn[0].scale = (sfVector2f){0.94, 0.94};
         }
-        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 16) {
-            sfRenderWindow_setFramerateLimit(game->window.window, 45);
-            sfSprite_setColor(btn->wood_btn[0].sprite, menu->opacity[1]);
-            sfSprite_setColor(btn->wood_btn[1].sprite, menu->opacity[0]);
-            sfSprite_setColor(btn->wood_btn[2].sprite, menu->opacity[1]);
-            btn->wood_btn[1].scale = (sfVector2f){0.94, 0.94};
-        }
-        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 17) {
-            sfRenderWindow_setFramerateLimit(game->window.window, 60);
-            sfSprite_setColor(btn->wood_btn[0].sprite, menu->opacity[1]);
-            sfSprite_setColor(btn->wood_btn[1].sprite, menu->opacity[1]);
-            sfSprite_setColor(btn->wood_btn[2].sprite, menu->opacity[0]);
-            btn->wood_btn[2].scale = (sfVector2f){0.94, 0.94};
-        }
+        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 16)
+            manage_setting_wood_two_again(menu, game, btn);
+        if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 17)
+            manage_setting_wood_two(menu, game, btn);
     }
     return (0);
 }

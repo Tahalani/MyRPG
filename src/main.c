@@ -17,6 +17,8 @@ int main(int ac, char **av)
 
     (void) av;
     if (game == NULL || menu == NULL)
+        return (84);
+    if (game == NULL || menu == NULL)
         return 84;
     if (ac > 1) {
         my_putstr("Invalid Argument l'hmar\n");

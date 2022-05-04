@@ -49,7 +49,16 @@ static int manage_click_menu_pausemid(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
-int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn)
+int manage_click_pause_condition(menu_t *menu, game_t *game, btn_t *btn)
+{
+    sfMusic_play(game->sound.game);
+    sfSprite_setColor(btn->music_btn.sprite, menu->opacity[0]);
+    btn->music_btn.scale = (sfVector2f){0.78, 0.78};
+    game->sound.status = 0;
+    return (0);
+}
+
+void manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);
     sfFloatRect shape;
@@ -67,13 +76,8 @@ int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn)
             sfSprite_setColor(btn->music_btn.sprite, menu->opacity[1]);
             game->sound.status = 1;
         } else if (sfFloatRect_contains(&shape, mouse.x, mouse.y) && i == 4
-            && game->sound.status == 1) {
-            sfMusic_play(game->sound.game);
-            sfSprite_setColor(btn->music_btn.sprite, menu->opacity[0]);
-            btn->music_btn.scale = (sfVector2f){0.78, 0.78};
-            game->sound.status = 0;
-        }
+            && game->sound.status == 1)
+            manage_click_pause_condition(menu, game, btn);
     }
     manage_click_menu_pausemid(menu, game, btn);
-    return (0);
 }

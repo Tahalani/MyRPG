@@ -25,7 +25,7 @@ int put_key(game_t *game, btn_t *btn)
     return (0);
 }
 
-int start_game(game_t *game, menu_t *menu, btn_t *btn)
+int call_function_to_start_game(game_t *game, menu_t *menu, btn_t *btn)
 {
     put_key(game, btn);
     initialize_player(menu, &game->player);
@@ -34,6 +34,12 @@ int start_game(game_t *game, menu_t *menu, btn_t *btn)
     initialize_player(menu, &game->player);
     sfMusic_stop(menu->sound.menu);
     sfMusic_play(game->sound.game);
+    return (0);
+}
+
+int start_game(game_t *game, menu_t *menu, btn_t *btn)
+{
+    call_function_to_start_game(game, menu, btn);
     if (menu->map1.status == 1) {
         sfSprite_destroy(game->background[0].sprite);
         game->background[0].sprite = init_sprite

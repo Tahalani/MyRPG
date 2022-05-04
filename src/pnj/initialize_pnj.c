@@ -11,6 +11,8 @@
 int init_pnj(game_t *game, int i, char *path, int offset)
 {
     game->pnj[i].path = malloc(sizeof(char) * (my_strlen(path) + 1));
+    if (game->pnj[i].path == NULL)
+        return (-1);
     game->pnj[i].path = path;
     game->pnj[i].offset = offset;
     return (0);

@@ -28,7 +28,8 @@ int initialize_animation(game_t *game)
     game->second_loading = 0;
     game->check_load = 1;
     game->transition.sprite =
-    init_sprite("ressources/map/loading_screen.png", &game->transition.texture, 2.4, 2.4);
+    init_sprite("ressources/map/loading_screen.png",
+    &game->transition.texture, 2.4, 2.4);
     position_sprite(game->transition.sprite, &game->transition.pos, 0, 0);
     game->transition.rect = (sfIntRect){800, 600, 800, 600};
     return (0);
@@ -47,7 +48,8 @@ int display_animation(game_t *game)
 
 int loop_animation(game_t *game)
 {
-    game->transition.pos = (sfVector2f){game->player.position.x - 950, game->player.position.y - 760};
+    game->transition.pos =
+    (sfVector2f){game->player.position.x - 950, game->player.position.y - 760};
     sfSprite_setPosition(game->transition.sprite, game->transition.pos);
     game->second_loading =
     sfTime_asSeconds(sfClock_getElapsedTime(game->clock_load));

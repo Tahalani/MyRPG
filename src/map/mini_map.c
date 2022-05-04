@@ -27,28 +27,27 @@ int mini_map_loop(game_t *game)
 
 static int display_pnj_mini_map(game_t *game)
 {
-    for (int i = 0; i != 11; i++) {
+    if (game->map[0].check == 1) {
+        for (int i = 0; i <= 2; i++) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->side_map[i].sprite, NULL);
+        }
         sfRenderWindow_drawSprite
-        (game->window.window, game->pnj[i].sprite, NULL);
+        (game->window.window, game->background[0].sprite, NULL);
+        for (int i = 0; i != 11; i++) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->pnj[i].sprite, NULL);
+        }
+        sfRenderWindow_drawSprite
+        (game->window.window, game->map_utils[0].sprite, NULL);
     }
     return (0);
 }
 
 int display_mini_map(game_t *game)
 {
-    if (game->status == 0 && game->second_loading >= 3) {
-        if (game->map[0].check == 1) {
-            for (int i = 0; i <= 2; i++) {
-                sfRenderWindow_drawSprite
-                (game->window.window, game->side_map[i].sprite, NULL);
-            }
-            sfRenderWindow_drawSprite
-            (game->window.window, game->background[0].sprite, NULL);
-            display_pnj_mini_map(game);
-            sfRenderWindow_drawSprite
-            (game->window.window, game->map_utils[0].sprite, NULL);
-        }
-    }
+    if (game->status == 0 && game->second_loading >= 3)
+        display_pnj_mini_map(game);
     return (0);
 }
 

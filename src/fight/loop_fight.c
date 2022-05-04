@@ -11,7 +11,8 @@
 int acces_fight(game_t *game)
 {
     if (game->map[3].check == 1 && game->map[3].x_player == 15 &&
-    game->map[3].y_player == 10 && game->arena_fight.life == 0) {
+    game->map[3].y_player == 10 && game->arena_fight.life == 0 &&
+    game->level_player == 1) {
         game->status = 6;
         game->map[3].check = 0;
     }

@@ -45,6 +45,7 @@ int set_pos_menu(menu_t *menu, btn_t *btn)
 
 int init_pos_conf(menu_t *menu)
 {
+    menu->sign_settings.pos = (sfVector2f){615, 0};
     menu->sign_skin.pos = (sfVector2f){615, 0};
     menu->red_skin.pos = (sfVector2f){572, 350};
     menu->brown_skin.pos = (sfVector2f){872, 350};
@@ -70,7 +71,6 @@ int init_pos_menu(menu_t *menu, btn_t *btn)
     btn->about_btn.pos = (sfVector2f){520, 138};
     btn->next_btn.pos = (sfVector2f){1325, -70};
     btn->prev_btn.pos = (sfVector2f){10, -70};
-    menu->sign_settings.pos = (sfVector2f){615, 0};
     btn->wood_btn[0].pos = (sfVector2f){425, 650};
     btn->wood_btn[3].pos = (sfVector2f){790, 300};
     btn->wood_btn[4].pos = (sfVector2f){540, 300};

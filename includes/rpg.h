@@ -63,14 +63,15 @@ int initialize_menu(menu_t *menu, btn_t *btn, game_t *game);
 int manage_conf_map(menu_t *menu, sfVector2i mouse, sfFloatRect shape);
 int manage_conf_skin(menu_t *menu, sfVector2i mouse, sfFloatRect shape);
 int manage_click_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
-int manage_settings_volume(menu_t *, game_t *, sfVector2i, btn_t *);
+void manage_settings_volume(menu_t *, game_t *, sfVector2i, btn_t *);
 int manage_wood_top(menu_t *menu, sfVector2i mouse, btn_t *btn);
 int manage_settings_wood(menu_t *, game_t *, sfVector2i, btn_t *);
 int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
-int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
+void manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
 int check_click(game_t *game);
+int manage_setting_wood_two_again(menu_t *menu, game_t *game, btn_t *btn);
 
 // PAUSE //
 int analyse_events_pause(game_t *game);

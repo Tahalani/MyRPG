@@ -8,7 +8,7 @@
 #include "my.h"
 #include "rpg.h"
 
-int initialize_story_object(game_t *game)
+int set_path_story_object(game_t *game)
 {
     game->inventory[0].sprite = init_sprite
     ("ressources/inventory/ring.png", &game->inventory[0].texture, 1, 1);
@@ -21,11 +21,17 @@ int initialize_story_object(game_t *game)
     ("ressources/inventory/charizard_inv.png",
     &game->inventory[3].texture, 1, 1);
     game->inventory[4].sprite = init_sprite
-    ("ressources/pnj/pnj_seven.png",
+    ("ressources/pnj/pnj_five.png",
     &game->inventory[4].texture, 3, 3);
     game->inventory[5].sprite = init_sprite
     ("ressources/inventory/detector.png",
     &game->inventory[5].texture, 0.06, 0.06);
+    return (0);
+}
+
+int initialize_story_object(game_t *game)
+{
+    set_path_story_object(game);
     set_position_object(game);
     set_rect_inv(game);
     game->coins.text = make_test("ressources/menu/font.ttf", 400, 150, 30);

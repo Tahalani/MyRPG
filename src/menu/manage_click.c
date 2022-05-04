@@ -51,6 +51,16 @@ static int manage_click_menu_bot(menu_t *menu, game_t *game, btn_t *btn)
     return (0);
 }
 
+int manage_setting_wood_two_again(menu_t *menu, game_t *game, btn_t *btn)
+{
+    sfRenderWindow_setFramerateLimit(game->window.window, 45);
+    sfSprite_setColor(btn->wood_btn[0].sprite, menu->opacity[1]);
+    sfSprite_setColor(btn->wood_btn[1].sprite, menu->opacity[0]);
+    sfSprite_setColor(btn->wood_btn[2].sprite, menu->opacity[1]);
+    btn->wood_btn[1].scale = (sfVector2f){0.94, 0.94};
+    return (0);
+}
+
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);

@@ -18,11 +18,8 @@ int display_natural_object(game_t *game)
     return (0);
 }
 
-int display_inventory(game_t *game)
+int display_condition_inv(game_t *game)
 {
-    sfRenderWindow_drawSprite
-    (game->window.window, game->inventory[1].sprite, NULL);
-    sfRenderWindow_drawText(game->window.window, game->coins.text, NULL);
     if (game->level_player == 0)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[2].sprite, NULL);
@@ -39,6 +36,15 @@ int display_inventory(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[0].sprite, NULL);
     }
+    return (0);
+}
+
+int display_inventory(game_t *game)
+{
+    sfRenderWindow_drawSprite
+    (game->window.window, game->inventory[1].sprite, NULL);
+    sfRenderWindow_drawText(game->window.window, game->coins.text, NULL);
+    display_condition_inv(game);
     if (game->story_steps >= 5)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[5].sprite, NULL);
