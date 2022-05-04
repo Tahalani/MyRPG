@@ -20,6 +20,9 @@ int initialize_story_object(game_t *game)
     game->inventory[3].sprite = init_sprite
     ("ressources/inventory/charizard_inv.png",
     &game->inventory[3].texture, 1, 1);
+    game->inventory[4].sprite = init_sprite
+    ("ressources/pnj/pnj_seven.png",
+    &game->inventory[4].texture, 3, 3);
     set_position_object(game);
     set_rect_inv(game);
     game->coins.text = make_test("ressources/menu/font.ttf", 400, 150, 30);

@@ -28,6 +28,7 @@ int in_loop(game_t *game)
     function_to_display(game);
     mini_map_loop(game);
     display_mini_map(game);
+    find_pika(game);
     sfRenderWindow_display(game->window.window);
     return (0);
 }

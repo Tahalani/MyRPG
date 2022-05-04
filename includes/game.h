@@ -40,6 +40,7 @@ typedef struct music_s {
     sfMusic *page_menu;
     sfMusic *dialogue;
     sfMusic *fight;
+    sfMusic *pika;
     int status;
     int status_fight;
 } music_t;
@@ -60,7 +61,7 @@ typedef struct game_s {
     window_t window;
     event_t event;
     map_t map[4];
-    inventory_t inventory[4];
+    inventory_t inventory[5];
     sfClock *clock;
     move_t key;
     music_t sound;
