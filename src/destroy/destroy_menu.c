@@ -28,13 +28,6 @@ int destroy_sprite_menu(menu_t *menu)
 
 int destroy_texture_menu(menu_t *menu)
 {
-    for (int i = 0; i != 21; i++)
-        sfTexture_destroy(menu->shape_btn[i].texture);
-    for (int i = 0; i != 4; i++)
-        sfTexture_destroy(menu->bg_skin[i].texture);
-    for (int i = 0; i != 3; i++)
-        sfTexture_destroy(menu->bg_square[i].texture);
-    sfTexture_destroy(menu->cursor.texture);
     sfTexture_destroy(menu->red_skin.texture);
     sfTexture_destroy(menu->brown_skin.texture);
     sfTexture_destroy(menu->blue_skin.texture);
