@@ -32,6 +32,7 @@ typedef struct fight_s {
     sfView *view;
     sfClock *clock;
     float seconds;
+    int turn;
 } fight_t;
 
 #endif/* !FIGHT_H_ */
