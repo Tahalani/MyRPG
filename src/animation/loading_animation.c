@@ -37,7 +37,7 @@ int initialize_animation(game_t *game)
 int display_animation(game_t *game)
 {
     if (game->check_load == 1) {
-        if (game->second_loading <= 3) {
+        if (game->second_loading <= 1) {
             sfRenderWindow_drawSprite
             (game->window.window, game->transition.sprite, NULL);
         }

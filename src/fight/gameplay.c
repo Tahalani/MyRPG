@@ -46,7 +46,6 @@ int gameplay_fight(game_t *game)
             return (0);
         }
     }
-    game->status = 0;
     game->arena_fight.life = 1;
     return (0);
 }
