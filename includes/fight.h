@@ -1,12 +1,12 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** my_rpg
 ** File description:
-** map
+** fight
 */
 
-#ifndef MAP_H_
-    #define MAP_H_
+#ifndef FIGHT_H_
+    #define FIGHT_H_
 
     #include <SFML/Graphics/RenderWindow.h>
     #include <SFML/Graphics/Transform.h>
@@ -22,26 +22,16 @@
     #include <unistd.h>
     #include <stdio.h>
 
-typedef struct lamp_s {
+typedef struct fight_s {
     sfTexture *texture;
     sfSprite *sprite;
     sfIntRect rect;
     sfVector2f scale;
     sfVector2f position;
-} lamp_t;
-
-typedef struct mini_map_s {
-    sfFloatRect rect;
+    int life;
     sfView *view;
-} mini_map_t;
+    sfClock *clock;
+    float seconds;
+} fight_t;
 
-typedef struct map_s {
-    char **main_map;
-    int x_player;
-    int y_player;
-    sfView *view;
-    sfVector2f view_size;
-    int check;
-} map_t;
-
-#endif/* !MAP_H_ */
+#endif/* !FIGHT_H_ */

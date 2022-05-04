@@ -1,12 +1,12 @@
 /*
 ** EPITECH PROJECT, 2022
-** rpg
+** my_rpg
 ** File description:
-** map
+** pnj
 */
 
-#ifndef MAP_H_
-    #define MAP_H_
+#ifndef PNJ_H_
+    #define PNJ_H_
 
     #include <SFML/Graphics/RenderWindow.h>
     #include <SFML/Graphics/Transform.h>
@@ -22,26 +22,26 @@
     #include <unistd.h>
     #include <stdio.h>
 
-typedef struct lamp_s {
+typedef struct speech_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f pos;
+} speech_t;
+
+typedef struct pnj_s {
     sfTexture *texture;
     sfSprite *sprite;
     sfIntRect rect;
     sfVector2f scale;
     sfVector2f position;
-} lamp_t;
+    sfClock *clock;
+    float seconds;
+    int offset;
+    int max_value;
+    char *path;
+    int count;
+} pnj_t;
 
-typedef struct mini_map_s {
-    sfFloatRect rect;
-    sfView *view;
-} mini_map_t;
-
-typedef struct map_s {
-    char **main_map;
-    int x_player;
-    int y_player;
-    sfView *view;
-    sfVector2f view_size;
-    int check;
-} map_t;
-
-#endif/* !MAP_H_ */
+#endif/* !PNJ_H_ */

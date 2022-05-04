@@ -25,8 +25,10 @@ char *my_file_in_str(char *filepath)
     buffer = malloc(sizeof(char) * (stats.st_size + 1));
     if (buffer == NULL)
         return (NULL);
-    if (read(fd, buffer, stats.st_size) == -1)
+    if (read(fd, buffer, stats.st_size) == -1) {
+        free(buffer);
         return (NULL);
+    }
     buffer[stats.st_size] = '\0';
     close(fd);
     return (buffer);

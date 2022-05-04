@@ -20,6 +20,9 @@
     #include "player.h"
     #include "map.h"
     #include "inventory.h"
+    #include "fight.h"
+    #include "pnj.h"
+    #include "utils.h"
 
 typedef struct window_s {
     sfRenderWindow *window;
@@ -31,15 +34,6 @@ typedef struct event {
     sfEvent event;
 } event_t;
 
-typedef struct element_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f scale;
-    sfVector2f pos;
-    int max_value;
-} element_t;
-
 typedef struct music_s {
     sfMusic *game;
     sfMusic *menu;
@@ -50,53 +44,6 @@ typedef struct music_s {
     int status_fight;
 } music_t;
 
-typedef struct fight_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f scale;
-    sfVector2f position;
-    int life;
-    sfView *view;
-    sfClock *clock;
-    float seconds;
-} fight_t;
-
-typedef struct speech_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f scale;
-    sfVector2f pos;
-} speech_t;
-
-typedef struct text_s {
-    sfText *text;
-    int count;
-    char *str;
-} text_t;
-
-typedef struct pnj_s {
-    sfTexture *texture;
-    sfSprite *sprite;
-    sfIntRect rect;
-    sfVector2f scale;
-    sfVector2f position;
-    sfClock *clock;
-    float seconds;
-    int offset;
-    int max_value;
-    char *path;
-    int count;
-} pnj_t;
-
-typedef struct shape_s {
-    sfRectangleShape *shape;
-    sfTexture *texture;
-    sfVector2f size;
-    sfVector2f pos;
-} shape_t;
-
 typedef struct move_s {
     sfKeyCode up;
     sfKeyCode down;
@@ -104,13 +51,9 @@ typedef struct move_s {
     sfKeyCode right;
 } move_t;
 
-typedef struct mini_map_s {
-    sfFloatRect rect;
-    sfView *view;
-} mini_map_t;
-
 typedef struct game_s {
-    element_t map_utils;
+    element_t transition;
+    element_t map_utils[2];
     mini_map_t mini_map;
     element_t side_map[3];
     element_t background[5];
@@ -122,7 +65,7 @@ typedef struct game_s {
     sfClock *clock;
     move_t key;
     music_t sound;
-    pnj_t pnj[12];
+    pnj_t pnj[11];
     speech_t speech[8];
     text_t coins;
     fight_t player_fight;
@@ -133,6 +76,9 @@ typedef struct game_s {
     int status;
     int story_steps;
     int level_player;
+    float second_loading;
+    sfClock *clock_load;
+    int check_load;
 } game_t;
 
 #endif/* !GAME_H_ */
