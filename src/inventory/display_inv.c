@@ -39,6 +39,9 @@ int display_inventory(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[0].sprite, NULL);
     }
+    if (game->story_steps >= 5)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->inventory[5].sprite, NULL);
     if (game->story_steps == 7)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[4].sprite, NULL);
