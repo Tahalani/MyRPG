@@ -36,7 +36,7 @@ static int display_pnj_mini_map(game_t *game)
 
 int display_mini_map(game_t *game)
 {
-    if (game->check_load == 0 && game->status == 0) {
+    if (game->status == 0 && game->second_loading >= 3) {
         if (game->map[0].check == 1) {
             for (int i = 0; i <= 2; i++) {
                 sfRenderWindow_drawSprite
@@ -56,7 +56,7 @@ int init_mini_map_utils(game_t *game)
 {
     game->map_utils[0].sprite =
     init_sprite("ressources/map/epingle.png",
-    game->map_utils[0].texture, 1, 1);
+    &game->map_utils[0].texture, 0.8, 0.8);
     position_sprite
     (game->map_utils[0].sprite, &game->map_utils[0].pos,
     game->map_utils->pos.x, game->map_utils->pos.y);

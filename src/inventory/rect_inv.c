@@ -25,10 +25,13 @@ int set_rect_inv(game_t *game)
 {
     game->inventory[0].rect = (sfIntRect){0, 0, 480, 480};
     game->inventory[1].rect = (sfIntRect){0, 0, 407, 613};
+    game->inventory[4].rect = (sfIntRect){0, 0, 35, 35};
     for (int i = 0; i != 2; i++) {
         sfSprite_setTextureRect
         (game->inventory[i].sprite, game->inventory[i].rect);
     }
+    sfSprite_setTextureRect
+        (game->inventory[4].sprite, game->inventory[4].rect);
     set_scale_inv(game);
     return (0);
 }

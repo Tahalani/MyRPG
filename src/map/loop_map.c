@@ -25,7 +25,7 @@ int check_for_the_good_view(game_t *game)
 
 int mini_map_utils(game_t *game)
 {
-    game->map_utils->pos.x = game->player.position.x - 115;
+    game->map_utils->pos.x = game->player.position.x - 100;
     game->map_utils->pos.y = game->player.position.y - 260;
     sfSprite_setPosition(game->map_utils[0].sprite, game->map_utils[0].pos);
     return 0;

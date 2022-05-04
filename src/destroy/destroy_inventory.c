@@ -25,7 +25,7 @@ int destroy_texture_inventory(inventory_t *inventory)
 
 int destroy_all_inventory(inventory_t *inventory)
 {
+    destroy_texture_inventory(inventory);
     destroy_sprite_inventory(inventory);
-    // destroy_texture_inventory(inventory);
     return (0);
 }

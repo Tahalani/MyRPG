@@ -56,7 +56,7 @@ int initialize_value(game_t *game)
 int destroy_all(menu_t *menu, btn_t *btn, game_t *game)
 {
     sfRenderWindow_destroy(game->window.window);
-    // destroy_all_btn(btn);
+    destroy_all_btn(btn);
     destroy_all_game(game);
     destroy_all_inventory(game->inventory);
     destroy_all_menu(menu);
@@ -70,8 +70,9 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
     game->window.window =
     initialize_window(game->window.width, game->window.height, 30);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 0 || game->status == 5 || game->status == 6)
+        if (game->status == 0 || game->status == 5 || game->status == 6) {
             in_loop(game);
+        }
         else if (game->status != 0)
             loop_menu(menu, game, btn);
     }

@@ -56,6 +56,7 @@ SRC			=		src/main.c									\
 					fight/loop_fight							\
 					fight/position_fight						\
 					fight/rect_fight							\
+					fight/gameplay								\
 					utils/move_rect								\
 					utils/make_text								\
 					utils/position								\
@@ -70,6 +71,8 @@ SRC			=		src/main.c									\
 					event										\
 					music										\
 					loop										\
+					algo_find_pika								\
+					check_click									\
 					window										\
 					))											\
 
@@ -119,6 +122,7 @@ SRCT 		=		tests/tests_rpg.c							\
 					fight/loop_fight							\
 					fight/position_fight						\
 					fight/rect_fight							\
+					fight/gameplay								\
 					utils/move_rect								\
 					utils/make_text								\
 					utils/position								\

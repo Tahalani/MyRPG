@@ -28,7 +28,7 @@ int initialize_animation(game_t *game)
     game->second_loading = 0;
     game->check_load = 1;
     game->transition.sprite =
-    init_sprite("ressources/map/loading_screen.png", game->transition.texture, 2.4, 2.4);
+    init_sprite("ressources/map/loading_screen.png", &game->transition.texture, 2.4, 2.4);
     position_sprite(game->transition.sprite, &game->transition.pos, 0, 0);
     game->transition.rect = (sfIntRect){800, 600, 800, 600};
     return (0);

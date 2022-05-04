@@ -11,7 +11,6 @@
 
 int destroy_sprite_game(game_t *game)
 {
-    // sfSprite_destroy(game->map_utils.sprite);
     sfSprite_destroy(game->player.sprite);
     sfSprite_destroy(game->player_fight.sprite);
     sfSprite_destroy(game->monster_fight.sprite);
@@ -50,7 +49,6 @@ int destroy_other_game(game_t *game)
         sfView_destroy(game->map[i].view);
     sfClock_destroy(game->arena_fight.clock);
     sfText_destroy(game->coins.text);
-    // sfClock_destroy(game->clock);
     return (0);
 }
 
@@ -62,13 +60,16 @@ int destroy_music(game_t *game, menu_t *menu)
     sfMusic_destroy(game->sound.fight);
     sfMusic_destroy(menu->sound.menu);
     sfMusic_destroy(game->sound.game);
+    sfMusic_destroy(game->sound.pika);
     return (0);
 }
 
 int destroy_all_game(game_t *game)
 {
+    for (int i = 0; i != 4; i++)
+        my_free_array(game->map[i].main_map);
+    destroy_texture_game(game);
     destroy_sprite_game(game);
-    // destroy_texture_game(game);
     destroy_other_game(game);
     return (0);
 }

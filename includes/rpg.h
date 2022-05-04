@@ -19,7 +19,7 @@
 
 // UTILS //
 sfRectangleShape *make_shape(sfTexture *, sfVector2f, sfVector2f);
-sfSprite *init_sprite(char *path, sfTexture *texture, float x, float y);
+sfSprite *init_sprite(char *path, sfTexture **texture, float x, float y);
 int position_sprite(sfSprite *, sfVector2f *, int, int);
 int rect_skin(param_t *player, int top, sfClock *clock, float seconds);
 int move_rect(sfIntRect *rect, int offset, int max_value, int top);
@@ -70,6 +70,7 @@ int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
 int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
+int check_click(game_t *game);
 
 // PAUSE //
 int analyse_events_pause(game_t *game);
@@ -105,6 +106,9 @@ int rect_player(player_t *player, int top);
 int check_map(game_t *game);
 int analyse_move_player(game_t *game);
 
+// quête //
+int find_pika(game_t *game);
+
 // PNJ //
 int display_pnj(game_t *game);
 int pnj_create(game_t *game);
@@ -128,6 +132,7 @@ int inventory_loop(game_t *game);
 int set_scale_inv(game_t *game);
 int set_rect_inv(game_t *game);
 int display_inventory(game_t *game);
+int check_click(game_t *game);
 
 // FIGHT //
 int acces_fight(game_t *game);
@@ -138,6 +143,7 @@ int display_fight(game_t *game);
 int fight_loop(game_t *game);
 int move_rect_player_fight(game_t *game);
 int move_rect_monster_fight(game_t *game);
+int gameplay_fight(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);

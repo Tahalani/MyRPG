@@ -24,16 +24,16 @@ int path_script_pnj(game_t *game)
 int pnj_create_two(game_t *game)
 {
     game->pnj[5].sprite = init_sprite
-    ("ressources/pnj/pnj_six.png", game->pnj[5].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_six.png", &game->pnj[5].texture, 2.2, 2.2);
     game->pnj[6].sprite = init_sprite
-    ("ressources/pnj/pnj_seven.png", game->pnj[6].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_seven.png", &game->pnj[6].texture, 2.2, 2.2);
     game->pnj[7].sprite = init_sprite
-    ("ressources/pnj/pnj_eight.png", game->pnj[7].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_eight.png", &game->pnj[7].texture, 2.2, 2.2);
     game->pnj[8].sprite = init_sprite
-    ("ressources/pnj/pnj_nine.png", game->pnj[8].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_nine.png", &game->pnj[8].texture, 2.2, 2.2);
     game->pnj[9].sprite = init_sprite
-    ("ressources/pnj/pnj_ten.png", game->pnj[9].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_ten.png", &game->pnj[9].texture, 2.2, 2.2);
     game->pnj[10].sprite = init_sprite
-    ("ressources/pnj/pnj_eleven.png", game->pnj[10].texture, 2.2, 2.2);
+    ("ressources/pnj/pnj_eleven.png", &game->pnj[10].texture, 2.2, 2.2);
     return (0);
 }

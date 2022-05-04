@@ -14,7 +14,6 @@ int display_natural_object(game_t *game)
     game->story_steps == 2)) {
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[0].sprite, NULL);
-        game->story_steps = 2;
     }
     return (0);
 }
@@ -40,5 +39,8 @@ int display_inventory(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[0].sprite, NULL);
     }
+    if (game->story_steps == 7)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->inventory[4].sprite, NULL);
     return (0);
 }
