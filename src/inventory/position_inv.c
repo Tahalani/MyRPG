@@ -33,7 +33,8 @@ int set_position_object(game_t *game)
     game->inventory[2].pos = (sfVector2f){140, 120};
     game->inventory[3].pos = (sfVector2f){140, 120};
     game->inventory[4].pos = (sfVector2f){125, 262};
-    for (int i = 0; i != 5; i++)
+    game->inventory[5].pos = (sfVector2f){140, 210};
+    for (int i = 0; i != 6; i++)
         sfSprite_setPosition
         (game->inventory[i].sprite, game->inventory[i].pos);
     return (0);
