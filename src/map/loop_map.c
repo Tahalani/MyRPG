@@ -43,11 +43,9 @@ int map_loop(game_t *game)
         sfView_setCenter(game->map[i].view, (sfVector2f){950, 490});
     if (game->status == 5)
         sfView_setCenter(game->map[i].view, (sfVector2f){325, 350});
-    if (game->map[0].check == 1) {
+    if (game->map[0].check == 1)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[0].sprite, NULL);
-        display_pnj(game);
-    }
     if (game->map[1].check == 1)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[1].sprite, NULL);

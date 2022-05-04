@@ -175,4 +175,9 @@ int destroy_all_btn(btn_t *btn);
 int destroy_all_pnj(pnj_t *pnj, speech_t *speech);
 int destroy_all(menu_t *menu, btn_t *btn, game_t *game);
 
+// ANIMATION //
+int initialize_animation(game_t *game);
+int display_animation(game_t *game);
+int loop_animation(game_t *game);
+
 #endif/* !PROJET_H_ */

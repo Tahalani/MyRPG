@@ -48,5 +48,6 @@ int function_to_display(game_t *game)
             display_fight(game);
     } else if (game->status == 5)
         display_inventory(game);
+
     return (0);
 }

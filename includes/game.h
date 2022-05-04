@@ -53,6 +53,7 @@ typedef struct move_s {
 } move_t;
 
 typedef struct game_s {
+    element_t transition;
     element_t map_utils[2];
     mini_map_t mini_map;
     element_t side_map[3];
@@ -65,7 +66,7 @@ typedef struct game_s {
     sfClock *clock;
     move_t key;
     music_t sound;
-    pnj_t pnj[12];
+    pnj_t pnj[11];
     speech_t speech[8];
     text_t coins;
     fight_t player_fight;
@@ -77,6 +78,9 @@ typedef struct game_s {
     int status;
     int story_steps;
     int level_player;
+    float second_loading;
+    sfClock *clock_load;
+    int check_load;
 } game_t;
 
 #endif/* !GAME_H_ */

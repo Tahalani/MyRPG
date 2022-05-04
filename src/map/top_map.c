@@ -14,11 +14,13 @@ int acces_to_top_map(game_t *game)
         game->map[0].check = 0;
         game->map[2].check = 1;
         game->map[0].y_player = 3;
+        sfClock_restart(game->clock_load);
     }
     if (game->map[2].x_player == 10 && game->map[2].y_player == 20) {
         game->map[2].check = 0;
         game->map[0].check = 1;
         game->map[2].y_player = 18;
+        sfClock_restart(game->clock_load);
     }
     return 0;
 }

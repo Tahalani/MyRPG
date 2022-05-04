@@ -36,7 +36,7 @@ static int display_pnj_mini_map(game_t *game)
 
 int display_mini_map(game_t *game)
 {
-    if (game->status == 0) {
+    if (game->status == 0 && game->second_loading >= 3) {
         if (game->map[0].check == 1) {
             for (int i = 0; i <= 2; i++) {
                 sfRenderWindow_drawSprite
