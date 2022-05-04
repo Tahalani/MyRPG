@@ -30,6 +30,8 @@ int analyse_events(game_t *game)
             game->status = 4;
             sfMusic_play(game->sound.page_menu);
         }
+        if (game->event.event.type == sfEvtMouseButtonPressed)
+            check_click(game);
         analyse_move_player(game);
         if (sfKeyboard_isKeyPressed(sfKeyTab))
             game->status = 5;

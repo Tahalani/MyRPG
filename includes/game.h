@@ -59,7 +59,6 @@ typedef struct game_s {
     element_t background[5];
     player_t player;
     window_t window;
-    shape_t shape[3];
     event_t event;
     map_t map[4];
     inventory_t inventory[5];

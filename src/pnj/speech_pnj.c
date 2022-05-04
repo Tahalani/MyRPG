@@ -57,12 +57,12 @@ int condition_display_speech_three(game_t *game)
 
 int condition_display_speech_four(game_t *game)
 {
-    if ((game->map->x_player == 30 && game->map->y_player == 30) &&
-    (game->story_steps == 9 || game->story_steps == 10)) {
-        sfRenderWindow_drawSprite
-        (game->window.window, game->speech[5].sprite, NULL);
-        game->story_steps = 10;
-    }
+    // if ((game->map->x_player == 30 && game->map->y_player == 30) &&
+    // (game->story_steps == 9 || game->story_steps == 10)) {
+    //     sfRenderWindow_drawSprite
+    //     (game->window.window, game->speech[5].sprite, NULL);
+        //game->story_steps = 10;
+    //}
     return (0);
 }
 

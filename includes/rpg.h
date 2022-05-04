@@ -132,6 +132,7 @@ int inventory_loop(game_t *game);
 int set_scale_inv(game_t *game);
 int set_rect_inv(game_t *game);
 int display_inventory(game_t *game);
+int check_click(game_t *game);
 
 // FIGHT //
 int acces_fight(game_t *game);

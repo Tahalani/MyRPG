@@ -70,6 +70,7 @@ SRC			=		src/main.c									\
 					music										\
 					loop										\
 					algo_find_pika								\
+					check_click									\
 					window										\
 					))											\
 
