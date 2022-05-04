@@ -70,6 +70,7 @@ int manage_click_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int manage_click_menu(menu_t *menu, game_t *game, btn_t *btn);
 int set_path_menu_conf(menu_t *menu);
 int manage_click_menu_pause(menu_t *menu, game_t *game, btn_t *btn);
+int check_click(game_t *game);
 
 // PAUSE //
 int analyse_events_pause(game_t *game);
@@ -104,6 +105,9 @@ int run_player(game_t *game, char check, int i);
 int rect_player(player_t *player, int top);
 int check_map(game_t *game);
 int analyse_move_player(game_t *game);
+
+// quête //
+int find_pika(game_t *game);
 
 // PNJ //
 int display_pnj(game_t *game);

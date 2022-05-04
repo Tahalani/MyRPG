@@ -62,6 +62,7 @@ int destroy_music(game_t *game, menu_t *menu)
     sfMusic_destroy(game->sound.fight);
     sfMusic_destroy(menu->sound.menu);
     sfMusic_destroy(game->sound.game);
+    sfMusic_destroy(game->sound.pika);
     return (0);
 }
 

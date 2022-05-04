@@ -69,6 +69,7 @@ SRC			=		src/main.c									\
 					event										\
 					music										\
 					loop										\
+					algo_find_pika								\
 					window										\
 					))											\
 
