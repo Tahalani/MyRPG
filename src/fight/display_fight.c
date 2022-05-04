@@ -20,8 +20,9 @@ int display_fight(game_t *game)
     for (int i = 0; i < 3; i++)
         sfRenderWindow_drawSprite
         (game->window.window, game->life[i].sprite, NULL);
-    sfRenderWindow_drawSprite
-    (game->window.window, game->fight_status[0].sprite, NULL);
+    if (game->monster_fight.life <= 0)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->fight_status[0].sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
