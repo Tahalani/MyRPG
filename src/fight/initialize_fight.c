@@ -26,17 +26,23 @@ int initialize_path_fight(game_t *game)
     ("ressources/fight/pokeball.png", &game->life[2].texture, 0.5, 0.5);
     game->fight_status[0].sprite = init_sprite
     ("ressources/fight/victory.png", &game->fight_status[0].texture, 4.1, 4.2);
+    game->fight_status[1].sprite = init_sprite("ressources/fight/game_over.png"
+    , &game->fight_status[1].texture, 4.1, 4.2);
     return (0);
 }
 
 int initialize_fight(game_t *game)
 {
+    game->timer.text = make_test("ressources/menu/font.ttf", 200, -2850, 200);
+    sfText_setColor(game->timer.text, sfColor_fromRGB(216, 148, 80));
+    sfText_setString(game->timer.text, "1");
     game->arena_fight.life = 0;
     game->player_fight.life = 120;
     game->monster_fight.life = 120;
     game->arena_fight.turn = 0;
     game->sound.status_fight = 0;
     game->arena_fight.clock = sfClock_create();
+    game->monster_fight.clock = sfClock_create();
     game->player_fight.clock = sfClock_create();
     game->arena_fight.seconds = 0;
     game->sound.fight = music("ressources/music/ost_fight.ogg", 1);

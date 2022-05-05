@@ -25,6 +25,8 @@ static int move_rect_animation(game_t *game)
 int initialize_animation(game_t *game)
 {
     game->clock_load = sfClock_create();
+    game->inventory[0].clock = sfClock_create();
+    game->inventory[0].seconds = 0;
     game->second_loading = 0;
     game->check_load = 1;
     game->transition.sprite =
@@ -37,13 +39,14 @@ int initialize_animation(game_t *game)
 
 int display_animation(game_t *game)
 {
-    if (game->second_loading <= 2.5) {
-        sfRenderWindow_drawSprite
-        (game->window.window, game->transition.sprite, NULL);
-        game->status = 5;
+    game->inventory[0].seconds =
+    sfTime_asSeconds(sfClock_getElapsedTime(game->inventory[0].clock));
+    if (game->check_load == 1) {
+        if (game->second_loading <= 1) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->transition.sprite, NULL);
+        }
     }
-    if (game->second_loading >= 2.5 && game->second_loading <= 3)
-        game->status = 0;
     return (0);
 }
 
@@ -54,6 +57,9 @@ int loop_animation(game_t *game)
     sfSprite_setPosition(game->transition.sprite, game->transition.pos);
     game->second_loading =
     sfTime_asSeconds(sfClock_getElapsedTime(game->clock_load));
-    move_rect_animation(game);
+    if (game->inventory[0].seconds >= 0.01) {
+        move_rect_animation(game);
+        sfClock_restart(game->inventory[0].clock);
+    }
     return (0);
 }

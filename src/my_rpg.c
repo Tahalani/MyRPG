@@ -70,9 +70,8 @@ int my_rpg(game_t *game, menu_t *menu, btn_t *btn)
     game->window.window =
     initialize_window(game->window.width, game->window.height, 30);
     while (sfRenderWindow_isOpen(game->window.window)) {
-        if (game->status == 0 || game->status == 5 || game->status == 6) {
+        if (game->status == 0 || game->status == 5 || game->status == 6)
             in_loop(game);
-        }
         else if (game->status != 0)
             loop_menu(menu, game, btn);
     }

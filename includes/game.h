@@ -75,6 +75,7 @@ typedef struct game_s {
     fight_t arena_fight;
     fight_t life[3];
     fight_t fight_status[2];
+    text_t timer;
     lamp_t lamp[6];
     int status;
     int story_steps;
