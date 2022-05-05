@@ -28,6 +28,8 @@ typedef struct inventory_s {
     sfIntRect rect;
     sfVector2f scale;
     sfVector2f pos;
+    sfClock *clock;
+    float seconds;
 } inventory_t;
 
 #endif/* !INVENTORY_H_ */
