@@ -14,6 +14,7 @@ int before_loop(game_t *game, menu_t *menu, btn_t *btn)
 {
     initialize_value(game);
     initialize_map(game);
+    initialize_coin_animation(game);
     initialize_menu(menu, btn, game);
     initialize_pnj(game);
     initialize_fight(game);

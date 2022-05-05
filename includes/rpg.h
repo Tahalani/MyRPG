@@ -182,5 +182,6 @@ int display_animation(game_t *game);
 int loop_animation(game_t *game);
 int display_coin_animation(game_t *game);
 int initialize_coin_animation(game_t *game);
+int position_coin_animation(game_t *game);
 
 #endif/* !PROJET_H_ */
