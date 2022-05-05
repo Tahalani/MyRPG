@@ -22,6 +22,14 @@
     #include <unistd.h>
     #include <stdio.h>
 
+typedef struct coin_anim_s {
+    sfTexture *texture;
+    sfSprite *sprite;
+    sfIntRect rect;
+    sfVector2f scale;
+    sfVector2f position;
+} coin_anim_t;
+
 typedef struct lamp_s {
     sfTexture *texture;
     sfSprite *sprite;

@@ -53,6 +53,7 @@ typedef struct move_s {
 } move_t;
 
 typedef struct game_s {
+    coin_anim_t anime[20];
     element_t transition;
     element_t map_utils[2];
     mini_map_t mini_map;
