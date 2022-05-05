@@ -27,7 +27,7 @@ int turn_player_fight(game_t *game)
 
 int turn_monster_fight(game_t *game)
 {
-    if (game->player_fight.seconds >= 5) {
+    if (game->player_fight.seconds >= 3) {
         game->monster_fight.position.x = 1190;
         sfSprite_setPosition
         (game->monster_fight.sprite, game->monster_fight.position);

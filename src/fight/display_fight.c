@@ -16,6 +16,7 @@ int display_fight(game_t *game)
     (game->window.window, game->arena_fight.sprite, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, game->player_fight.sprite, NULL);
+    sfRenderWindow_drawText(game->window.window, game->timer.text, NULL);
     sfRenderWindow_drawSprite
     (game->window.window, game->monster_fight.sprite, NULL);
     for (int i = 0; i < 3; i++)

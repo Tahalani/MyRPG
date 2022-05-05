@@ -33,6 +33,9 @@ int initialize_path_fight(game_t *game)
 
 int initialize_fight(game_t *game)
 {
+    game->timer.text = make_test("ressources/menu/font.ttf", 890, 485, 150);
+    game->timer.str = malloc(sizeof(char) * 2);
+    game->timer.str = "3";
     game->arena_fight.life = 0;
     game->player_fight.life = 120;
     game->monster_fight.life = 120;
