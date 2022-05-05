@@ -11,6 +11,9 @@
 int turn_player_fight(game_t *game)
 {
     if (sfKeyboard_isKeyPressed(sfKeyA)) {
+        game->player_fight.position.x = 210;
+        sfSprite_setPosition
+        (game->player_fight.sprite, game->player_fight.position);
         move_rect(&game->life[1].rect, 196, 2549, 0);
         move_rect(&game->life[1].rect, 196, 2549, 0);
         sfSprite_setTextureRect(game->life[1].sprite, game->life[1].rect);
@@ -25,6 +28,9 @@ int turn_player_fight(game_t *game)
 int turn_monster_fight(game_t *game)
 {
     if (game->player_fight.seconds >= 5) {
+        game->monster_fight.position.x = 1190;
+        sfSprite_setPosition
+        (game->monster_fight.sprite, game->monster_fight.position);
         move_rect(&game->life[0].rect, 196, 2549, 0);
         sfSprite_setTextureRect(game->life[0].sprite, game->life[0].rect);
         game->player_fight.life -= 10;
@@ -38,10 +44,16 @@ int gameplay_fight(game_t *game)
 {
     if (game->monster_fight.life > 0 && game->player_fight.life > 0) {
         if (game->arena_fight.turn % 2 == 0) {
+            game->monster_fight.position = (sfVector2f){1200, -2500};
+            sfSprite_setPosition
+            (game->monster_fight.sprite, game->monster_fight.position);
             turn_player_fight(game);
             return (0);
         }
         if (game->arena_fight.turn % 2 != 0) {
+            game->player_fight.position = (sfVector2f){200, -2800};
+            sfSprite_setPosition
+            (game->player_fight.sprite, game->player_fight.position);
             turn_monster_fight(game);
             return (0);
         }
