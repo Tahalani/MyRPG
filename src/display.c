@@ -32,6 +32,17 @@ int check_number_map(game_t *game)
     return (0);
 }
 
+int display_lamp_func(game_t *game)
+{
+    if (game->map[0].check == 1) {
+        for (int i = 0; i != 6; i++)
+            sfRenderWindow_drawSprite
+            (game->window.window, game->lamp[i].sprite, NULL);
+        display_pnj(game);
+    }
+    return (0);
+}
+
 int function_to_display(game_t *game)
 {
     sfRenderWindow_clear(game->window.window, sfBlack);
@@ -40,12 +51,7 @@ int function_to_display(game_t *game)
         inventory_loop(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->player.sprite, NULL);
-        if (game->map[0].check == 1) {
-            for (int i = 0; i != 6; i++)
-                sfRenderWindow_drawSprite
-                (game->window.window, game->lamp[i].sprite, NULL);
-            display_pnj(game);
-        }
+        display_lamp_func(game);
         if (game->status == 6)
             display_fight(game);
     } else if (game->status == 5)
