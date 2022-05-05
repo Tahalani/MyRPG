@@ -27,7 +27,7 @@ int turn_monster_fight(game_t *game)
     if (game->player_fight.seconds >= 5) {
         move_rect(&game->life[0].rect, 196, 2549, 0);
         sfSprite_setTextureRect(game->life[0].sprite, game->life[0].rect);
-        game->player_fight.life -= 10;
+        game->player_fight.life -= 60;
         game->arena_fight.turn++;
         sfClock_restart(game->player_fight.clock);
     }

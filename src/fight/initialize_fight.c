@@ -39,6 +39,7 @@ int initialize_fight(game_t *game)
     game->arena_fight.turn = 0;
     game->sound.status_fight = 0;
     game->arena_fight.clock = sfClock_create();
+    game->monster_fight.clock = sfClock_create();
     game->player_fight.clock = sfClock_create();
     game->arena_fight.seconds = 0;
     game->sound.fight = music("ressources/music/ost_fight.ogg", 1);
