@@ -69,7 +69,7 @@ sfFloatRect shape)
     return (0);
 }
 
-int animation_menu(menu_t *menu, game_t *game, btn_t *btn)
+void animation_menu(menu_t *menu, game_t *game, btn_t *btn)
 {
     sfVector2i mouse = sfMouse_getPositionRenderWindow(game->window.window);
     sfFloatRect shape;
@@ -91,5 +91,4 @@ int animation_menu(menu_t *menu, game_t *game, btn_t *btn)
             btn->about_btn.scale = (sfVector2f) {0.79, 0.79};
     }
     animation_menu_config(menu, game, btn, shape);
-    return (0);
 }

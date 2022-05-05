@@ -53,7 +53,7 @@ int analyse_key(menu_t *menu, game_t *game, btn_t *btn);
 int analyse_menu(menu_t *menu, game_t *game, btn_t *btn);
 int animation_menu_settings(menu_t *, game_t *, btn_t *, sfFloatRect);
 int animation_menu_config(menu_t *, game_t *, btn_t *, sfFloatRect );
-int animation_menu(menu_t *menu, game_t *game, btn_t *btn);
+void animation_menu(menu_t *menu, game_t *game, btn_t *btn);
 int display_menu_settings(menu_t *menu, game_t *game, btn_t *btn);
 int display_conf_skin(menu_t *menu, game_t *game);
 int display_menu_conf(menu_t *menu, game_t *game, btn_t *btn);
@@ -138,7 +138,7 @@ int check_click(game_t *game);
 // FIGHT //
 int acces_fight(game_t *game);
 int initialize_fight(game_t *game);
-int set_rect_fight(game_t *game);
+void set_rect_fight(game_t *game);
 int set_position_fight(game_t *game);
 int display_fight(game_t *game);
 int fight_loop(game_t *game);

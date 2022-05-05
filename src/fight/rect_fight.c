@@ -64,7 +64,7 @@ int move_rect_game_over(game_t *game)
     return (0);
 }
 
-int set_rect_fight(game_t *game)
+void set_rect_fight(game_t *game)
 {
     game->player_fight.rect = (sfIntRect){0, 0, 344, 332};
     game->monster_fight.rect = (sfIntRect){0, 0, 1055, 949};
@@ -86,5 +86,4 @@ int set_rect_fight(game_t *game)
     sfSprite_setTextureRect(game->life[0].sprite, game->life[0].rect);
     sfSprite_setTextureRect(game->life[1].sprite, game->life[1].rect);
     sfSprite_setTextureRect(game->life[2].sprite, game->life[2].rect);
-    return (0);
 }
