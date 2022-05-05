@@ -39,13 +39,14 @@ int initialize_animation(game_t *game)
 
 int display_animation(game_t *game)
 {
-    if (game->second_loading <= 2.5) {
-        sfRenderWindow_drawSprite
-        (game->window.window, game->transition.sprite, NULL);
-        game->status = 5;
+    game->inventory[0].seconds =
+    sfTime_asSeconds(sfClock_getElapsedTime(game->inventory[0].clock));
+    if (game->check_load == 1) {
+        if (game->second_loading <= 1) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->transition.sprite, NULL);
+        }
     }
-    if (game->second_loading >= 2.5 && game->second_loading <= 3)
-        game->status = 0;
     return (0);
 }
 
