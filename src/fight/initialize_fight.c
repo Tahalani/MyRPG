@@ -26,6 +26,8 @@ int initialize_path_fight(game_t *game)
     ("ressources/fight/pokeball.png", &game->life[2].texture, 0.5, 0.5);
     game->fight_status[0].sprite = init_sprite
     ("ressources/fight/victory.png", &game->fight_status[0].texture, 4.1, 4.2);
+    game->fight_status[1].sprite = init_sprite("ressources/fight/game_over.png"
+    , &game->fight_status[1].texture, 4.1, 4.2);
     return (0);
 }
 

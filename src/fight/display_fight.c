@@ -11,6 +11,7 @@
 int display_fight(game_t *game)
 {
     move_rect_victory(game);
+    move_rect_game_over(game);
     sfRenderWindow_drawSprite
     (game->window.window, game->arena_fight.sprite, NULL);
     sfRenderWindow_drawSprite
@@ -23,6 +24,9 @@ int display_fight(game_t *game)
     if (game->monster_fight.life <= 0)
         sfRenderWindow_drawSprite
         (game->window.window, game->fight_status[0].sprite, NULL);
+    else if (game->player_fight.life <= 0)
+    sfRenderWindow_drawSprite
+    (game->window.window, game->fight_status[1].sprite, NULL);
     sfRenderWindow_display(game->window.window);
     return (0);
 }
