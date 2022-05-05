@@ -39,6 +39,7 @@ int initialize_pnj(game_t *game)
     init_script(game, 8, 99);
     init_script(game, 9, 96);
     init_script(game, 10, 99);
+    init_script(game, 11, 147);
     game->pnj->clock = sfClock_create();
     game->pnj->seconds = 0;
     return (0);

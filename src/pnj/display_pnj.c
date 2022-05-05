@@ -10,7 +10,7 @@
 
 int display_pnj(game_t *game)
 {
-    for (int i = 0; i != 11; i++) {
+    for (int i = 0; i != 12; i++) {
         if (i != 4)
             sfRenderWindow_drawSprite
             (game->window.window, game->pnj[i].sprite, NULL);

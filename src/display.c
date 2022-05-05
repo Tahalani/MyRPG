@@ -10,9 +10,11 @@
 
 int check_number_map(game_t *game)
 {
-    if (game->map[3].check == 1)
+    if (game->map[3].check == 1) {
         sfRenderWindow_drawSprite
         (game->window.window, game->background[3].sprite, NULL);
+        display_pnj(game);
+    }
     if (game->map[0].check == 1) {
         for (int i = 0; i <= 2; i++)
             sfRenderWindow_drawSprite

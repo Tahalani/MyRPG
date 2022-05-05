@@ -18,6 +18,7 @@ int path_script_pnj(game_t *game)
     init_pnj(game, 8, "src/conf/path_pnj_nine.txt", 33);
     init_pnj(game, 9, "src/conf/path_pnj_ten.txt", 32);
     init_pnj(game, 10, "src/conf/path_pnj_eleven.txt", 33);
+    init_pnj(game, 11, "src/conf/path_pnj_twelve.txt", 49);
     return (0);
 }
 
@@ -35,5 +36,7 @@ int pnj_create_two(game_t *game)
     ("ressources/pnj/pnj_ten.png", &game->pnj[9].texture, 2.2, 2.2);
     game->pnj[10].sprite = init_sprite
     ("ressources/pnj/pnj_eleven.png", &game->pnj[10].texture, 2.2, 2.2);
+    game->pnj[11].sprite = init_sprite
+    ("ressources/pnj/pnj_twelve.png", &game->pnj[11].texture, 2.2, 2.2);
     return (0);
 }
