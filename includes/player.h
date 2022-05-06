@@ -29,6 +29,8 @@ typedef struct player_s {
     sfVector2f position;
     sfIntRect rect;
     sfClock *clock;
+    sfText *level_player;
+    char *nbr_level;
     float second;
 } player_t;
 

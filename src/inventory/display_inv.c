@@ -44,7 +44,10 @@ int display_inventory(game_t *game)
     sfRenderWindow_drawSprite
     (game->window.window, game->inventory[1].sprite, NULL);
     sfRenderWindow_drawText(game->window.window, game->coins.text, NULL);
+    sfRenderWindow_drawText
+    (game->window.window, game->player.level_player, NULL);
     display_condition_inv(game);
+    sfRenderWindow_drawText(game->window.window, game->exp_player.text, NULL);
     if (game->story_steps >= 5)
         sfRenderWindow_drawSprite
         (game->window.window, game->inventory[5].sprite, NULL);

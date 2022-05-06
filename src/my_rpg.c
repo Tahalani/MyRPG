@@ -36,6 +36,7 @@ void check_status_game(game_t *game)
 
 int initialize_story_value(game_t *game)
 {
+    game->exp_player.count = 0;
     game->story_steps = 0;
     game->coins.count = 0;
     game->level_player = 0;
@@ -44,6 +45,10 @@ int initialize_story_value(game_t *game)
 
 int initialize_value(game_t *game)
 {
+    game->exp_player.text =
+    make_test("ressources/menu/font.ttf", 310, 135, 50);
+    game->exp_player.str = "O";
+    sfText_setString(game->exp_player.text, game->exp_player.str);
     game->status = 2;
     set_value_window(game);
     initialize_story_value(game);

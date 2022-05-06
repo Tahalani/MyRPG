@@ -17,10 +17,6 @@
     #include <SFML/Graphics.h>
     #include <SFML/Window.h>
     #include <SFML/Audio.h>
-    #include <stdbool.h>
-    #include <stdlib.h>
-    #include <unistd.h>
-    #include <stdio.h>
 
 typedef struct coin_anim_s {
     sfTexture *texture;

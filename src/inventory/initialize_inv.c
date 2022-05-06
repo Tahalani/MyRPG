@@ -31,6 +31,10 @@ int set_path_story_object(game_t *game)
 
 int initialize_story_object(game_t *game)
 {
+    game->player.level_player =
+    make_test("ressources/menu/font.ttf", 220, 142, 40);
+    game->player.nbr_level = "LEVEL";
+    sfText_setString(game->player.level_player, game->player.nbr_level);
     set_path_story_object(game);
     set_position_object(game);
     set_rect_inv(game);

@@ -53,36 +53,37 @@ typedef struct move_s {
 } move_t;
 
 typedef struct game_s {
-    coin_anim_t anime[20];
     element_t transition;
     element_t map_utils[2];
-    mini_map_t mini_map;
     element_t side_map[3];
     element_t background[5];
-    player_t player;
-    window_t window;
-    event_t event;
-    map_t map[4];
-    inventory_t inventory[6];
-    sfClock *clock;
-    move_t key;
-    music_t sound;
-    pnj_t pnj[12];
-    speech_t speech[8];
-    text_t coins;
     fight_t player_fight;
     fight_t monster_fight;
     fight_t arena_fight;
     fight_t life[3];
     fight_t fight_status[2];
-    text_t timer;
+    inventory_t inventory[6];
     lamp_t lamp[6];
+    player_t player;
+    pnj_t pnj[12];
+    speech_t speech[8];
+    coin_anim_t anime[20];
+    mini_map_t mini_map;
+    window_t window;
+    text_t coins;
+    text_t timer;
+    text_t exp_player;
+    event_t event;
+    map_t map[4];
+    sfClock *clock;
+    sfClock *clock_load;
+    move_t key;
+    music_t sound;
     int status;
     int story_steps;
     int level_player;
-    float second_loading;
-    sfClock *clock_load;
     int check_load;
+    float second_loading;
 } game_t;
 
 #endif/* !GAME_H_ */

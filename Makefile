@@ -79,6 +79,8 @@ SRC			=		src/main.c									\
 
 SRCT 		=		tests/tests_rpg.c							\
 					$(addsuffix .c, $(addprefix src/, my_rpg	\
+					animation/loading_animation					\
+					animation/coin_animation					\
 					map/church_map								\
 					map/mini_map								\
 					map/top_map									\
@@ -138,6 +140,8 @@ SRCT 		=		tests/tests_rpg.c							\
 					event										\
 					music										\
 					loop										\
+					algo_find_pika								\
+					check_click									\
 					window										\
 					))											\
 

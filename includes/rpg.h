@@ -8,10 +8,6 @@
 #ifndef PROJET_H_
     #define PROJET_H_
 
-    #include <stdbool.h>
-    #include <stdlib.h>
-    #include <unistd.h>
-    #include <stdio.h>
     #include "player.h"
     #include "game.h"
     #include "menu.h"
