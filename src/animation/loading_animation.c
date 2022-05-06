@@ -41,11 +41,23 @@ int display_animation(game_t *game)
 {
     game->inventory[0].seconds =
     sfTime_asSeconds(sfClock_getElapsedTime(game->inventory[0].clock));
-    if (game->check_load == 1) {
-        if (game->second_loading <= 1) {
-            sfRenderWindow_drawSprite
-            (game->window.window, game->transition.sprite, NULL);
-        }
+    printf("sec = %2f\n", game->second_loading);
+    if (game->check_load == 1 && sfKeyboard_isKeyPressed(sfKeyEnter)) {
+        game->second_loading += 1;
+        game->status = 0;
+        game->check_load = 0;
+        printf("yes\n");
+        printf("sec = %2f\n", game->second_loading);
+    }
+    if (game->second_loading <= 2) {
+        game->status = 5;
+        sfRenderWindow_drawSprite
+        (game->window.window, game->transition.sprite, NULL);
+        game->check_load = 1;
+    }
+    if (game->second_loading > 2 && game->second_loading < 2.5) {
+        game->status = 0;
+        game->check_load = 0;
     }
     return (0);
 }
