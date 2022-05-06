@@ -43,8 +43,3 @@ Test(my_rpg, test_rpg)
     game->window.window = initialize_window(1920, 1080, 32);
     cr_assert_eq(my_rpg(game, menu, btn), 0);
 }
-
-Test(lose_condition, lose_condition_test_good)
-{
-    cr_assert_eq(lose_condition(0), 1);
-}
