@@ -20,6 +20,7 @@ int check_number_map(game_t *game)
         sfRenderWindow_drawSprite
         (game->window.window, game->background[0].sprite, NULL);
         display_pnj(game);
+        display_coin_animation(game);
     }
     if (game->map[1].check == 1)
         sfRenderWindow_drawSprite
