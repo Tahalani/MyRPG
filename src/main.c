@@ -17,7 +17,7 @@ void display_help(void)
     my_putstr("VOLUM: you can set the volum in the settings menu\n");
     my_putstr("FPS: you can also choice the fps 30/45 or 60\n");
     my_putstr("\n============ CONFIG =========\n");
-    my_putstr("SKIN: you can chosse the skin\n");
+    my_putstr("SKIN: you can choose the skin\n");
     my_putstr("MAP: you can also chosse the map: light or dark\n");
     my_putstr("\n============ GAME =========\n");
     my_putstr("GOAL: you have to beat the bad guy\n");
