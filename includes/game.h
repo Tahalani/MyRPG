@@ -63,10 +63,10 @@ typedef struct game_s {
     fight_t life[3];
     fight_t fight_status[2];
     inventory_t inventory[6];
-    lamp_t lamp[6];
+    lamp_t lamp[7];
     player_t player;
     pnj_t pnj[12];
-    speech_t speech[8];
+    speech_t speech[10];
     coin_anim_t anime[20];
     mini_map_t mini_map;
     window_t window;

@@ -61,7 +61,7 @@ int initialize_castle_map(game_t *game)
     return (0);
 }
 
-int initialize_map(game_t *game)
+void initialize_map(game_t *game)
 {
     game->background[0].sprite = init_sprite
     ("ressources/map/map.png", &game->background[0].texture, 2.3, 2.3);
@@ -72,6 +72,10 @@ int initialize_map(game_t *game)
     for (int i = 0; i != 6; i++)
         game->lamp[i].sprite = init_sprite
         ("ressources/map/lamp.png", &game->lamp[i].texture, 2.3, 2.3);
+    game->lamp[6].sprite = init_sprite
+        ("ressources/map/statue.png", &game->lamp[6].texture, 2.3, 2.3);
+    game->lamp[6].rect = (sfIntRect){0, 0, 1440, 1210};
+    sfSprite_setTextureRect(game->lamp[6].sprite, game->lamp[6].rect);
     position_sprite
     (game->background[0].sprite, &game->background[0].pos, -1000, -400);
     create_side_map(game);
@@ -79,5 +83,4 @@ int initialize_map(game_t *game)
     initialize_map_top(game);
     initialize_castle_map(game);
     init_mini_map_utils(game);
-    return (0);
 }

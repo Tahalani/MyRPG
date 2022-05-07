@@ -35,7 +35,7 @@ int check_number_map(game_t *game)
 int display_lamp_func(game_t *game)
 {
     if (game->map[0].check == 1) {
-        for (int i = 0; i != 6; i++)
+        for (int i = 0; i != 7; i++)
             sfRenderWindow_drawSprite
             (game->window.window, game->lamp[i].sprite, NULL);
         display_pnj(game);

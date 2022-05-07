@@ -18,7 +18,9 @@ int set_position_speech(game_t *game)
     game->speech[5].pos = (sfVector2f){250, 700};
     game->speech[6].pos = (sfVector2f){-820, 1750};
     game->speech[7].pos = (sfVector2f){-820, 1750};
-    for (int i = 0; i != 8; i++)
+    game->speech[8].pos = (sfVector2f){100, -2250};
+    game->speech[9].pos = (sfVector2f){100, -2250};
+    for (int i = 0; i != 10; i++)
         sfSprite_setPosition(game->speech[i].sprite, game->speech[i].pos);
     return (0);
 }

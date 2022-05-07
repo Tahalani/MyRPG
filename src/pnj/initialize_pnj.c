@@ -80,5 +80,9 @@ int speech_create(game_t *game)
     ("ressources/speech/nelly_speech_one.png", &game->speech[6].texture, 1, 1);
     game->speech[7].sprite = init_sprite
     ("ressources/speech/nelly_speech_two.png", &game->speech[7].texture, 1, 1);
+    game->speech[8].sprite = init_sprite
+    ("ressources/speech/fabio_speech_one.png", &game->speech[8].texture, 1, 1);
+    game->speech[9].sprite = init_sprite
+    ("ressources/speech/fabio_speech_two.png", &game->speech[9].texture, 1, 1);
     return (0);
 }

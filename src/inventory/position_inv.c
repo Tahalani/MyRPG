@@ -22,6 +22,8 @@ int set_position_lamp(game_t *game)
     (game->lamp[4].sprite, &game->lamp[4].position, 546, 484);
     position_sprite
     (game->lamp[5].sprite, &game->lamp[5].position, 546, 1366);
+    position_sprite
+    (game->lamp[6].sprite, &game->lamp[6].position, -1000, -400);
     return (0);
 }
 

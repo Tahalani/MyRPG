@@ -21,7 +21,7 @@ int destroy_sprite_game(game_t *game)
         sfSprite_destroy(game->background[i].sprite);
     for (int i = 0; i != 3; i++)
         sfSprite_destroy(game->life[i].sprite);
-    for (int i = 0; i != 6; i++)
+    for (int i = 0; i != 7; i++)
         sfSprite_destroy(game->lamp[i].sprite);
     return (0);
 }
@@ -38,7 +38,7 @@ int destroy_texture_game(game_t *game)
         sfTexture_destroy(game->background[i].texture);
     for (int i = 0; i != 3; i++)
         sfTexture_destroy(game->life[i].texture);
-    for (int i = 0; i != 6; i++)
+    for (int i = 0; i != 7; i++)
         sfTexture_destroy(game->lamp[i].texture);
     return (0);
 }
