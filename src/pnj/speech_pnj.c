@@ -29,6 +29,7 @@ int condition_display_speech_three(game_t *game)
 {
     if ((game->map->x_player == 11 && game->map->y_player == 49) &&
     (game->story_steps == 7 || game->story_steps == 8)) {
+        display_coin_animation(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[7].sprite, NULL);
         game->story_steps = 8;
@@ -75,17 +76,18 @@ int condition_speech_five(game_t *game)
     game->level_player == 1)
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[9].sprite, NULL);
+    if ((game->map[3].x_player == 15 && game->map[3].y_player == 9) &&
+    game->level_player == 0)
+        sfRenderWindow_drawSprite
+        (game->window.window, game->speech[8].sprite, NULL);
     return (0);
 }
 
 int condition_display_speech(game_t *game)
 {
-    if ((game->map[3].x_player == 15 && game->map[3].y_player == 9) &&
-    game->level_player == 0)
-        sfRenderWindow_drawSprite
-        (game->window.window, game->speech[8].sprite, NULL);
     if ((game->map->x_player == 22 && game->map->y_player == 19) &&
     (game->story_steps == 3 || game->story_steps == 4)) {
+        display_coin_animation(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[3].sprite, NULL);
         game->story_steps = 4;
