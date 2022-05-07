@@ -57,14 +57,14 @@ int pnj_create(game_t *game)
     ("ressources/pnj/pnj_four.png", &game->pnj[3].texture, 2.2, 2.2);
     game->pnj[4].sprite = init_sprite
     ("ressources/pnj/pnj_five.png", &game->pnj[4].texture, 2.2, 2.2);
+    game->speech[0].sprite = init_sprite
+    ("ressources/speech/Flora_speech_one.png", &game->speech[0].texture, 1, 1);
     pnj_create_two(game);
     return (0);
 }
 
 int speech_create(game_t *game)
 {
-    game->speech[0].sprite = init_sprite
-    ("ressources/speech/Flora_speech_one.png", &game->speech[0].texture, 1, 1);
     game->speech[1].sprite = init_sprite
     ("ressources/speech/bilal_speech.png", &game->speech[1].texture, 1, 1);
     game->speech[2].sprite = init_sprite
