@@ -143,6 +143,7 @@ int move_rect_monster_fight(game_t *game);
 int gameplay_fight(game_t *game);
 int move_rect_victory(game_t *game);
 int move_rect_game_over(game_t *game);
+int display_elem_fight(game_t *game);
 
 // DISPLAY.C //
 int function_to_display(game_t *game);
@@ -157,6 +158,10 @@ sfMusic *music(char *path, int loop);
 // WINDOW.C //
 int set_value_window(game_t *game);
 sfRenderWindow *initialize_window(int width, int height, int bitsPerPixel);
+
+// PIKA.C //
+int check_pos_sound(game_t *game);
+int check_pos_pika(game_t *game);
 
 // MY_RPG //
 void check_status_game(game_t *game);

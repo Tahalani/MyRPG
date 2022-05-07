@@ -34,6 +34,14 @@ Test(move_rect, test_rect_two)
     cr_assert_eq(move_rect(&game->player.rect, 256, 256, 128), 0);
 }
 
+Test(find_pika, test_pika)
+{
+    game_t *game = malloc(sizeof(game_t));
+
+    game->window.window = initialize_window(1920, 1080, 32);
+    cr_assert_eq(find_pika(game), 0);
+}
+
 Test(my_rpg, test_rpg)
 {
     game_t *game = malloc(sizeof(game_t));
