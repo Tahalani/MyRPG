@@ -29,6 +29,7 @@ int condition_display_speech_three(game_t *game)
 {
     if ((game->map->x_player == 11 && game->map->y_player == 49) &&
     (game->story_steps == 7 || game->story_steps == 8)) {
+        game->check_coin = 1;
         display_coin_animation(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[7].sprite, NULL);
@@ -87,6 +88,7 @@ int condition_display_speech(game_t *game)
 {
     if ((game->map->x_player == 22 && game->map->y_player == 19) &&
     (game->story_steps == 3 || game->story_steps == 4)) {
+        game->check_coin = 1;
         display_coin_animation(game);
         sfRenderWindow_drawSprite
         (game->window.window, game->speech[3].sprite, NULL);

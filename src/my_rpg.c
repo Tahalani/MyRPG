@@ -45,6 +45,7 @@ int initialize_story_value(game_t *game)
 
 int initialize_value(game_t *game)
 {
+    game->check_coin = 0;
     game->exp_player.text =
     make_test("ressources/menu/font.ttf", 310, 135, 50);
     game->exp_player.str = "O";

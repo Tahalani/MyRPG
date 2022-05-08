@@ -84,6 +84,7 @@ typedef struct game_s {
     int level_player;
     int check_load;
     float second_loading;
+    int check_coin;
 } game_t;
 
 #endif/* !GAME_H_ */

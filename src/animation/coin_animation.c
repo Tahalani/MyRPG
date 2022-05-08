@@ -46,7 +46,9 @@ static int anime_the_coin(game_t *game)
     int a = 0;
     int b = 19;
 
-    for (int i = 0; i <= 50; i++) {
+    for (int i = 0; i <= 100; i++) {
+        if (a >= 10 || b <= 9)
+            break;
         game->anime[a].position =
         (sfVector2f){game->anime[a].position.x, game->anime[a].position.y + 2};
         sfSprite_setPosition(game->anime[a].sprite, game->anime[a].position);
@@ -57,18 +59,41 @@ static int anime_the_coin(game_t *game)
         sfSprite_setPosition(game->anime[b].sprite, game->anime[b].position);
         if (game->anime[b].position.y >= game->player.position.y + 500)
             b--;
-        if (a >= 9 || b <= 9)
-            break;
+    }
+    return 0;
+}
+
+static int set_pos_coin(game_t *game)
+{
+    int x_a = 150;
+    int x_b = 225;
+    int a = 0;
+    int b = 1;
+
+    while (a <= 19) {
+        position_sprite
+        (game->anime[a].sprite, &game->anime[a].position, game->player.position.y + 1500, x_a);
+        x_a += 160;
+        a += 2;
+        position_sprite
+        (game->anime[b].sprite, &game->anime[b].position, game->player.position.y + 1500, x_b);
+        x_b += 160;
+        b += 2;
     }
     return 0;
 }
 
 int display_coin_animation(game_t *game)
 {
-    anime_the_coin(game);
-    for (int i = 0; i <= 19; i++) {
-        sfRenderWindow_drawSprite
-        (game->window.window, game->anime[i].sprite, NULL);
+    if (game->check_coin == 1) {
+        anime_the_coin(game);
+        for (int i = 0; i <= 19; i++) {
+            sfRenderWindow_drawSprite
+            (game->window.window, game->anime[i].sprite, NULL);
+        }
     }
+    if (game->check_coin == 0)
+        set_pos_coin(game);
+    game->check_coin = 0;
     return 0;
 }
